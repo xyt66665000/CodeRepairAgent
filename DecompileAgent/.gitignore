@@ -1,0 +1,9 @@
+venv/
+dataset/
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+output/
+results/
