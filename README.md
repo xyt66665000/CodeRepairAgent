@@ -51,7 +51,6 @@ python main.py -d ./target_dir
 
 ```
 /repair-full-pipeline  # 执行完整管线
-/simplify              # 审查和优化代码
 ```
 
 详细用法见各 Skill 目录下的 README。
