@@ -4,14 +4,14 @@
 
 项目包含两大组件：
 
-- **[DecompileAgent](./DecompileAgent)** — Python 实现的多阶段管线系统，自动化执行反编译代码修复
+- **[DecompileAgent](./DecompileAgent)** — 多阶段 agent 系统，自动化执行反编译代码修复
 - **[Skills](./skills)** — Claude Code 可调用的 6 个 Skill，在 Claude Code 中直接使用 (`/skill-name`)
 
 ## 快速导航
 
 | 组件 | 说明 |
 |------|------|
-| [DecompileAgent](./DecompileAgent/) | 多阶段反编译修复管线（Python） |
+| [DecompileAgent](./DecompileAgent/) | 多阶段反编译修复 agent 系统 |
 | [control-flow-normalizer](./skills/control-flow-normalizer/) | goto/label → 结构化控制流 |
 | [decompile-repair](./skills/decompile-repair/) | 编译修复（头文件、类型、隐式声明） |
 | [repair-full-pipeline](./skills/repair-full-pipeline/) | 总编排流程 |
@@ -37,7 +37,7 @@ DONE: 可编译、语义恢复的 .c + .o
 
 ## 使用方式
 
-### DecompileAgent（Python 管线）
+### DecompileAgent（Agent 系统）
 
 ```bash
 cd DecompileAgent
