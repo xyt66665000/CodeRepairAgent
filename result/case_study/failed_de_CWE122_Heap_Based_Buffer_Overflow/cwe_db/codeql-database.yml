@@ -1,0 +1,10 @@
+---
+sourceLocationPrefix: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src
+baselineLinesOfCode: 380
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+creationMetadata:
+  cliVersion: 2.17.0
+  creationTime: 2026-05-15T05:53:09.791728860Z
+finalised: true

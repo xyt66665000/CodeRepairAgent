@@ -1,0 +1,923 @@
+[2026-05-17 23:33:30] This is codeql execute queries -J-Xmx1493M --verbosity=progress --logdir=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --rerun --interpret-passthrough=null,--format=sarifv2.1.0,-o=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_results/results.json,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml,--,/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db,/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql --output=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/results -- /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/db-cpp /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:30] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --format=json -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:31] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:31] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql"
+                      ]
+[2026-05-17 23:33:31] Creating executor with 1 threads.
+[2026-05-17 23:33:31] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:31] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --allow-library-packs --format startingpacks -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:31] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:31] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src"
+                      ]
+[2026-05-17 23:33:31] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/util: 0.2.13
+[2026-05-17 23:33:31] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:33:31] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:33:31] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --query=/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql --format=json
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> Resolving query at normalized path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> Adding compilation cache at /home/xyt19/.codeql/compile-cache.
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> Resolving library dependencies from /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/qlpack.yml.
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-17 23:33:31] [SPAMMY] resolve library-path> [DECISION 9] codeql/util: 0.2.13
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> QL pack dependencies for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src resolved OK.
+[2026-05-17 23:33:31] [DETAILS] resolve library-path> Found dbscheme through QL packs: /home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme.
+[2026-05-17 23:33:31] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src",
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/dataflow",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/rangeanalysis",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/ssa",
+                          "/home/xyt19/tools/codeql/ql/codeql/misc/suite-helpers",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/tutorial",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/typetracking",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/util"
+                        ],
+                        "dbscheme" : "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme",
+                        "compilationCache" : [
+                          "/home/xyt19/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/cgc/MyAccel.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2026-05-17 23:33:31] [PROGRESS] execute queries> Compiling query plan for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:31] [DETAILS] execute queries> Resolving imports for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:32] Resolved file set for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql hashes to 8daec15932e36146b0423c4fba11d8b1d776da5c.
+[2026-05-17 23:33:32] [DETAILS] execute queries> Checking QL for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:32] ExternalModuleBindingPass ...
+[2026-05-17 23:33:33] ExternalModuleBindingPass time: 00:00.473
+[2026-05-17 23:33:33] CollectInstantiationsPass ...
+[2026-05-17 23:33:33] CollectInstantiationsPass time: 00:00.053
+[2026-05-17 23:33:33] Ql checks ...
+[2026-05-17 23:33:35] Ql checks time: 00:02.011
+[2026-05-17 23:33:37] Compilation pipeline
+[2026-05-17 23:33:37] Type Inference ...
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: Best number of iterations,Maximum number of runs,Number of BDD variables,Size of BDD for typefacts
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,12,12
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,8,8
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,833,1774
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,4,4
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,7,7
+[2026-05-17 23:33:37] CSV_TYPE_HIERARCHY: 0,0,6,6
+[2026-05-17 23:33:38] Type Inference time: 00:00.789
+[2026-05-17 23:33:38] [DETAILS] execute queries> Optimizing /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:38] Processing compilation pipeline
+[2026-05-17 23:33:38] Started compiling a query
+[2026-05-17 23:33:38] Initialising compiler...
+[2026-05-17 23:33:38] 	 ... compiler initialised
+[2026-05-17 23:33:38] About to start query optimisation
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache hit - skipping compilation.
+[2026-05-17 23:33:38] Compilation cache miss for 237e7ba280040b782b332584dafb8bb1ecab7aed.
+[2026-05-17 23:33:42] Stored compiled program for 237e7ba280040b782b332584dafb8bb1ecab7aed.
+[2026-05-17 23:33:42] CSV_COMPILATION: NONE,MISC,RA_TRANSLATION,OPTIMISATIONS
+[2026-05-17 23:33:42] CSV_COMPILATION: 250,396,228,3717
+[2026-05-17 23:33:42] [SPAMMY] execute queries> No database upgrade/downgrade needed for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:42] [PROGRESS] execute queries> [1/1 comp 11.1s] Compiled /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:42] [PROGRESS] execute queries> Starting evaluation of codeql/cpp-queries/cgc/MyAccel.ql.
+[2026-05-17 23:33:42] Starting evaluation of /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:42] (0s) Start query execution
+[2026-05-17 23:33:42] (0s) Beginning execution of MyAccel.ql
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprs/3@9afeabih with 7824 rows and digest 622623tdg9fasqn1rct303fnpj8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate exprs_10#join_rhs/2@1396b79f
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprs_10#join_rhs/2@1396b79f with 7824 rows and digest a43eb95k6d6cr4gm8uu10iohop6.
+[2026-05-17 23:33:43] (0s)  >>> Created relation funbind/2@9dec5d4b with 464 rows and digest 637086k5nvrou7sa9f77iuqvd0c.
+[2026-05-17 23:33:43] (0s)  >>> Created relation iscall/2@2705571r with 463 rows and digest 82c624kh9469da444rboktbkp39.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate iscall_0#antijoin_rhs/1@c6da7f2j
+[2026-05-17 23:33:43] (0s)  >>> Created relation iscall_0#antijoin_rhs/1@c6da7f2j with 463 rows and digest c968e5v43r0t4lggmgkm5vnuaef.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::Call#048c9613/1@5a441f9o
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::Call#048c9613/1@5a441f9o with 465 rows and digest 2745b1lqb57fldr789bmv0co0ie.
+[2026-05-17 23:33:43] (0s)  >>> Created relation functions/3@176659cl with 183 rows and digest c5dd756s7ubg3qvdq4vdb11hef7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Function::Function.getName/0#dispred#b6c7beb4/2@0a21e19r
+[2026-05-17 23:33:43] (0s)  >>> Created relation Function::Function.getName/0#dispred#b6c7beb4/2@0a21e19r with 183 rows and digest 49bd6141q7belu6a0pomjbhirlc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Function::Function.getName/0#dispred#b6c7beb4_10#join_rhs/2@b1cb40in
+[2026-05-17 23:33:43] (0s)  >>> Created relation Function::Function.getName/0#dispred#b6c7beb4_10#join_rhs/2@b1cb40in with 183 rows and digest 76ff58007j67bp9he9rt0ntid74.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Call::FunctionCall.getTarget/0#dispred#935da4c5#fb/1@ee4e398e
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Call::FunctionCall.getTarget/0#dispred#935da4c5#fb/1@ee4e398e with 2 rows and digest 43b140kkl9maa1d1747s6urh893.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::FunctionCall.getTarget/0#45745a57#fb/2@586c24aq
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::FunctionCall.getTarget/0#45745a57#fb/2@586c24aq with 17 rows and digest 1349176hqveeo02tvnevh9akhl4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::FunctionCall.getTarget/0#45745a57#fb_10#join_rhs/2@4c4335bo
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::FunctionCall.getTarget/0#45745a57#fb_10#join_rhs/2@4c4335bo with 17 rows and digest 92835d94l57b1ogv06d0m2hqhtc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Call::ConstructorCall#c4f8b4c6#b/1@647ff61j
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Call::ConstructorCall#c4f8b4c6#b/1@647ff61j with 17 rows and digest 700685bu131o6919oj0mi2b3p76.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Call::FunctionCall.getTarget/0#45745a57#bf/1@79ec90su
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Call::FunctionCall.getTarget/0#45745a57#bf/1@79ec90su with 17 rows and digest 44996b9mrnaa8jd85gih8vvd2q2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::FunctionCall.getTarget/0#45745a57#bf/2@7edd422b
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::FunctionCall.getTarget/0#45745a57#bf/2@7edd422b with 17 rows and digest 1349176hqveeo02tvnevh9akhl4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MemberFunction::Constructor#3a697e8a#b/1@d623c7hl
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#MemberFunction::Constructor#3a697e8a#b/1@d623c7hl with 2 rows and digest 7a9598g48k55vhb2hmbr8tvpv67.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MemberFunction::MemberFunction#8965af43#b/1@93500919
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#MemberFunction::MemberFunction#8965af43#b/1@93500919 with 2 rows and digest 43b140kkl9maa1d1747s6urh893.
+[2026-05-17 23:33:43] (0s)  >>> Created relation member/3@70d8ac5v with 27 rows and digest d8b749c243og22gner4rlclc2e9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Class::Class.getCanonicalMember/1#dispred#e1747079/3@473325fg
+[2026-05-17 23:33:43] (0s)  >>> Created relation Class::Class.getCanonicalMember/1#dispred#e1747079/3@473325fg with 27 rows and digest 48f7bbnhv40g1ladkqg9jqr1k69.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate project#Class::Class.getCanonicalMember/1#dispred#e1747079/1@8c6bdel9
+[2026-05-17 23:33:43] (0s)  >>> Created relation project#Class::Class.getCanonicalMember/1#dispred#e1747079/1@8c6bdel9 with 27 rows and digest 19df05nnh7tc8l24754ogt8s008.
+[2026-05-17 23:33:43] (0s)  >>> Created relation membervariables/3@23983e89 with 27 rows and digest 6b0e2d1lseo09i251gr4lgrld36.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Declaration::Declaration.isMember/0#dispred#de845e36#b/1@54bd660u
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Declaration::Declaration.isMember/0#dispred#de845e36#b/1@54bd660u with 29 rows and digest d809891vk6nl13mthkgk3an5su8.
+[2026-05-17 23:33:43] (0s)  >>> Created relation variable_instantiation/2@9b432a6o with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that Variable::Variable.isConstructedFrom/1#dispred#fbdd4275/2@408239lt is empty, due to variable_instantiation/2@9b432a6o.
+[2026-05-17 23:33:43] (0s) Inferred that variable_instantiation_10#join_rhs/2@5d959293 is empty, due to variable_instantiation/2@9b432a6o.
+[2026-05-17 23:33:43] (0s) Inferred that Variable::TemplateVariable.getAnInstantiation/0#dispred#f6b531ee/2@de696eu5 is empty, due to Variable::Variable.isConstructedFrom/1#dispred#fbdd4275/2@408239lt.
+[2026-05-17 23:33:43] (0s) Inferred that Variable::Variable.isConstructedFrom/1#dispred#fbdd4275_10#join_rhs/2@7ec8a9lv is empty, due to Variable::Variable.isConstructedFrom/1#dispred#fbdd4275/2@408239lt.
+[2026-05-17 23:33:43] (0s)  >>> Created relation is_variable_template/1@c03b2f84 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s)  >>> Created relation is_function_template/1@7da6b4j0 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that _is_function_template_project#Declaration::Declaration.getATemplateArgument/0#dispred#260b9dcc#shared/1@25515avh is empty, due to is_function_template/1@7da6b4j0.
+[2026-05-17 23:33:43] (0s) Inferred that _is_function_template_project#function_template_argument#shared/1@42e7f181 is empty, due to is_function_template/1@7da6b4j0.
+[2026-05-17 23:33:43] (0s) Inferred that Function::TemplateFunction.getAnInstantiation/0#dispred#578175e9#fb/2@42a33fi4 is empty, due to is_function_template/1@7da6b4j0.
+[2026-05-17 23:33:43] (0s) Inferred that _Function::Function.isConstructedFrom/1#dispred#2edd856f_10#join_rhs_is_function_template_project#De__#shared/2@89668035 is empty, due to is_function_template/1@7da6b4j0.
+[2026-05-17 23:33:43] (0s) Inferred that _Function::Function.isConstructedFrom/1#dispred#2edd856f_10#join_rhs_ResolveFunction::isFunction/1#9__#antijoin_rhs/2@f35edde3 is empty, due to _is_function_template_project#Declaration::Declaration.getATemplateArgument/0#dispred#260b9dcc#shared/1@25515avh.
+[2026-05-17 23:33:43] (0s) Inferred that Function::TemplateFunction.getAnInstantiation/0#dispred#578175e9/2@633a45ae is empty, due to _is_function_template_project#Declaration::Declaration.getATemplateArgument/0#dispred#260b9dcc#shared/1@25515avh.
+[2026-05-17 23:33:43] (0s) Inferred that __is_function_template_project#function_template_argument#shared_fun_decls_10#join_rhs_fun_specializ__#antijoin_rhs/1@9fd3f48p is empty, due to _is_function_template_project#function_template_argument#shared/1@42e7f181.
+[2026-05-17 23:33:43] (0s) Inferred that QualifiedName::TemplateFunction.getAnInstantiation/0#dispred#1cbe8684/2@4d00c7ce is empty, due to _is_function_template_project#function_template_argument#shared/1@42e7f181.
+[2026-05-17 23:33:43] (0s) Inferred that _ResolveFunction::isFunction/1#9226b83f__Function::Function.isConstructedFrom/1#dispred#2edd856f_10#__#antijoin_rhs/2@e20bd25n is empty, due to _Function::Function.isConstructedFrom/1#dispred#2edd856f_10#join_rhs_is_function_template_project#De__#shared/2@89668035.
+[2026-05-17 23:33:43] (0s) Inferred that Function::TemplateFunction.getAnInstantiation/0#dispred#578175e9#fb/2@8d6aabt4 is empty, due to _Function::Function.isConstructedFrom/1#dispred#2edd856f_10#join_rhs_is_function_template_project#De__#shared/2@89668035.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Declaration::Declaration.isMember/0#dispred#de845e36#b/1@65327edk
+[2026-05-17 23:33:43] (0s)  >>> Created relation Declaration::Declaration.isMember/0#dispred#de845e36#b/1@65327edk with 27 rows and digest de0dbbgd5kv46pgug9qtv0id724.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MemberFunction::MemberFunction#8965af43#b/1@9a9728lv
+[2026-05-17 23:33:43] (0s)  >>> Created relation MemberFunction::MemberFunction#8965af43#b/1@9a9728lv with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that MemberFunction::Constructor#3a697e8a#b/1@2f9bf8t0 is empty, due to MemberFunction::MemberFunction#8965af43#b/1@9a9728lv.
+[2026-05-17 23:33:43] (0s) Inferred that MemberFunction::Destructor#3b34c0ea#b/1@5740bd2i is empty, due to MemberFunction::MemberFunction#8965af43#b/1@9a9728lv.
+[2026-05-17 23:33:43] (0s) Inferred that Call::ConstructorCall#c4f8b4c6#b/1@d3496351 is empty, due to MemberFunction::Constructor#3a697e8a#b/1@2f9bf8t0.
+[2026-05-17 23:33:43] (0s) Inferred that Call::DestructorCall#43f8f365#b/1@d1d07061 is empty, due to MemberFunction::Destructor#3b34c0ea#b/1@5740bd2i.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::FunctionCall.getTarget/0#dispred#935da4c5#fb/2@d4a04526
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::FunctionCall.getTarget/0#dispred#935da4c5#fb/2@d4a04526 with 17 rows and digest 9ed6256covkqk2amu8ng9dg6fpa.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::FunctionCall.getTarget/0#dispred#935da4c5#fb_10#join_rhs/2@ae4f0dmr
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::FunctionCall.getTarget/0#dispred#935da4c5#fb_10#join_rhs/2@ae4f0dmr with 17 rows and digest 92835d94l57b1ogv06d0m2hqhtc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::isMallocCall/1#bd46c232/1@779a88ef
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::isMallocCall/1#bd46c232/1@779a88ef with 16 rows and digest f8db17l1e5u0u4ptcpsfv30lf73.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MyAccel::stripCasts/1#4b1aa085#fb/1@321e8c8l
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#MyAccel::stripCasts/1#4b1aa085#fb/1@321e8c8l with 1390 rows and digest d4f8804kqilp5trsngs92v9olf8.
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprconv/2@a7c700ao with 1388 rows and digest b943a9vr9h5lmg0dqk8gpvsv7mf.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate @cast/1@379750sg
+[2026-05-17 23:33:43] (0s)  >>> Created relation @cast/1@379750sg with 972 rows and digest 777c678lbjk29kjqrl3lkd7hut2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#fb/2@i1#b460bbc5 (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - MyAccel::stripCasts/1#4b1aa085#fb_delta has 1390 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#fb/2@i2#b460bbc5 (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - MyAccel::stripCasts/1#4b1aa085#fb_delta has 434 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#fb/2@i3#b460bbc5 (iteration 3)
+[2026-05-17 23:33:43] (0s) 			 - MyAccel::stripCasts/1#4b1aa085#fb_delta has 2 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#fb/2@i4#b460bbc5 (iteration 4)
+[2026-05-17 23:33:43] (0s) Empty delta for MyAccel::stripCasts/1#4b1aa085#fb_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::stripCasts/1#4b1aa085#fb/2@b460bbc5 with 1826 rows and digest 5a889e0pto4u8kib8l1v7kltr4f.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs/2@5fcea26l
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs/2@5fcea26l with 1826 rows and digest 1706b3g2lk5ntf646nn6genskod.
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprparents/3@d2c9f3iv with 6319 rows and digest 72abdet67oi17kri9con1n6ngmd.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate exprparents_201#join_rhs/3@c1b9f871
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprparents_201#join_rhs/3@c1b9f871 with 6319 rows and digest 8f1a8ea7dneoa5cfb532fd8upnc.
+[2026-05-17 23:33:43] (0s)  >>> Created relation initialisers/4@acf38083 with 11 rows and digest 917aff2ft22ktl98376j0jrmn90.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate initialisers_20#join_rhs/2@6c27d5am
+[2026-05-17 23:33:43] (0s)  >>> Created relation initialisers_20#join_rhs/2@6c27d5am with 11 rows and digest 9ef387hr77qam6qeopp25heavu6.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate exprconv_10#join_rhs/2@3f96abku
+[2026-05-17 23:33:43] (0s)  >>> Created relation exprconv_10#join_rhs/2@3f96abku with 1388 rows and digest cedc68ffj9hcj4a547cqks1gik9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate functions_0#antijoin_rhs/1@2bed3fv1
+[2026-05-17 23:33:43] (0s)  >>> Created relation functions_0#antijoin_rhs/1@2bed3fv1 with 183 rows and digest efa180j6vu0viu7ve8cn4i3unla.
+[2026-05-17 23:33:43] (0s)  >>> Created relation globalvariables/3@4f60f152 with 9 rows and digest b0cba5v5h3e8uqoono6h5h24af3.
+[2026-05-17 23:33:43] (0s)  >>> Created relation localvariables/3@988e509n with 441 rows and digest 23a98eb6ss0dbdde4qi88di3ede.
+[2026-05-17 23:33:43] (0s)  >>> Created relation params/4@db7c62k0 with 360 rows and digest 4854f9m5abltgm323nsjc20bcje.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate @localscopevariable/1@7bd7922d
+[2026-05-17 23:33:43] (0s)  >>> Created relation @localscopevariable/1@7bd7922d with 801 rows and digest e648c6bts76s2obi7eifurnjeb5.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate @variable/1@90354baj
+[2026-05-17 23:33:43] (0s)  >>> Created relation @variable/1@90354baj with 837 rows and digest 80cb5439sstenjq4a74n24ttvr8.
+[2026-05-17 23:33:43] (0s)  >>> Created relation usertypes/3@0e966f4c with 51 rows and digest bdece8k0e7tt98tk2p371opcr31.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate usertypes_0#antijoin_rhs/1@e4754bn3
+[2026-05-17 23:33:43] (0s)  >>> Created relation usertypes_0#antijoin_rhs/1@e4754bn3 with 51 rows and digest eb77070ve9vmhe7u4p6amr3hnre.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getParent/0#dispred#393b4f50#bf/2@af4da4vu
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getParent/0#dispred#393b4f50#bf/2@af4da4vu with 6319 rows and digest 81b67apavj6tds2i6sdd41a2rk4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::isReallocCall/1#1db79ef4/1@dde0e4nq
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::isReallocCall/1#1db79ef4/1@dde0e4nq with 1 rows and digest 70a4172bovf5u2gduq89vc9rfh6.
+[2026-05-17 23:33:43] (0s)  >>> Created relation condition_decl_bind/2@8b6815rs with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that Assignment::ConditionDeclExpr.getVariable/0#dispred#cc50c0bf/2@f45f537q is empty, due to condition_decl_bind/2@8b6815rs.
+[2026-05-17 23:33:43] (0s) Inferred that project#Assignment::ConditionDeclExpr.getVariable/0#dispred#cc50c0bf/1@7b6ca2hl is empty, due to Assignment::ConditionDeclExpr.getVariable/0#dispred#cc50c0bf/2@f45f537q.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf/1@i1#212b2dtf (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf/1@i2#212b2dtf (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf/1@i3#212b2dtf (iteration 3)
+[2026-05-17 23:33:43] (0s) 			 - m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf/1@i4#212b2dtf (iteration 4)
+[2026-05-17 23:33:43] (0s) Empty delta for m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Expr::Expr.getEnclosingStmt/0#224d8d99#bf/1@212b2dtf with 3 rows and digest 33576dup5re910qqd692j7gsf05.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb/1@855fec6s
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb/1@855fec6s with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb/2@083182np is empty, due to m#Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb/1@855fec6s.
+[2026-05-17 23:33:43] (0s) Inferred that Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb_10#join_rhs/2@cbee5a6f is empty, due to Variable::Variable.getInitializer/0#dispred#34a5a1a6#fb/2@083182np.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getChild/1#dispred#e5374b3c/3@7245be9t
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getChild/1#dispred#e5374b3c/3@7245be9t with 4766 rows and digest 75a0c7o04ljljk9c9jmcuvuum91.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::Operation.getAnOperand/0#dispred#4dc2ee04#bf/1@de7f0449
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Expr::Operation.getAnOperand/0#dispred#4dc2ee04#bf/1@de7f0449 with 199 rows and digest 0f94bbe8aed62e63dv56iv2non1.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Operation.getAnOperand/0#dispred#4dc2ee04#bf/2@cf5e18h5
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Operation.getAnOperand/0#dispred#4dc2ee04#bf/2@cf5e18h5 with 398 rows and digest 6808e7565r87h7cmk9rtcgbpci9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate @assign_expr/1@19a572br
+[2026-05-17 23:33:43] (0s)  >>> Created relation @assign_expr/1@19a572br with 711 rows and digest e5c17e247ee35huebm15tk8lo08.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getLValue/0#dispred#4a59925a/2@39172ba2
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getLValue/0#dispred#4a59925a/2@39172ba2 with 711 rows and digest 379b7at4od6lihedjg41sbn0s67.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getRValue/0#dispred#282c9917#bf/2@abd3432p
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getRValue/0#dispred#282c9917#bf/2@abd3432p with 1 rows and digest f2c769hitr1q09nf0n3n5t0i454.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getRValue/0#dispred#282c9917#bf_10#join_rhs/2@8d9e56st
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getRValue/0#dispred#282c9917#bf_10#join_rhs/2@8d9e56st with 1 rows and digest f1a103n7tlbd2c137bpqaesgtm8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Expr::UnaryOperation.getOperand/0#dispred#990de484#bf/1@df2782ko
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Expr::UnaryOperation.getOperand/0#dispred#990de484#bf/1@df2782ko with 105 rows and digest 9e525240001a5q5vnoplo93rijd.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::UnaryOperation.getOperand/0#dispred#990de484#bf/2@bb6b109b
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::UnaryOperation.getOperand/0#dispred#990de484#bf/2@bb6b109b with 105 rows and digest 2b499edfr3dqa35l4nmn0342l8a.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs_exprs_10#join_rhs#shared/1@d14206ju
+[2026-05-17 23:33:43] (0s)  >>> Created relation _MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs_exprs_10#join_rhs#shared/1@d14206ju with 36 rows and digest 9532d9vfpp43dsfudhb36n5vec2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _MyAccel::isMallocCall/1#bd46c232_MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs#shared/1@9baff028
+[2026-05-17 23:33:43] (0s)  >>> Created relation _MyAccel::isMallocCall/1#bd46c232_MyAccel::stripCasts/1#4b1aa085#fb_10#join_rhs#shared/1@9baff028 with 29 rows and digest 0379a46p0grnpgvh2kp44341tqa.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Call::Call.getArgument/1#dispred#ada436ba#bff/3@77e2a10c
+[2026-05-17 23:33:43] (0s)  >>> Created relation Call::Call.getArgument/1#dispred#ada436ba#bff/3@77e2a10c with 2 rows and digest c91fdb61bn8dc1gl68cpge9ik01.
+[2026-05-17 23:33:43] (0s)  >>> Created relation values/2@60250b16 with 1656 rows and digest 449207okdk19m8g604g43uuvcn9.
+[2026-05-17 23:33:43] (0s)  >>> Created relation valuebind/2@e1bd0dpg with 1661 rows and digest 07ab52lf0bivhd32mdmq8jrb854.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getValue/0#dispred#5f237cff#bf/2@ee7b73ue
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getValue/0#dispred#5f237cff#bf/2@ee7b73ue with 1661 rows and digest b7b9act7dpnvqgl40vonoh3elgc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#Assignment::Assignment.getRValue/0#dispred#282c9917#fb/1@f3ca2cdt
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#Assignment::Assignment.getRValue/0#dispred#282c9917#fb/1@f3ca2cdt with 92 rows and digest 94ba21nd8lad88p3obs5o1vqhqb.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getChild/1#dispred#e5374b3c_120#join_rhs/3@3fa4b7f6
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getChild/1#dispred#e5374b3c_120#join_rhs/3@3fa4b7f6 with 4766 rows and digest a00a1f6v0rafvgmrg5lvc9t24n7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getRValue/0#dispred#282c9917#fb/2@2c9327bs
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getRValue/0#dispred#282c9917#fb/2@2c9327bs with 40 rows and digest 1a4accnka0ghoktk5ljnuo9clj2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getRValue/0#dispred#282c9917#fb_10#join_rhs/2@e0a695ci
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getRValue/0#dispred#282c9917#fb_10#join_rhs/2@e0a695ci with 40 rows and digest 66fba6t4l4m79gtrhiha3ackb9f.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MyAccel::stripCasts/1#4b1aa085#bf/1@i1#30fa4xtb (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - m#MyAccel::stripCasts/1#4b1aa085#bf_delta has 1413 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#bf/2@i1#30fa4wtb (iteration 1)
+[2026-05-17 23:33:43] (0s) Empty delta for MyAccel::stripCasts/1#4b1aa085#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _@cast_m#MyAccel::stripCasts/1#4b1aa085#bf#prev_delta#shared/1@i2#L0#30fa4wtb (iteration 2)
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MyAccel::stripCasts/1#4b1aa085#bf/1@i2#30fa4xtb (iteration 2)
+[2026-05-17 23:33:43] (0s) Empty delta for m#MyAccel::stripCasts/1#4b1aa085#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#bf/2@i2#30fa4wtb (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - MyAccel::stripCasts/1#4b1aa085#bf_delta has 1413 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _@cast_m#MyAccel::stripCasts/1#4b1aa085#bf#prev_delta#shared/1@i3#L0#30fa4wtb (iteration 3)
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate m#MyAccel::stripCasts/1#4b1aa085#bf/1@i3#30fa4xtb (iteration 3)
+[2026-05-17 23:33:43] (0s) Empty delta for m#MyAccel::stripCasts/1#4b1aa085#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#bf/2@i3#30fa4wtb (iteration 3)
+[2026-05-17 23:33:43] (0s) Empty delta for MyAccel::stripCasts/1#4b1aa085#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::stripCasts/1#4b1aa085#bf/2@30fa4wtb with 1413 rows and digest 66768c5ir9t930e8khq533pgul2.
+[2026-05-17 23:33:43] (0s)  >>> Created relation m#MyAccel::stripCasts/1#4b1aa085#bf/1@30fa4xtb with 1413 rows and digest f5c5280btovg3of6collqs4ebde.
+[2026-05-17 23:33:43] (0s)  >>> Created relation varbind/2@5dab1189 with 2583 rows and digest 146322rciudmntv476qpv8eena4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _exprs_10#join_rhs#antijoin_rhs/1@e5f512pu
+[2026-05-17 23:33:43] (0s)  >>> Created relation _exprs_10#join_rhs#antijoin_rhs/1@e5f512pu with 464 rows and digest c744ebet0e8h6hh37d81rti8qtb.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate @access/1@44d25679
+[2026-05-17 23:33:43] (0s)  >>> Created relation @access/1@44d25679 with 3047 rows and digest e8e79db4u8nom9h11od4ngqu7s1.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::Access#bfafc000/1@6112e813
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::Access#bfafc000/1@6112e813 with 2584 rows and digest 9ec1b1au00739tb2r3vvqs7v6r1.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _Access::Access#bfafc000_exprs_10#join_rhs#shared/1@3a6467cm
+[2026-05-17 23:33:43] (0s)  >>> Created relation _Access::Access#bfafc000_exprs_10#join_rhs#shared/1@3a6467cm with 2583 rows and digest 617448oeskk575h25nb1rb0go8c.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _@variable__Access::Access#bfafc000_exprs_10#join_rhs#shared_functions_0#antijoin_rhs_varbind#antijoin_rhs/1@1e070bqo
+[2026-05-17 23:33:43] (0s)  >>> Created relation _@variable__Access::Access#bfafc000_exprs_10#join_rhs#shared_functions_0#antijoin_rhs_varbind#antijoin_rhs/1@1e070bqo with 16 rows and digest 26a2b7sltr87j6jkng7c55778k3.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::VariableAccess#27163138/1@e536eeln
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::VariableAccess#27163138/1@e536eeln with 2567 rows and digest 487a026kfi3ci8mr697bvlm56h2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::VariableAccess.getTarget/0#238a7818/2@9c8b71nj
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::VariableAccess.getTarget/0#238a7818/2@9c8b71nj with 2567 rows and digest a87e6b849foa2v9l7fpkfea7v1f.
+[2026-05-17 23:33:43] (0s)  >>> Created relation fieldoffsets/3@c90a93ht with 27 rows and digest 173daeb7od7n1ilgefv5bse1sgf.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::MemberVariable#03cd19f4/1@4d9c8d8c
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::MemberVariable#03cd19f4/1@4d9c8d8c with 27 rows and digest de0dbbgd5kv46pgug9qtv0id724.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Field::Field#3a3ce059/1@e38e3e43
+[2026-05-17 23:33:43] (0s)  >>> Created relation Field::Field#3a3ce059/1@e38e3e43 with 27 rows and digest de0dbbgd5kv46pgug9qtv0id724.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate varbind_10#join_rhs/2@04ad12gt
+[2026-05-17 23:33:43] (0s)  >>> Created relation varbind_10#join_rhs/2@04ad12gt with 2583 rows and digest c8f15ch7t1fgigjs0vtbfjdmfk4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::FieldAccess#d1ccd326/1@e5909b4j
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::FieldAccess#d1ccd326/1@e5909b4j with 188 rows and digest 1612cbr4p96ve0n27493h3dekda.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::Access.getTarget/0#dispred#cf25c8aa/2@d52dc6hc
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::Access.getTarget/0#dispred#cf25c8aa/2@d52dc6hc with 2567 rows and digest a87e6b849foa2v9l7fpkfea7v1f.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::allocation/2#461805b7/2@62b8ecmq
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::allocation/2#461805b7/2@62b8ecmq with 14 rows and digest 8faccfl13vvptcjlcrr6umopdbc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate project#MyAccel::allocation/2#461805b7/1@38a9afqe
+[2026-05-17 23:33:43] (0s)  >>> Created relation project#MyAccel::allocation/2#461805b7/1@38a9afqe with 14 rows and digest 520195lo56h34dacmmh3suc215b.
+[2026-05-17 23:33:43] (0s)  >>> Created relation var_decls/5@dfcf95g2 with 1010 rows and digest 0f1a32fnhm9sh9t1pnjm48hls59.
+[2026-05-17 23:33:43] (0s)  >>> Created relation var_def/1@1fa39695 with 649 rows and digest a2003bl99uln9nca7fvte5e53ra.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::LocalScopeVariable#3aae4a09/1@ba75236i
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::LocalScopeVariable#3aae4a09/1@ba75236i with 801 rows and digest e648c6bts76s2obi7eifurnjeb5.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::LocalVariable#66787c88/1@fcd782rh
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::LocalVariable#66787c88/1@fcd782rh with 441 rows and digest 13b0a2qc1d42c89dnfroa5flmac.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::VariableDeclarationEntry.getVariable/0#dispred#a634d70c/2@4ee26a1m
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::VariableDeclarationEntry.getVariable/0#dispred#a634d70c/2@4ee26a1m with 1010 rows and digest 9f4b53nj47cg5u1bt72p2si1o00.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::VariableDeclarationEntry.getVariable/0#dispred#a634d70c_10#join_rhs/2@28bdfcli
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::VariableDeclarationEntry.getVariable/0#dispred#a634d70c_10#join_rhs/2@28bdfcli with 1010 rows and digest 93eda4i45vj01c30bgk1h1inck0.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Parameter::Parameter#623bc78d/1@16ad1c91
+[2026-05-17 23:33:43] (0s)  >>> Created relation Parameter::Parameter#623bc78d/1@16ad1c91 with 360 rows and digest 331d874smgirlr1fr58oj0rdfa6.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Parameter::Parameter.getIndex/0#dispred#66f59d90/2@fd83c5np
+[2026-05-17 23:33:43] (0s)  >>> Created relation Parameter::Parameter.getIndex/0#dispred#66f59d90/2@fd83c5np with 360 rows and digest dd637cuh4mdeelfdttnjm6l07e6.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate var_decls_03#join_rhs/2@e62632rn
+[2026-05-17 23:33:43] (0s)  >>> Created relation var_decls_03#join_rhs/2@e62632rn with 1010 rows and digest 9114f02hufodr5lu6fp7m4n6a6d.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::LocalVariable.getName/0#dispred#fe44a180/2@cd8925sb
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::LocalVariable.getName/0#dispred#fe44a180/2@cd8925sb with 441 rows and digest 9f45aeglnt8baijdo1gl18u540e.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::VariableDeclarationEntry.getName/0#dispred#227acfab/2@7f5a232a
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::VariableDeclarationEntry.getName/0#dispred#227acfab/2@7f5a232a with 989 rows and digest 54694d8mq87itg4o68gkj1j2gv4.
+[2026-05-17 23:33:43] (0s)  >>> Created relation function_instantiation/2@4edba28i with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that Function::Function.isConstructedFrom/1#dispred#2edd856f/2@e46668o3 is empty, due to function_instantiation/2@4edba28i.
+[2026-05-17 23:33:43] (0s) Inferred that function_instantiation_10#join_rhs/2@65afeav9 is empty, due to function_instantiation/2@4edba28i.
+[2026-05-17 23:33:43] (0s) Inferred that Function::Function.isConstructedFrom/1#dispred#2edd856f_10#join_rhs/2@23f5faqm is empty, due to Function::Function.isConstructedFrom/1#dispred#2edd856f/2@e46668o3.
+[2026-05-17 23:33:43] (0s) Inferred that project#Function::Function.isConstructedFrom/1#dispred#2edd856f/1@c9ffc3mv is empty, due to Function::Function.isConstructedFrom/1#dispred#2edd856f/2@e46668o3.
+[2026-05-17 23:33:43] (0s) Inferred that Parameter::Parameter.getFunction/0#dispred#803faca2#fb/2@e32ba6ni is empty, due to project#Function::Function.isConstructedFrom/1#dispred#2edd856f/1@c9ffc3mv.
+[2026-05-17 23:33:43] (0s) Inferred that Parameter::Parameter.getFunction/0#dispred#803faca2#fb/2@5b5871pm is empty, due to project#Function::Function.isConstructedFrom/1#dispred#2edd856f/1@c9ffc3mv.
+[2026-05-17 23:33:43] (0s) Inferred that _Parameter::Parameter#623bc78d_Parameter::Parameter.getFunction/0#dispred#803faca2#fb_project#Functi__#antijoin_rhs/1@e46d4aci is empty, due to Parameter::Parameter.getFunction/0#dispred#803faca2#fb/2@e32ba6ni.
+[2026-05-17 23:33:43] (0s) Inferred that _Parameter::Parameter#623bc78d_Parameter::Parameter.getFunction/0#dispred#803faca2#fb_project#Functi__#antijoin_rhs/1@7f1c09f6 is empty, due to Parameter::Parameter.getFunction/0#dispred#803faca2#fb/2@5b5871pm.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Function::Function.getParameter/1#dispred#200dcf26/3@f3e7c9ff
+[2026-05-17 23:33:43] (0s)  >>> Created relation Function::Function.getParameter/1#dispred#200dcf26/3@f3e7c9ff with 360 rows and digest ebcb6eot0495oi27ei5nooonrt3.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Parameter::Parameter.getAnEffectiveDeclarationEntry/0#dispred#03397d60/2@e87920bp
+[2026-05-17 23:33:43] (0s)  >>> Created relation Parameter::Parameter.getAnEffectiveDeclarationEntry/0#dispred#03397d60/2@e87920bp with 533 rows and digest e28973uck9ffbccra9po0come26.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Parameter::Parameter.getAnEffectiveDeclarationEntry/0#dispred#03397d60_10#join_rhs/2@8dc48c68
+[2026-05-17 23:33:43] (0s)  >>> Created relation Parameter::Parameter.getAnEffectiveDeclarationEntry/0#dispred#03397d60_10#join_rhs/2@8dc48c68 with 533 rows and digest ea54bd1041ueq5hvmsqvg12olrf.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5/2@f0d69ba3
+[2026-05-17 23:33:43] (0s)  >>> Created relation Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5/2@f0d69ba3 with 512 rows and digest f354807f2h05jf35oifcgi680jf.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate project#Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5/1@9bb813v5
+[2026-05-17 23:33:43] (0s)  >>> Created relation project#Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5/1@9bb813v5 with 339 rows and digest fa69865ts5us9prpu9cai56vn4f.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5_Variable::VariableDeclarationEntr__#antijoin_rhs/3@21192e19
+[2026-05-17 23:33:43] (0s)  >>> Created relation _Parameter::Parameter.getANamedDeclarationEntry/0#dispred#ee3743d5_Variable::VariableDeclarationEntr__#antijoin_rhs/3@21192e19 with 347 rows and digest ec7ee8rmkv6aspigij7c8qk5ga6.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Variable::Variable.getName/0#dispred#1b4a78c5/2@8a41aar7
+[2026-05-17 23:33:43] (0s)  >>> Created relation Variable::Variable.getName/0#dispred#1b4a78c5/2@8a41aar7 with 837 rows and digest 71ca26b5diq983c6h6ap669utc9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Assignment::Assignment.getLValue/0#dispred#4a59925a_10#join_rhs/2@68acec5e
+[2026-05-17 23:33:43] (0s)  >>> Created relation Assignment::Assignment.getLValue/0#dispred#4a59925a_10#join_rhs/2@68acec5e with 711 rows and digest 1ab5287lt4gvg3ge064n23do8nd.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::stripCasts/1#4b1aa085#bf_10#join_rhs/2@a8f2d0ak
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::stripCasts/1#4b1aa085#bf_10#join_rhs/2@a8f2d0ak with 1413 rows and digest 66768c5ir9t930e8khq533pgul2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Access::Access.getTarget/0#dispred#cf25c8aa_10#join_rhs/2@24c45den
+[2026-05-17 23:33:43] (0s)  >>> Created relation Access::Access.getTarget/0#dispred#cf25c8aa_10#join_rhs/2@24c45den with 2567 rows and digest 3113bedmeutomftm7dlbsb3cfd3.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::preIncrementArrayWrite/3#8e2ee8b3/3@6efc447b
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::preIncrementArrayWrite/3#8e2ee8b3/3@6efc447b with 1 rows and digest 97e5d02jj1m8arh0mieid22amp4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::preIncrementArrayWrite/3#8e2ee8b3_102#join_rhs/3@f1bd031f
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::preIncrementArrayWrite/3#8e2ee8b3_102#join_rhs/3@f1bd031f with 1 rows and digest e794bbt6dlbofcn4vkjsajdolve.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getEnclosingFunction/0#dispred#3960f06c/2@b0eef5te
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getEnclosingFunction/0#dispred#3960f06c/2@b0eef5te with 7695 rows and digest 3696f2nmuimssnh1h7hjoik2d0b.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::Stmt.getEnclosingFunction/0#dispred#751b9184/2@67370e0c
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::Stmt.getEnclosingFunction/0#dispred#751b9184/2@67370e0c with 2529 rows and digest d490faamdm21n1pl7j9muivoete.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::Stmt.getEnclosingFunction/0#dispred#751b9184_10#join_rhs/2@62e185ck
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::Stmt.getEnclosingFunction/0#dispred#751b9184_10#join_rhs/2@62e185ck with 2529 rows and digest f87555n0sn1tufa3lggnqm0g100.
+[2026-05-17 23:33:43] (0s)  >>> Created relation locations_default/6@541b30r8 with 4982 rows and digest 5c1116u04c961hmad86carik8g2.
+[2026-05-17 23:33:43] (0s)  >>> Created relation locations_stmt/6@57d0fajs with 2529 rows and digest 6aaf13palfvp2njpo136n0nj0r1.
+[2026-05-17 23:33:43] (0s)  >>> Created relation locations_expr/6@2a6934jl with 6553 rows and digest aaf534ma39ffmsshpk1q470gnd9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::Location.fullLocationInfo/5#dispred#cf4c85ba/6@fe126fee
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::Location.fullLocationInfo/5#dispred#cf4c85ba/6@fe126fee with 14064 rows and digest a6741eqlpjc2bptheq5inge4r01.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::Location.getStartLine/0#d54f9e6c/2@32d847ne
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::Location.getStartLine/0#d54f9e6c/2@32d847ne with 14064 rows and digest b27f1bcfc7te06vait3cn30e2l3.
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmts/3@5e395e5s with 2529 rows and digest f37893uos0qfkk34uuit83n04b8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate stmts_10#join_rhs/2@9c3ed1qr
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmts_10#join_rhs/2@9c3ed1qr with 2529 rows and digest cad601kei1qlsq2gn5mhkfon265.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::Stmt.getChild/1#dispred#3a1e5070/3@7afffan5
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::Stmt.getChild/1#dispred#3a1e5070/3@7afffan5 with 1542 rows and digest f7388d9nqthsc6iri1huonk12aa.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::ExprStmt.getExpr/0#dispred#9acabece/2@71c103bg
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::ExprStmt.getExpr/0#dispred#9acabece/2@71c103bg with 865 rows and digest 4ba55f0mkkc50nj81c8u26fmchf.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::ExprStmt.getExpr/0#dispred#9acabece_10#join_rhs/2@6835c6pd
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::ExprStmt.getExpr/0#dispred#9acabece_10#join_rhs/2@6835c6pd with 865 rows and digest 397b39cv5u1438bej6oil0c4roe.
+[2026-05-17 23:33:43] (0s)  >>> Created relation if_then/2@6398ebvl with 320 rows and digest 72f534g3caecseaqhu0f2mfvdv4.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate if_then_10#join_rhs/2@516d5bpu
+[2026-05-17 23:33:43] (0s)  >>> Created relation if_then_10#join_rhs/2@516d5bpu with 320 rows and digest 39c259poe99c3v237ik9rel0hg2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::Stmt.getChild/1#dispred#3a1e5070_120#join_rhs/3@46808d3j
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::Stmt.getChild/1#dispred#3a1e5070_120#join_rhs/3@46808d3j with 1542 rows and digest 781174bh57956m7ivtqhc2nanm5.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Stmt::IfStmt.getCondition/0#dispred#25bca336#fb/2@9ef705lg
+[2026-05-17 23:33:43] (0s)  >>> Created relation Stmt::IfStmt.getCondition/0#dispred#25bca336#fb/2@9ef705lg with 32 rows and digest 2be4eerncp94skrs1t70bi42oe4.
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmt_decl_bind/3@518bff7d with 441 rows and digest a6df8b3hqk4go09meg8uo72grt0.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate stmt_decl_bind_20#join_rhs/2@6ee8100g
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmt_decl_bind_20#join_rhs/2@6ee8100g with 441 rows and digest 74b46b9f7vok3rfsm4quf2umlp3.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getParent/0#dispred#393b4f50#bf_10#join_rhs/2@383cf8rc
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getParent/0#dispred#393b4f50#bf_10#join_rhs/2@383cf8rc with 6319 rows and digest c53cdcoceenfo0g3t0df8kkqk45.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getEnclosingStmt/0#224d8d99#bf/2@i1#68e0ecni (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getEnclosingStmt/0#224d8d99#bf/2@i2#68e0ecni (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getEnclosingStmt/0#224d8d99#bf/2@i3#68e0ecni (iteration 3)
+[2026-05-17 23:33:43] (0s) Empty delta for Expr::Expr.getEnclosingStmt/0#224d8d99#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getEnclosingStmt/0#224d8d99#bf/2@68e0ecni with 2 rows and digest c5c1cf8m4nqi5p8q7a7a8d6je32.
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmtparents/3@c44ad0on with 2422 rows and digest f9567c8cc32ltbtegofmopv83nb.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate project#Stmt::ExprStmt.getExpr/0#dispred#9acabece/1@53ef1cmb
+[2026-05-17 23:33:43] (0s)  >>> Created relation project#Stmt::ExprStmt.getExpr/0#dispred#9acabece/1@53ef1cmb with 865 rows and digest 24341etbmov435a5mnhdj9nokl3.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i1#1895cafm (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 865 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i2#1895cafm (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 665 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i3#1895cafm (iteration 3)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 632 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i4#1895cafm (iteration 4)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 403 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i5#1895cafm (iteration 5)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 350 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i6#1895cafm (iteration 6)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 286 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i7#1895cafm (iteration 7)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 238 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i8#1895cafm (iteration 8)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 206 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i9#1895cafm (iteration 9)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 137 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i10#1895cafm (iteration 10)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 130 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i11#1895cafm (iteration 11)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 96 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i12#1895cafm (iteration 12)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 77 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i13#1895cafm (iteration 13)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 60 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i14#1895cafm (iteration 14)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 34 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i15#1895cafm (iteration 15)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 34 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i16#1895cafm (iteration 16)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 25 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i17#1895cafm (iteration 17)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 18 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i18#1895cafm (iteration 18)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 16 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i19#1895cafm (iteration 19)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 10 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i20#1895cafm (iteration 20)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 9 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i21#1895cafm (iteration 21)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 6 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i22#1895cafm (iteration 22)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@i23#1895cafm (iteration 23)
+[2026-05-17 23:33:43] (0s) Empty delta for #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#bf/2@1895cafm with 4298 rows and digest 33b170fns6rkm9a0bkie4pudcf9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate stmtparents_20#join_rhs/2@75db10l9
+[2026-05-17 23:33:43] (0s)  >>> Created relation stmtparents_20#join_rhs/2@75db10l9 with 2422 rows and digest c29eab5j9iln1qmn83s79m58en7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i1#1f7a417j (iteration 1)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 431 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i2#1f7a417j (iteration 2)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 142 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i3#1f7a417j (iteration 3)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 182 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i4#1f7a417j (iteration 4)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 185 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i5#1f7a417j (iteration 5)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 94 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i6#1f7a417j (iteration 6)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 120 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i7#1f7a417j (iteration 7)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 47 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i8#1f7a417j (iteration 8)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 45 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i9#1f7a417j (iteration 9)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 33 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i10#1f7a417j (iteration 10)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 31 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i11#1f7a417j (iteration 11)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 69 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i12#1f7a417j (iteration 12)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 16 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i13#1f7a417j (iteration 13)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 22 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i14#1f7a417j (iteration 14)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 20 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i15#1f7a417j (iteration 15)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 8 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i16#1f7a417j (iteration 16)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 11 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i17#1f7a417j (iteration 17)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 5 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i18#1f7a417j (iteration 18)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 6 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i19#1f7a417j (iteration 19)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 6 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i20#1f7a417j (iteration 20)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 2 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i21#1f7a417j (iteration 21)
+[2026-05-17 23:33:43] (0s) 			 - #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@i22#1f7a417j (iteration 22)
+[2026-05-17 23:33:43] (0s) Empty delta for #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation #Stmt::Stmt.getParent/0#dispred#9a7cec3ePlus#fb#flipped/2@1f7a417j with 1476 rows and digest 65c807cfi3dph8maji4sc9gaiu6.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::reallocGuardOffByOne/4#e2f8d18a/4@1116fftr
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::reallocGuardOffByOne/4#e2f8d18a/4@1116fftr with 1 rows and digest 73cb763e2nfrqb0ufnpipifp5l8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate MyAccel::reallocGuardOffByOne/4#e2f8d18a_0231#join_rhs/4@58c52cpg
+[2026-05-17 23:33:43] (0s)  >>> Created relation MyAccel::reallocGuardOffByOne/4#e2f8d18a_0231#join_rhs/4@58c52cpg with 1 rows and digest ee51d2pnc3ij458sf7v46in29uc.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #select/2@00a203gl
+[2026-05-17 23:33:43] (0s)  >>> Created relation #select/2@00a203gl with 1 rows and digest 30cf42dphl0o4l5gpkb04ofib83.
+[2026-05-17 23:33:43] (0s)  >>> Created relation folders/2@6d7e6b0i with 19 rows and digest 07c08acrqbo32hn0s1gf0g1ic74.
+[2026-05-17 23:33:43] (0s)  >>> Created relation files/2@1ebcd3es with 19 rows and digest 169e14i9hbkt10vs1sd7a4r2g5b.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate File::Impl::Container.getAbsolutePath/0#aa2eaf0a/2@db2709ka
+[2026-05-17 23:33:43] (0s)  >>> Created relation File::Impl::Container.getAbsolutePath/0#aa2eaf0a/2@db2709ka with 38 rows and digest 5da8e8unmft02ogk6rh7oa85ns9.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate project#Element::ElementBase.toString/0#dispred#6e016f86/1@0e280fcm
+[2026-05-17 23:33:43] (0s)  >>> Created relation project#Element::ElementBase.toString/0#dispred#6e016f86/1@0e280fcm with 17336 rows and digest be7c24t2kprbv5a76m9ogbtv667.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::Location.hasLocationInfo/5#dispred#558082fb/6@63dcd3nl
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::Location.hasLocationInfo/5#dispred#558082fb/6@63dcd3nl with 14064 rows and digest 2f7d318oq3gvhkiof0di5f02ck7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate locations_expr_23450#join_rhs/5@ef9080lq
+[2026-05-17 23:33:43] (0s)  >>> Created relation locations_expr_23450#join_rhs/5@ef9080lq with 6553 rows and digest b98b43vlvv04935pdjcskr8krj7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::Location.getContainer/0#9edabfb6/2@c3dcecq6
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::Location.getContainer/0#9edabfb6/2@c3dcecq6 with 14064 rows and digest d3b842bors8tupkn1063gt5jaa2.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::Location.getContainer/0#9edabfb6_10#join_rhs/2@96236d9v
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::Location.getContainer/0#9edabfb6_10#join_rhs/2@96236d9v with 14064 rows and digest 206203d6kamni0ft19mia1s8di5.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::UnknownLocation#d525d7d6#b/1@0e3a6etg
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::UnknownLocation#d525d7d6#b/1@0e3a6etg with 3 rows and digest b9f15do0c3sic211hih10hasoi8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Location::UnknownExprLocation#8e055dca/1@08427f5q
+[2026-05-17 23:33:43] (0s)  >>> Created relation Location::UnknownExprLocation#8e055dca/1@08427f5q with 1 rows and digest a8d47ce6bbc0gp7emvc19u2ink8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getExprLocationOverride/0#80738c92/2@i1#bfc8bavp (iteration 1)
+[2026-05-17 23:33:43] (0s) Empty delta for Expr::Expr.getExprLocationOverride/0#80738c92_delta (order for disjuncts: delta=<standard>).
+[2026-05-17 23:33:43] (0s) Accumulating deltas
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getExprLocationOverride/0#80738c92/2@bfc8bavp with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-17 23:33:43] (0s) Inferred that project#Expr::Expr.getExprLocationOverride/0#80738c92/1@3faf1fa8 is empty, due to Expr::Expr.getExprLocationOverride/0#80738c92/2@bfc8bavp.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate Expr::Expr.getLocation/0#dispred#0a3d90c6/2@65367fal
+[2026-05-17 23:33:43] (0s)  >>> Created relation Expr::Expr.getLocation/0#dispred#0a3d90c6/2@65367fal with 7824 rows and digest 17636118v2mpr0frk97f1bc1vd8.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _#select_Expr::Expr.getLocation/0#dispred#0a3d90c6#shared/3@d6aa34k5
+[2026-05-17 23:33:43] (0s)  >>> Created relation _#select_Expr::Expr.getLocation/0#dispred#0a3d90c6#shared/3@d6aa34k5 with 1 rows and digest 2e869e9temjf5l6c8fjoprbuaq7.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate _Location::Location.hasLocationInfo/5#dispred#558082fb__#select_Expr::Expr.getLocation/0#dispred#0a3__#antijoin_rhs/2@e3d85072
+[2026-05-17 23:33:43] (0s)  >>> Created relation _Location::Location.hasLocationInfo/5#dispred#558082fb__#select_Expr::Expr.getLocation/0#dispred#0a3__#antijoin_rhs/2@e3d85072 with 1 rows and digest 30cf42dphl0o4l5gpkb04ofib83.
+[2026-05-17 23:33:43] (0s) Starting to evaluate predicate #select#query/8@3a41a0d0
+[2026-05-17 23:33:43] (0s)  >>> Created relation #select#query/8@3a41a0d0 with 1 rows and digest acb5163tvj2eggh9491ivncoh70.
+[2026-05-17 23:33:43] (0s) Query done
+[2026-05-17 23:33:43] (0s) Sequence stamp origin is -5913001686628652827
+[2026-05-17 23:33:43] (0s) Pausing evaluation to sync to disk at sequence stamp o+0
+[2026-05-17 23:33:43] (0s) Unpausing evaluation
+[2026-05-17 23:33:43] Evaluation of /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql produced BQRS results.
+[2026-05-17 23:33:43] [PROGRESS] execute queries> [1/1 eval 516ms] Evaluation done; writing results to codeql/cpp-queries/cgc/MyAccel.bqrs.
+[2026-05-17 23:33:43] [PROGRESS] execute queries> Shutting down query evaluator.
+[2026-05-17 23:33:43] Pausing evaluation to close the cache at sequence stamp o+1
+[2026-05-17 23:33:43] The disk cache is freshly trimmed; leave it be.
+[2026-05-17 23:33:43] Unpausing evaluation
+[2026-05-17 23:33:43] [PROGRESS] execute queries> Interpreting results.
+[2026-05-17 23:33:43] Running plumbing command: codeql database interpret-results --format=sarifv2.1.0 -o=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_results/results.json --max-paths=4 --csv-location-format=line-column --print-diagnostics-summary --print-metrics-summary --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml -- /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --format=json -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:43] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:43] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql"
+                      ]
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --allow-library-packs --format startingpacks -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:33:43] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:43] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src"
+                      ]
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-17 23:33:43] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/util: 0.2.13
+[2026-05-17 23:33:43] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:33:43] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:33:43] [PROGRESS] database interpret-results> Interpreting /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql...
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve library-path --query=/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql --full-library-path=none --dbscheme=none --format=json
+[2026-05-17 23:33:43] [DETAILS] resolve library-path> Resolving query at normalized path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:43] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:33:43] [DETAILS] resolve library-path> Adding compilation cache at /home/xyt19/.codeql/compile-cache.
+[2026-05-17 23:33:43] [DETAILS] resolve library-path> Dbscheme was explicitly overridden as /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/none
+[2026-05-17 23:33:43] [DETAILS] resolve library-path> Library path was overridden on command line.
+[2026-05-17 23:33:43] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/none"
+                        ],
+                        "dbscheme" : "/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/none",
+                        "compilationCache" : [
+                          "/home/xyt19/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/cgc/MyAccel.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2026-05-17 23:33:43] [DETAILS] database interpret-results>  ... found results file at /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/results/codeql/cpp-queries/cgc/MyAccel.bqrs.
+[2026-05-17 23:33:43] [SPAMMY] database interpret-results> Not including help for query %s in pack %s due to specified CLI options.
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Interpreted problem query "Off-by-one heap buffer overflow due to incorrect realloc guard" (cgc/off-by-one-realloc-guard) at path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Interpreting file coverage baseline information
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Finished interpreting file coverage baseline information.
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Interpreting diagnostic messages...
+[2026-05-17 23:33:43] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic...
+[2026-05-17 23:33:43] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/extractors...
+[2026-05-17 23:33:43] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/extractors/cpp...
+[2026-05-17 23:33:43] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/extractors/cpp/summary.jsonl.
+[2026-05-17 23:33:43] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/cli-diagnostics-add-20260517T152351.068Z.json.
+[2026-05-17 23:33:43] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/cli-diagnostics-add-20260517T153102.961Z.json.
+[2026-05-17 23:33:43] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/cli-diagnostics-add-20260517T153330.046Z.json.
+[2026-05-17 23:33:43] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/diagnostic/tracer...
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Found 1 raw diagnostic messages.
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Processed diagnostic messages (removed 0 due to limits, created 0 summary diagnostics for status page).
+[2026-05-17 23:33:43] [DETAILS] database interpret-results> Interpreted diagnostic messages (48ms).
+[2026-05-17 23:33:43] Calling plumbing command: codeql resolve languages --format=json
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/xyt19/tools/codeql/codeql/.codeqlmanifest.json
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/yaml/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csv/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/go/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/xml/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/python/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/swift/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/java/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csharp/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/ruby/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/html/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/cpp/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/javascript/codeql-extractor.yml.
+[2026-05-17 23:33:43] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/properties/codeql-extractor.yml.
+[2026-05-17 23:33:43] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "yaml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/yaml"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/go"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/xml"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "python_executable_name" : {
+                                  "title" : "Controls the name of the Python executable used by the Python extractor.",
+                                  "description" : "The Python extractor uses platform-dependent heuristics to determine the name of the Python executable to use. Specifying a value for this option overrides the name of the Python executable used by the extractor. Accepted values are py, python and python3. Use this setting with caution, the Python extractor requires Python 3 to run.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(py|python|python3)$"
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/swift"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "DEPRECATED - Whether to use buildless (standalone) extraction.",
+                                  "description" : "DEPRECATED: Use `--build-mode none` instead.\nA value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the extractor. The supported levels are (in order of increasing verbosity):\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/html"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/properties"
+                            }
+                          ]
+                        }
+                      }
+[2026-05-17 23:33:43] [SPAMMIER] database interpret-results> Loaded the following extractors: YAML, CSV, Go, XML, Python, Swift, Java/Kotlin, C#, Ruby, HTML, C/C++, JavaScript/TypeScript, Java Properties Files
+[2026-05-17 23:33:43] [PROGRESS] database interpret-results> Exporting results to SARIF v2.1.0...
+[2026-05-17 23:33:44] [SPAMMY] database interpret-results> Found 2 baseline files for cpp.
+[2026-05-17 23:33:44] [PROGRESS] database interpret-results> Exported results to SARIF v2.1.0 (404ms).
+[2026-05-17 23:33:44] Plumbing command codeql database interpret-results completed.
+[2026-05-17 23:33:44] Exiting with code 0

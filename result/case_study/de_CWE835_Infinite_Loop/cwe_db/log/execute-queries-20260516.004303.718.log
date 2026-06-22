@@ -1,0 +1,624 @@
+[2026-05-16 00:43:03] This is codeql execute queries -J-Xmx1493M --verbosity=progress --logdir=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --rerun --interpret-passthrough=null,--format=sarifv2.1.0,-o=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_results/results.json,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml,--,/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db,/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835 --output=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/results -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/db-cpp /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:03] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --format=json -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:04] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:04] [SPAMMY] resolve queries> Scanning for QL files at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:04] [SPAMMY] resolve queries> Found 1 QL files in /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:04] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql"
+                      ]
+[2026-05-16 00:43:04] Creating executor with 1 threads.
+[2026-05-16 00:43:04] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:04] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --allow-library-packs --format startingpacks -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:04] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:04] [SPAMMY] resolve queries> Scanning for QL files at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:04] [SPAMMY] resolve queries> Found 1 QL files in /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:04] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src"
+                      ]
+[2026-05-16 00:43:04] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/util: 0.2.13
+[2026-05-16 00:43:04] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-16 00:43:04] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-16 00:43:04] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --query=/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql --format=json
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> Resolving query at normalized path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> Adding compilation cache at /home/xyt19/.codeql/compile-cache.
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> Resolving library dependencies from /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/qlpack.yml.
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-16 00:43:04] [SPAMMY] resolve library-path> [DECISION 9] codeql/util: 0.2.13
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> QL pack dependencies for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src resolved OK.
+[2026-05-16 00:43:04] [DETAILS] resolve library-path> Found dbscheme through QL packs: /home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme.
+[2026-05-16 00:43:04] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src",
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/dataflow",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/rangeanalysis",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/ssa",
+                          "/home/xyt19/tools/codeql/ql/codeql/misc/suite-helpers",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/tutorial",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/typetracking",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/util"
+                        ],
+                        "dbscheme" : "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme",
+                        "compilationCache" : [
+                          "/home/xyt19/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2026-05-16 00:43:04] [PROGRESS] execute queries> Compiling query plan for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:04] [DETAILS] execute queries> Resolving imports for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:05] Resolved file set for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql hashes to c9cc1df6dc0bd0edd8b722220d565f20474727eb.
+[2026-05-16 00:43:05] [DETAILS] execute queries> Compilation cache hit for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:05] [SPAMMY] execute queries> No database upgrade/downgrade needed for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql
+[2026-05-16 00:43:05] [PROGRESS] execute queries> [1/1] Found in cache: /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:05] [PROGRESS] execute queries> Starting evaluation of codeql/cpp-queries/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:05] Starting evaluation of /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql
+[2026-05-16 00:43:05] (0s) Start query execution
+[2026-05-16 00:43:05] (0s) Beginning execution of InfiniteLoopWithUnsatisfiableExitCondition.ql
+[2026-05-16 00:43:05] (0s) Inferred that EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a_10#join_rhs/2@19aac7if is empty, due to EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a/2@99ca4ach.
+[2026-05-16 00:43:05] (0s) Inferred that project#EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a/1@0f5a0fgh is empty, due to EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a/2@99ca4ach.
+[2026-05-16 00:43:05] (0s) Inferred that Call::Call.passesByReferenceNonConst/2#dispred#6e26eadc/3@383818bo is empty, due to EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a_10#join_rhs/2@19aac7if.
+[2026-05-16 00:43:05] (0s) Inferred that Call::Call.passesByReferenceNonConst/2#dispred#6e26eadc/3@f03844b8 is empty, due to EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a_10#join_rhs/2@19aac7if.
+[2026-05-16 00:43:05] (0s) Inferred that SSAUtils::addressTakenVariable/1#2639911a/1@1ea1e2rf is empty, due to project#EscapesTree::variableAddressEscapesTreeNonConst/2#2d11850a/1@0f5a0fgh.
+[2026-05-16 00:43:05] (0s) Inferred that project#Call::Call.passesByReferenceNonConst/2#dispred#6e26eadc/1@ed147f24 is empty, due to Call::Call.passesByReferenceNonConst/2#dispred#6e26eadc/3@f03844b8.
+[2026-05-16 00:43:05] (0s) Inferred that _ControlFlowGraph::reachable/1#2301e18b_SimpleRangeAnalysis::exprWithEmptyRange/1#174241d5_boundedFa__#antijoin_rhs/1@ab5751i3 is empty, due to SimpleRangeAnalysis::exprWithEmptyRange/1#174241d5/1@627260ea.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate RangeAnalysisUtils::Greater#dom#7ebfa29a/0@dab1424s
+[2026-05-16 00:43:05] (0s)  >>> Created relation RangeAnalysisUtils::Greater#dom#7ebfa29a/0@dab1424s with 1 rows and digest ac90f0ei322hhreshlvdl215c38.
+[2026-05-16 00:43:05] (0s)  >>> Created relation exprs/3@9afeabih with 102 rows and digest 2f1293vo49fv2c5aoevi0g2nts0.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate exprs_10#join_rhs/2@1396b79f
+[2026-05-16 00:43:05] (0s)  >>> Created relation exprs_10#join_rhs/2@1396b79f with 102 rows and digest 4c9f30j81gmjf0ijgbuocvvo7j4.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::alwaysLT/4#c03e345d#cpe#123#bff/1@5fdb1eg2
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::alwaysLT/4#c03e345d#cpe#123#bff/1@5fdb1eg2 with 3 rows and digest f50844a6a2opv68ni7vffeku0f6.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::alwaysGT/4#be5db02e#cpe#123#bff/1@380b669h
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::alwaysGT/4#be5db02e#cpe#123#bff/1@380b669h with 1 rows and digest 108cd9qshvicru1i1alckverhf9.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::alwaysGE/4#8972d50b#cpe#123#bff/1@d09036bp
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::alwaysGE/4#8972d50b#cpe#123#bff/1@d09036bp with 2 rows and digest 3446e0nbnd5tnvpml4ti2e6c5l2.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::alwaysLE/4#5b0145a8#cpe#123#bff/1@5e0809jp
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::alwaysLE/4#5b0145a8#cpe#123#bff/1@5e0809jp with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-16 00:43:05] (0s) Inferred that PointlessComparison::alwaysLE/4#5b0145a8#cpe#123#bff/3@37d29e7n is empty, due to m#PointlessComparison::alwaysLE/4#5b0145a8#cpe#123#bff/1@5e0809jp.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#Expr::BinaryOperation.getLeftOperand/0#dispred#7f2052a8#bf/1@c2f488v6
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#Expr::BinaryOperation.getLeftOperand/0#dispred#7f2052a8#bf/1@c2f488v6 with 3 rows and digest f50844a6a2opv68ni7vffeku0f6.
+[2026-05-16 00:43:05] (0s)  >>> Created relation exprparents/3@d2c9f3iv with 70 rows and digest 3d5725eklda0kusvbq5063gm6fe.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate Expr::Expr.getChild/1#dispred#e5374b3c/3@bc50f0p4
+[2026-05-16 00:43:05] (0s)  >>> Created relation Expr::Expr.getChild/1#dispred#e5374b3c/3@bc50f0p4 with 56 rows and digest 5ff442n1op1so8g3ir9o6e439aa.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate Expr::BinaryOperation.getLeftOperand/0#dispred#7f2052a8#bf/2@136ff2jb
+[2026-05-16 00:43:05] (0s)  >>> Created relation Expr::BinaryOperation.getLeftOperand/0#dispred#7f2052a8#bf/2@136ff2jb with 3 rows and digest fa5fb7mifes2qjqeue1k5425psa.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate Expr::BinaryOperation.getRightOperand/0#dispred#15bcca4c#bf/2@c6e273gc
+[2026-05-16 00:43:05] (0s)  >>> Created relation Expr::BinaryOperation.getRightOperand/0#dispred#15bcca4c#bf/2@c6e273gc with 3 rows and digest feec9djulg5jribtdn6lkktj2i3.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::upperBoundFC/1#cbecf744#bf/1@871fd2fm
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::upperBoundFC/1#cbecf744#bf/1@871fd2fm with 6 rows and digest b4f035q270kjip9gc7euhofqq85.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate PointlessComparison::upperBoundFC/1#cbecf744#bf/2@1fcf9eue
+[2026-05-16 00:43:05] (0s)  >>> Created relation PointlessComparison::upperBoundFC/1#cbecf744#bf/2@1fcf9eue with 6 rows and digest b279a4afajbe5aetk34sb6b1kr7.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate m#PointlessComparison::lowerBoundFC/1#9ec300c6#bf/1@c65c6b8s
+[2026-05-16 00:43:05] (0s)  >>> Created relation m#PointlessComparison::lowerBoundFC/1#9ec300c6#bf/1@c65c6b8s with 6 rows and digest b4f035q270kjip9gc7euhofqq85.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate PointlessComparison::lowerBoundFC/1#9ec300c6#bf/2@7d55d7sl
+[2026-05-16 00:43:05] (0s)  >>> Created relation PointlessComparison::lowerBoundFC/1#9ec300c6#bf/2@7d55d7sl with 6 rows and digest 721d6d1sjn5c29hvgnm6las8ee1.
+[2026-05-16 00:43:05] (0s) Starting to evaluate predicate PointlessComparison::alwaysGE/4#8972d50b#cpe#123#bff/3@aa8dc6m0
+[2026-05-16 00:43:06] (0s)  >>> Created relation PointlessComparison::alwaysGE/4#8972d50b#cpe#123#bff/3@aa8dc6m0 with 2 rows and digest 0da123ous5ap1415knt35661mfe.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate PointlessComparison::alwaysGT/4#be5db02e#cpe#123#bff/3@703312kf
+[2026-05-16 00:43:06] (0s)  >>> Created relation PointlessComparison::alwaysGT/4#be5db02e#cpe#123#bff/3@703312kf with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate num#PointlessComparison::RightIsSmaller#312c92bc/1@3a48b3r1
+[2026-05-16 00:43:06] Evaluating HOP construct<PointlessComparison#fe0023de::SmallSide,1> with inputs:
+                        1 tuples in PointlessComparison::LeftIsSmaller#dom#9e1b634a/0@dab1424s
+[2026-05-16 00:43:06] (0s)  >>> Created relation num#PointlessComparison::RightIsSmaller#312c92bc/1@3a48b3r1 with 1 rows and digest 19f2cevarof1fbaqkctt3t43if4.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate PointlessComparison::alwaysLT/4#c03e345d#cpe#123#bff/3@089087m0
+[2026-05-16 00:43:06] (0s)  >>> Created relation PointlessComparison::alwaysLT/4#c03e345d#cpe#123#bff/3@089087m0 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate num#PointlessComparison::LeftIsSmaller#efb3c07a/1@9c8955sp
+[2026-05-16 00:43:06] Evaluating HOP construct<PointlessComparison#fe0023de::SmallSide,0> with inputs:
+                        1 tuples in PointlessComparison::LeftIsSmaller#dom#9e1b634a/0@dab1424s
+[2026-05-16 00:43:06] (0s)  >>> Created relation num#PointlessComparison::LeftIsSmaller#efb3c07a/1@9c8955sp with 1 rows and digest 14d190jcpgdl411cck5pgml3dof.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate PointlessComparison::pointlessComparison/5#809ebe86/5@a1e1283r
+[2026-05-16 00:43:06] (0s)  >>> Created relation PointlessComparison::pointlessComparison/5#809ebe86/5@a1e1283r with 2 rows and digest 59cf79t3sf98uo9ma0u815j4prb.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate PointlessComparison::reachablePointlessComparison/5#b8bf2a23/5@fa3ffaa5
+[2026-05-16 00:43:06] (0s)  >>> Created relation PointlessComparison::reachablePointlessComparison/5#b8bf2a23/5@fa3ffaa5 with 2 rows and digest 59cf79t3sf98uo9ma0u815j4prb.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#PointlessComparison::reachablePointlessComparison/5#b8bf2a23/2@168811hp
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#PointlessComparison::reachablePointlessComparison/5#b8bf2a23/2@168811hp with 2 rows and digest e35957tsvru24qegqffbbvsmjd6.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::Cached::basic_block_member/3#b27e1019_120#join_rhs/3@060b3268
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::Cached::basic_block_member/3#b27e1019_120#join_rhs/3@060b3268 with 97 rows and digest ab73bc25ii2gg4jpee8ab2ujfld.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::BasicBlock.getEnd/0#dispred#bf79d940/2@e46b324j
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::BasicBlock.getEnd/0#dispred#bf79d940/2@e46b324j with 11 rows and digest 9e6de40itco3ig445p0273tsdbd.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::BasicBlock.getEnd/0#dispred#bf79d940_10#join_rhs/2@0317f51n
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::BasicBlock.getEnd/0#dispred#bf79d940_10#join_rhs/2@0317f51n with 11 rows and digest d18785bdebveedr49ljl82letr4.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::BasicBlock.getAFalseSuccessor/0#dispred#3ec57dee/2@879ff9ad
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::BasicBlock.getAFalseSuccessor/0#dispred#3ec57dee/2@879ff9ad with 3 rows and digest 843b347c26mktteqr0mjaoltgre.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::BasicBlock.getATrueSuccessor/0#dispred#372d1a5f/2@487b578p
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::BasicBlock.getATrueSuccessor/0#dispred#372d1a5f/2@487b578p with 3 rows and digest 2aed1bjoiobl4hp32dccj917e7b.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a/4@c9aad696
+[2026-05-16 00:43:06] (0s)  >>> Created relation InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a/4@c9aad696 with 2 rows and digest ee4c63u5t6re9qk1mi1k8eh9ea0.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2/3@49b605qn
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2/3@49b605qn with 2 rows and digest 96da173inpm18f8qevf63npo9ge.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2_201#join_rhs/3@b21677s8
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2_201#join_rhs/3@b21677s8 with 2 rows and digest 7aaea2n72n218lcburcguemcsb1.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a/2@98bd61of
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a/2@98bd61of with 2 rows and digest c1b581b118io9g7jtenqbvhfh22.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080/2@1f0ba11r
+[2026-05-16 00:43:06] (0s)  >>> Created relation InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080/2@1f0ba11r with 9 rows and digest 94a78as0u6r5sf2vsumgs697447.
+[2026-05-16 00:43:06] (0s)  >>> Created relation function_entry_point/2@c630a6j8 with 3 rows and digest 94a6a38ch1t7bnv8tve4tsrp525.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::EntryBasicBlock#2ee84aef/1@56717a7r
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::EntryBasicBlock#2ee84aef/1@56717a7r with 3 rows and digest 8ec14cp3ij3chmcddu1ijfbq79b.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:BasicBlocks::EntryBasicBlock#2ee84aef/2@4b9efedm = HOP boundedFastTC(9,3)
+[2026-05-16 00:43:06] (0s)  >>> Relation boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:BasicBlocks::EntryBasicBlock#2ee84aef: 20 rows using 0 MB
+[2026-05-16 00:43:06] (0s)  >>> Created relation boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:BasicBlocks::EntryBasicBlock#2ee84aef/2@4b9efedm with 27 rows and digest eac878s00f8a7ti5g0manmbrgv4.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate _BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enh__#higher_order_body/1@66b222qb
+[2026-05-16 00:43:06] (0s)  >>> Created relation _BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enh__#higher_order_body/1@66b222qb with 7 rows and digest 7497fckj1pdgms4bj464rn6mf34.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:_BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enh__#higher_order_body/2@ccb5df81 = HOP boundedFastTC(9,7)
+[2026-05-16 00:43:06] (0s)  >>> Relation boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:_BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enh__#higher_order_body: 15 rows using 0 MB
+[2026-05-16 00:43:06] (0s)  >>> Created relation boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enhancedSucc/1#01cda080:_BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::enh__#higher_order_body/2@ccb5df81 with 20 rows and digest 8c2978v606khk23h8jr7th5jfvf.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate BasicBlocks::ExitBasicBlock#6a837b57/1@bbc68bis
+[2026-05-16 00:43:06] (0s)  >>> Created relation BasicBlocks::ExitBasicBlock#6a837b57/1@bbc68bis with 3 rows and digest 0a7bee2veedi7scmv7cd9pi33a8.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate _BasicBlocks::ExitBasicBlock#6a837b57__BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteL__#antijoin_rhs/1@6f748f88
+[2026-05-16 00:43:06] (0s)  >>> Created relation _BasicBlocks::ExitBasicBlock#6a837b57__BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteL__#antijoin_rhs/1@6f748f88 with 4 rows and digest 93b575nft6jjk84ml4bfpnvdd54.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate __BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::en__#shared/1@55d4ebvn
+[2026-05-16 00:43:06] (0s)  >>> Created relation __BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::en__#shared/1@55d4ebvn with 3 rows and digest fd2e5dffhd5qs2hrpa3gfgrere6.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2_2#join_rhs/1@a02c3d9n
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdge/4#18d1df6a#2_2#join_rhs/1@a02c3d9n with 2 rows and digest 7c8ec4af4eqmb691bej6rmtju6a.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate ___BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::e__#higher_order_body/1@fd6120t5
+[2026-05-16 00:43:06] (0s)  >>> Created relation ___BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::e__#higher_order_body/1@fd6120t5 with 1 rows and digest 34678dp9eh0619f0tivfotcbu79.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate boundedFastTC:BasicBlocks::bb_successor/2#60e0df8c:___BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::e__#higher_order_body/2@bc0638l0 = HOP boundedFastTC(11,1)
+[2026-05-16 00:43:06] (0s)  >>> Relation boundedFastTC:BasicBlocks::bb_successor/2#60e0df8c:___BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::e__#higher_order_body: 4 rows using 0 MB
+[2026-05-16 00:43:06] (0s)  >>> Created relation boundedFastTC:BasicBlocks::bb_successor/2#60e0df8c:___BasicBlocks::EntryBasicBlock#2ee84aef_boundedFastTC:InfiniteLoopWithUnsatisfiableExitCondition::e__#higher_order_body/2@bc0638l0 with 6 rows and digest 3960b4egcu6p2ik5rrlh5l8aead.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdgeCausesNonTermination/2#b539925b/2@51ed36kh
+[2026-05-16 00:43:06] (0s)  >>> Created relation InfiniteLoopWithUnsatisfiableExitCondition::impossibleEdgeCausesNonTermination/2#b539925b/2@51ed36kh with 1 rows and digest 646361hcdgu3h5gedkfhd4i1dce.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate #select/2@86a80bok
+[2026-05-16 00:43:06] (0s)  >>> Created relation #select/2@86a80bok with 1 rows and digest 3a81081il2212lhbh6cmaqbsql6.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate project#Element::ElementBase.toString/0#dispred#6e016f86/1@0e280fcm
+[2026-05-16 00:43:06] (0s)  >>> Created relation project#Element::ElementBase.toString/0#dispred#6e016f86/1@0e280fcm with 607 rows and digest 94fb414po45e5j5bi01ivcv9h2a.
+[2026-05-16 00:43:06] (0s)  >>> Created relation locations_expr/6@2a6934jl with 93 rows and digest 80e63b3bu2fkinkpi4saon32rma.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate locations_expr_23450#join_rhs/5@ef9080lq
+[2026-05-16 00:43:06] (0s)  >>> Created relation locations_expr_23450#join_rhs/5@ef9080lq with 93 rows and digest c19706ttkqgugt5n75rdpgks1dc.
+[2026-05-16 00:43:06] (0s)  >>> Created relation files/2@1ebcd3es with 3 rows and digest 9348046m8vf666e36dgi5c4kegd.
+[2026-05-16 00:43:06] (0s)  >>> Created relation functions/3@176659cl with 4 rows and digest 04ce62rc2blqgp3qs3ais7n6mo3.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate functions_0#antijoin_rhs/1@2bed3fv1
+[2026-05-16 00:43:06] (0s)  >>> Created relation functions_0#antijoin_rhs/1@2bed3fv1 with 4 rows and digest ab8487ta9d4vh67nojhkumi06id.
+[2026-05-16 00:43:06] (0s)  >>> Created relation usertypes/3@0e966f4c with 31 rows and digest 7d0f700kh5o7761cqiu51pfhkoe.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate usertypes_0#antijoin_rhs/1@e4754bn3
+[2026-05-16 00:43:06] (0s)  >>> Created relation usertypes_0#antijoin_rhs/1@e4754bn3 with 31 rows and digest 022446gt9l6e1u3ti3d9d1v1fi2.
+[2026-05-16 00:43:06] (0s)  >>> Created relation membervariables/3@23983e89 with 4 rows and digest 3c085dg82duioj8d2nmgor9kh4b.
+[2026-05-16 00:43:06] (0s)  >>> Created relation localvariables/3@988e509n with 4 rows and digest a7b104cfu47st0jhgrm82rg6d7c.
+[2026-05-16 00:43:06] (0s)  >>> Created relation params/4@db7c62k0 with 1 rows and digest 9e3a398ir7c7k2r83pga0nhn104.
+[2026-05-16 00:43:06] (0s)  >>> Created relation globalvariables/3@4f60f152 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-16 00:43:06] (0s) Inferred that globalvariables_0#antijoin_rhs/1@0441ecmv is empty, due to globalvariables/3@4f60f152.
+[2026-05-16 00:43:06] (0s) Inferred that _@element_ResolveGlobalVariable::isVariable/1#6e051315_globalvariables#antijoin_rhs/1@d592701b is empty, due to globalvariables/3@4f60f152.
+[2026-05-16 00:43:06] (0s) Inferred that Variable::GlobalOrNamespaceVariable#27557652/1@4a5f81ji is empty, due to globalvariables/3@4f60f152.
+[2026-05-16 00:43:06] (0s) Inferred that ResolveGlobalVariable::hasDefinition/1#b8c2d296/1@502ecfi7 is empty, due to globalvariables_0#antijoin_rhs/1@0441ecmv.
+[2026-05-16 00:43:06] (0s) Inferred that _ResolveGlobalVariable::hasDefinition/1#b8c2d296_mangled_name#count_range/2@7f84e109 is empty, due to ResolveGlobalVariable::hasDefinition/1#b8c2d296/1@502ecfi7.
+[2026-05-16 00:43:06] (0s) Inferred that __ResolveGlobalVariable::hasDefinition/1#b8c2d296_mangled_name#count_range#join_rhs/2@eecf5d51 is empty, due to _ResolveGlobalVariable::hasDefinition/1#b8c2d296_mangled_name#count_range/2@7f84e109.
+[2026-05-16 00:43:06] (0s) Inferred that ResolveGlobalVariable::onlyOneCompleteGlobalVariableExistsWithMangledName/1#75fdafa8/1@27ad29j9 is empty, due to __ResolveGlobalVariable::hasDefinition/1#b8c2d296_mangled_name#count_range#join_rhs/2@eecf5d51.
+[2026-05-16 00:43:06] (0s) Inferred that ResolveGlobalVariable::hasTwinWithDefinition/2#b8884456/2@41dbb6nd is empty, due to ResolveGlobalVariable::onlyOneCompleteGlobalVariableExistsWithMangledName/1#75fdafa8/1@27ad29j9.
+[2026-05-16 00:43:06] (0s) Inferred that project#ResolveGlobalVariable::hasTwinWithDefinition/2#b8884456/1@5b64256o is empty, due to ResolveGlobalVariable::hasTwinWithDefinition/2#b8884456/2@41dbb6nd.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate @variable/1@f29eb0c6
+[2026-05-16 00:43:06] (0s)  >>> Created relation @variable/1@f29eb0c6 with 9 rows and digest d731d9dkbdncqtb87isg85bc2sa.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Expr::Expr.getParent/0#dispred#393b4f50/2@76e336el
+[2026-05-16 00:43:06] (0s)  >>> Created relation Expr::Expr.getParent/0#dispred#393b4f50/2@76e336el with 70 rows and digest 637ddalfvj3hkhjd8jeqq5aaqk8.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate m#Expr::Expr.getExprLocationOverride/0#80738c92#bf/1@i1#5c348cd8 (iteration 1)
+[2026-05-16 00:43:06] (0s) 			 - m#Expr::Expr.getExprLocationOverride/0#80738c92#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate m#Expr::Expr.getExprLocationOverride/0#80738c92#bf/1@i2#5c348cd8 (iteration 2)
+[2026-05-16 00:43:06] (0s) 			 - m#Expr::Expr.getExprLocationOverride/0#80738c92#bf_delta has 1 rows (order for disjuncts: delta=<standard>).
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate m#Expr::Expr.getExprLocationOverride/0#80738c92#bf/1@i3#5c348cd8 (iteration 3)
+[2026-05-16 00:43:06] (0s) Empty delta for m#Expr::Expr.getExprLocationOverride/0#80738c92#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-16 00:43:06] (0s) Accumulating deltas
+[2026-05-16 00:43:06] (0s)  >>> Created relation m#Expr::Expr.getExprLocationOverride/0#80738c92#bf/1@5c348cd8 with 2 rows and digest f12a6fb8mk8cjtlv4sh93d2bko4.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate locations_expr_40#join_rhs/2@492c6ei0
+[2026-05-16 00:43:06] (0s)  >>> Created relation locations_expr_40#join_rhs/2@492c6ei0 with 93 rows and digest 3ccc219eenfp3qkk9274kelkdc1.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate m#Location::UnknownLocation#d525d7d6#b/1@7121d4o5
+[2026-05-16 00:43:06] (0s)  >>> Created relation m#Location::UnknownLocation#d525d7d6#b/1@7121d4o5 with 1 rows and digest a8d47ce6bbc0gp7emvc19u2ink8.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Location::Location.getContainer/0#9edabfb6/2@1cd6102h
+[2026-05-16 00:43:06] (0s)  >>> Created relation Location::Location.getContainer/0#9edabfb6/2@1cd6102h with 93 rows and digest ad3233mmnmb6476u0s68bn9lhc4.
+[2026-05-16 00:43:06] (0s)  >>> Created relation folders/2@6d7e6b0i with 8 rows and digest 158403j97r0fgrojrbtqsa13iqe.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate File::Impl::Container.getAbsolutePath/0#aa2eaf0a/2@db2709ka
+[2026-05-16 00:43:06] (0s)  >>> Created relation File::Impl::Container.getAbsolutePath/0#aa2eaf0a/2@db2709ka with 11 rows and digest ed85d7aoc6gpi8c8jhj1vonsnkc.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Location::UnknownLocation#d525d7d6#b/1@49d867sb
+[2026-05-16 00:43:06] (0s)  >>> Created relation Location::UnknownLocation#d525d7d6#b/1@49d867sb with 1 rows and digest a8d47ce6bbc0gp7emvc19u2ink8.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Location::UnknownExprLocation#8e055dca/1@f3f8a2kk
+[2026-05-16 00:43:06] (0s)  >>> Created relation Location::UnknownExprLocation#8e055dca/1@f3f8a2kk with 1 rows and digest a8d47ce6bbc0gp7emvc19u2ink8.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Expr::Expr.getParent/0#dispred#393b4f50_10#join_rhs/2@e8d03d1a
+[2026-05-16 00:43:06] (0s)  >>> Created relation Expr::Expr.getParent/0#dispred#393b4f50_10#join_rhs/2@e8d03d1a with 70 rows and digest d57a9fq732h3gm1bcpo28c91ug1.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Expr::Expr.getExprLocationOverride/0#80738c92#bf/2@i1#c9056cfq (iteration 1)
+[2026-05-16 00:43:06] (0s) Empty delta for Expr::Expr.getExprLocationOverride/0#80738c92#bf_delta (order for disjuncts: delta=<standard>).
+[2026-05-16 00:43:06] (0s) Accumulating deltas
+[2026-05-16 00:43:06] (0s)  >>> Created relation Expr::Expr.getExprLocationOverride/0#80738c92#bf/2@c9056cfq with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2026-05-16 00:43:06] (0s) Inferred that project#Expr::Expr.getExprLocationOverride/0#80738c92#bf/1@b019412j is empty, due to Expr::Expr.getExprLocationOverride/0#80738c92#bf/2@c9056cfq.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Expr::Expr.getLocation/0#dispred#0a3d90c6#bf/2@32a94ajb
+[2026-05-16 00:43:06] (0s)  >>> Created relation Expr::Expr.getLocation/0#dispred#0a3d90c6#bf/2@32a94ajb with 1 rows and digest b14e124rr0p79od0j1bep10bkff.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Expr::Expr.getLocation/0#dispred#0a3d90c6#bf_10#join_rhs/2@7e154ans
+[2026-05-16 00:43:06] (0s)  >>> Created relation Expr::Expr.getLocation/0#dispred#0a3d90c6#bf_10#join_rhs/2@7e154ans with 1 rows and digest 3c2c52hpmsdgcepj5a12eifl6p9.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate Location::Location.hasLocationInfo/5#dispred#558082fb#bfffff/6@454e39ji
+[2026-05-16 00:43:06] (0s)  >>> Created relation Location::Location.hasLocationInfo/5#dispred#558082fb#bfffff/6@454e39ji with 1 rows and digest cc02280ddkbcv3eosm9cngbi235.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate _#select_Expr::Expr.getLocation/0#dispred#0a3d90c6#bf#shared/3@895198oc
+[2026-05-16 00:43:06] (0s)  >>> Created relation _#select_Expr::Expr.getLocation/0#dispred#0a3d90c6#bf#shared/3@895198oc with 1 rows and digest ced651cam42ih1vdff2u0djhlge.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate _Location::Location.hasLocationInfo/5#dispred#558082fb#bfffff__#select_Expr::Expr.getLocation/0#disp__#antijoin_rhs/2@17ab4akn
+[2026-05-16 00:43:06] (0s)  >>> Created relation _Location::Location.hasLocationInfo/5#dispred#558082fb#bfffff__#select_Expr::Expr.getLocation/0#disp__#antijoin_rhs/2@17ab4akn with 1 rows and digest 3a81081il2212lhbh6cmaqbsql6.
+[2026-05-16 00:43:06] (0s) Starting to evaluate predicate #select#query/8@d66022am
+[2026-05-16 00:43:06] (0s)  >>> Created relation #select#query/8@d66022am with 1 rows and digest 9cd7e2trg4a81ilfhfacgrtr375.
+[2026-05-16 00:43:06] (0s) Query done
+[2026-05-16 00:43:06] (0s) Sequence stamp origin is -5913725934412465781
+[2026-05-16 00:43:06] (0s) Pausing evaluation to sync to disk at sequence stamp o+0
+[2026-05-16 00:43:06] (0s) Unpausing evaluation
+[2026-05-16 00:43:06] Evaluation of /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql produced BQRS results.
+[2026-05-16 00:43:06] [PROGRESS] execute queries> [1/1 eval 491ms] Evaluation done; writing results to codeql/cpp-queries/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.bqrs.
+[2026-05-16 00:43:06] [PROGRESS] execute queries> Shutting down query evaluator.
+[2026-05-16 00:43:06] Pausing evaluation to close the cache at sequence stamp o+1
+[2026-05-16 00:43:06] The disk cache is freshly trimmed; leave it be.
+[2026-05-16 00:43:06] Unpausing evaluation
+[2026-05-16 00:43:06] [PROGRESS] execute queries> Interpreting results.
+[2026-05-16 00:43:06] Running plumbing command: codeql database interpret-results --format=sarifv2.1.0 -o=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_results/results.json --max-paths=4 --csv-location-format=line-column --print-diagnostics-summary --print-metrics-summary --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --format=json -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:06] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:06] [SPAMMY] resolve queries> Scanning for QL files at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:06] [SPAMMY] resolve queries> Found 1 QL files in /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:06] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql"
+                      ]
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml --allow-library-packs --format startingpacks -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835
+[2026-05-16 00:43:06] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:06] [SPAMMY] resolve queries> Scanning for QL files at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:06] [SPAMMY] resolve queries> Found 1 QL files in /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835.
+[2026-05-16 00:43:06] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src"
+                      ]
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/qlconfig.yml -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-16 00:43:06] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/util: 0.2.13
+[2026-05-16 00:43:06] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-16 00:43:06] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-16 00:43:06] [PROGRESS] database interpret-results> Interpreting /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql...
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve library-path --query=/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql --full-library-path=none --dbscheme=none --format=json
+[2026-05-16 00:43:06] [DETAILS] resolve library-path> Resolving query at normalized path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:06] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-16 00:43:06] [DETAILS] resolve library-path> Adding compilation cache at /home/xyt19/.codeql/compile-cache.
+[2026-05-16 00:43:06] [DETAILS] resolve library-path> Dbscheme was explicitly overridden as /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/none
+[2026-05-16 00:43:06] [DETAILS] resolve library-path> Library path was overridden on command line.
+[2026-05-16 00:43:06] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/none"
+                        ],
+                        "dbscheme" : "/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/none",
+                        "compilationCache" : [
+                          "/home/xyt19/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2026-05-16 00:43:06] [DETAILS] database interpret-results>  ... found results file at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/results/codeql/cpp-queries/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.bqrs.
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Not including help for query %s in pack %s due to specified CLI options.
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Interpreted problem query "Infinite loop with unsatisfiable exit condition" (cpp/infinite-loop-with-unsatisfiable-exit-condition) at path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/Security/CWE/CWE-835/InfiniteLoopWithUnsatisfiableExitCondition.ql.
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Interpreting file coverage baseline information
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Finished interpreting file coverage baseline information.
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Interpreting diagnostic messages...
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic...
+[2026-05-16 00:43:06] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/cli-diagnostics-add-20260515T163103.944Z.json.
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/extractors...
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/extractors/cpp...
+[2026-05-16 00:43:06] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/extractors/cpp/summary.jsonl.
+[2026-05-16 00:43:06] [SPAMMIER] database interpret-results> Found diagnostics file /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/cli-diagnostics-add-20260515T164303.078Z.json.
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Looking for diagnostics in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/cwe_db/diagnostic/tracer...
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Found 1 raw diagnostic messages.
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Processed diagnostic messages (removed 0 due to limits, created 0 summary diagnostics for status page).
+[2026-05-16 00:43:06] [DETAILS] database interpret-results> Interpreted diagnostic messages (39ms).
+[2026-05-16 00:43:06] Calling plumbing command: codeql resolve languages --format=json
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/xyt19/tools/codeql/codeql/.codeqlmanifest.json
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/yaml/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csv/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/go/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/xml/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/python/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/swift/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/java/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csharp/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/ruby/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/html/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/cpp/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/javascript/codeql-extractor.yml.
+[2026-05-16 00:43:06] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/properties/codeql-extractor.yml.
+[2026-05-16 00:43:06] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "yaml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/yaml"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/go"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/xml"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "python_executable_name" : {
+                                  "title" : "Controls the name of the Python executable used by the Python extractor.",
+                                  "description" : "The Python extractor uses platform-dependent heuristics to determine the name of the Python executable to use. Specifying a value for this option overrides the name of the Python executable used by the extractor. Accepted values are py, python and python3. Use this setting with caution, the Python extractor requires Python 3 to run.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(py|python|python3)$"
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/swift"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "DEPRECATED - Whether to use buildless (standalone) extraction.",
+                                  "description" : "DEPRECATED: Use `--build-mode none` instead.\nA value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the extractor. The supported levels are (in order of increasing verbosity):\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/html"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/properties"
+                            }
+                          ]
+                        }
+                      }
+[2026-05-16 00:43:06] [SPAMMIER] database interpret-results> Loaded the following extractors: YAML, CSV, Go, XML, Python, Swift, Java/Kotlin, C#, Ruby, HTML, C/C++, JavaScript/TypeScript, Java Properties Files
+[2026-05-16 00:43:06] [PROGRESS] database interpret-results> Exporting results to SARIF v2.1.0...
+[2026-05-16 00:43:06] [SPAMMY] database interpret-results> Found 2 baseline files for cpp.
+[2026-05-16 00:43:07] [PROGRESS] database interpret-results> Exported results to SARIF v2.1.0 (340ms).
+[2026-05-16 00:43:07] Plumbing command codeql database interpret-results completed.
+[2026-05-16 00:43:07] Exiting with code 0

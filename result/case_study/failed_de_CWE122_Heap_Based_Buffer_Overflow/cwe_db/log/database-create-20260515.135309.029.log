@@ -1,0 +1,528 @@
+[2026-05-15 13:53:09] This is codeql database create cwe_db --language=cpp --source-root=de_src --command=gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I. all_functions.c --overwrite
+[2026-05-15 13:53:09] Log file was started late.
+[2026-05-15 13:53:09] [PROGRESS] database create> Initializing database at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db.
+[2026-05-15 13:53:09] Running plumbing command: codeql database init --overwrite --language=cpp --extractor-options-verbosity=1 --qlconfig-file=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/qlconfig.yml --source-root=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src --allow-missing-source-root=false --allow-already-existing -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db
+[2026-05-15 13:53:09] Calling plumbing command: codeql resolve languages --extractor-options-verbosity=1 --format=betterjson
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from /home/xyt19/tools/codeql/codeql/.codeqlmanifest.json
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/yaml/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csv/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/go/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/xml/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/python/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/swift/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/java/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/csharp/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/ruby/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/html/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/cpp/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/javascript/codeql-extractor.yml.
+[2026-05-15 13:53:09] [DETAILS] resolve languages> Parsing /home/xyt19/tools/codeql/codeql/properties/codeql-extractor.yml.
+[2026-05-15 13:53:09] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "yaml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/yaml"
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/go"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/xml"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "python_executable_name" : {
+                                  "title" : "Controls the name of the Python executable used by the Python extractor.",
+                                  "description" : "The Python extractor uses platform-dependent heuristics to determine the name of the Python executable to use. Specifying a value for this option overrides the name of the Python executable used by the extractor. Accepted values are py, python and python3. Use this setting with caution, the Python extractor requires Python 3 to run.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(py|python|python3)$"
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/swift"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "DEPRECATED - Whether to use buildless (standalone) extraction.",
+                                  "description" : "DEPRECATED: Use `--build-mode none` instead.\nA value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the extractor. The supported levels are (in order of increasing verbosity):\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/html"
+                            }
+                          ],
+                          "cpp" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "/home/xyt19/tools/codeql/codeql/properties"
+                            }
+                          ]
+                        }
+                      }
+[2026-05-15 13:53:09] [PROGRESS] database init> Calculating baseline information in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src
+[2026-05-15 13:53:09] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2026-05-15 13:53:09] [DETAILS] database init> Running command in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src: /home/xyt19/tools/codeql/codeql/tools/linux64/scc --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2026-05-15 13:53:09] [SPAMMY] database init> Found 2 baseline files for cpp.
+[2026-05-15 13:53:09] [PROGRESS] database init> Calculated baseline information for languages: cpp (59ms).
+[2026-05-15 13:53:09] [PROGRESS] database init> Resolving extractor cpp.
+[2026-05-15 13:53:09] [DETAILS] database init> Found candidate extractor root for cpp: /home/xyt19/tools/codeql/codeql/cpp.
+[2026-05-15 13:53:09] [PROGRESS] database init> Successfully loaded extractor C/C++ (cpp) from /home/xyt19/tools/codeql/codeql/cpp.
+[2026-05-15 13:53:09] [PROGRESS] database init> Created skeleton CodeQL database at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db. This in-progress database is ready to be populated by an extractor.
+[2026-05-15 13:53:09] Plumbing command codeql database init completed.
+[2026-05-15 13:53:09] [PROGRESS] database create> Running build command: [gcc, -c, -Werror=implicit-function-declaration, -Werror=implicit-int, -Werror=incompatible-pointer-types, -Werror=int-conversion, -Werror=return-type, -fno-builtin, -fmax-errors=0, -I., all_functions.c]
+[2026-05-15 13:53:09] Running plumbing command: codeql database trace-command --working-dir=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src --index-traceless-dbs --no-db-cluster -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I. all_functions.c
+[2026-05-15 13:53:09] [PROGRESS] database trace-command> Running command in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src: [gcc, -c, -Werror=implicit-function-declaration, -Werror=implicit-int, -Werror=incompatible-pointer-types, -Werror=int-conversion, -Werror=return-type, -fno-builtin, -fmax-errors=0, -I., all_functions.c]
+[2026-05-15 13:53:10] Plumbing command codeql database trace-command completed.
+[2026-05-15 13:53:10] [PROGRESS] database create> Finalizing database at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db.
+[2026-05-15 13:53:10] Running plumbing command: codeql database finalize --mode=trim --no-db-cluster -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db
+[2026-05-15 13:53:10] Using pre-finalize script /home/xyt19/tools/codeql/codeql/cpp/tools/pre-finalize.sh.
+[2026-05-15 13:53:10] [PROGRESS] database finalize> Running pre-finalize script /home/xyt19/tools/codeql/codeql/cpp/tools/pre-finalize.sh in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src.
+[2026-05-15 13:53:10] Running plumbing command: codeql database trace-command --working-dir=/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src --no-tracing -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db /home/xyt19/tools/codeql/codeql/cpp/tools/pre-finalize.sh
+[2026-05-15 13:53:10] [PROGRESS] database trace-command> Running command in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/de_src: [/home/xyt19/tools/codeql/codeql/cpp/tools/pre-finalize.sh]
+[2026-05-15 13:53:10] Plumbing command codeql database trace-command completed.
+[2026-05-15 13:53:10] [PROGRESS] database finalize> Running TRAP import for CodeQL database at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db...
+[2026-05-15 13:53:10] Running plumbing command: codeql dataset import --dbscheme=/home/xyt19/tools/codeql/codeql/cpp/semmlecode.cpp.dbscheme -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/trap/cpp
+[2026-05-15 13:53:10] Clearing disk cache since the version file /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp/default/cache/version does not exist
+[2026-05-15 13:53:10] Tuple pool not found. Clearing relations with cached strings
+[2026-05-15 13:53:10] Trimming disk cache at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp/default/cache in mode clear.
+[2026-05-15 13:53:10] Sequence stamp origin is -5913893410837060743
+[2026-05-15 13:53:10] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2026-05-15 13:53:10] Unpausing evaluation
+[2026-05-15 13:53:10] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2026-05-15 13:53:10] Unpausing evaluation
+[2026-05-15 13:53:10] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2026-05-15 13:53:10] Unpausing evaluation
+[2026-05-15 13:53:10] Trimming completed (10ms): Purged everything.
+[2026-05-15 13:53:10] Scanning for files in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/trap/cpp
+[2026-05-15 13:53:10] Found 3 files on disk containing 58 TRAP files (324.51 KiB)
+[2026-05-15 13:53:10] [PROGRESS] dataset import> Importing TRAP files
+[2026-05-15 13:53:11] Importing cpp_predefined.acb19af8.trap (all_functions.c.683e1e84_0.trap.tar.zst) (1 of 58)
+[2026-05-15 13:53:11] Importing defs.h.de0a2eb8.trap (all_functions.c.683e1e84_0.trap.tar.zst) (2 of 58)
+[2026-05-15 13:53:11] Importing wordsize.h.92468457.trap (all_functions.c.683e1e84_0.trap.tar.zst) (3 of 58)
+[2026-05-15 13:53:11] Importing timesize.h.00d5e597.trap (all_functions.c.683e1e84_0.trap.tar.zst) (4 of 58)
+[2026-05-15 13:53:11] Importing features-time64.h.736f5777.trap (all_functions.c.683e1e84_0.trap.tar.zst) (5 of 58)
+[2026-05-15 13:53:11] Importing stdc-predef.h.c6e479d9.trap (all_functions.c.683e1e84_0.trap.tar.zst) (6 of 58)
+[2026-05-15 13:53:11] Importing long-double.h.50566853.trap (all_functions.c.683e1e84_0.trap.tar.zst) (7 of 58)
+[2026-05-15 13:53:11] Importing cdefs.h.1f707008.trap (all_functions.c.683e1e84_0.trap.tar.zst) (8 of 58)
+[2026-05-15 13:53:11] Importing stubs-64.h.c6e479d9.trap (all_functions.c.683e1e84_0.trap.tar.zst) (9 of 58)
+[2026-05-15 13:53:11] Importing stubs.h.5a6a849c.trap (all_functions.c.683e1e84_0.trap.tar.zst) (10 of 58)
+[2026-05-15 13:53:11] Importing features.h.14646c38.trap (all_functions.c.683e1e84_0.trap.tar.zst) (11 of 58)
+[2026-05-15 13:53:11] Importing libc-header-start.h.ce7c3e95.trap (all_functions.c.683e1e84_0.trap.tar.zst) (12 of 58)
+[2026-05-15 13:53:11] Importing stddef.h.8bd9206f.trap (all_functions.c.683e1e84_0.trap.tar.zst) (13 of 58)
+[2026-05-15 13:53:11] Importing waitflags.h.040c1de5.trap (all_functions.c.683e1e84_0.trap.tar.zst) (14 of 58)
+[2026-05-15 13:53:11] Importing waitstatus.h.9b882f51.trap (all_functions.c.683e1e84_0.trap.tar.zst) (15 of 58)
+[2026-05-15 13:53:11] Importing floatn-common.h.9fc579a0.trap (all_functions.c.683e1e84_0.trap.tar.zst) (16 of 58)
+[2026-05-15 13:53:11] Importing floatn.h.f449be45.trap (all_functions.c.683e1e84_0.trap.tar.zst) (17 of 58)
+[2026-05-15 13:53:11] Importing typesizes.h.f8f8da78.trap (all_functions.c.683e1e84_0.trap.tar.zst) (18 of 58)
+[2026-05-15 13:53:11] Importing time64.h.18e096c5.trap (all_functions.c.683e1e84_0.trap.tar.zst) (19 of 58)
+[2026-05-15 13:53:11] Importing types.h.1280f6de.trap (all_functions.c.683e1e84_0.trap.tar.zst) (20 of 58)
+[2026-05-15 13:53:11] Importing clock_t.h.61e99454.trap (all_functions.c.683e1e84_0.trap.tar.zst) (21 of 58)
+[2026-05-15 13:53:11] Importing clockid_t.h.6ad7214c.trap (all_functions.c.683e1e84_0.trap.tar.zst) (22 of 58)
+[2026-05-15 13:53:11] Importing time_t.h.6396c2b8.trap (all_functions.c.683e1e84_0.trap.tar.zst) (23 of 58)
+[2026-05-15 13:53:11] Importing timer_t.h.47964e39.trap (all_functions.c.683e1e84_0.trap.tar.zst) (24 of 58)
+[2026-05-15 13:53:11] Importing stddef.h.3eaa8a8d.trap (all_functions.c.683e1e84_0.trap.tar.zst) (25 of 58)
+[2026-05-15 13:53:11] Importing stdint-intn.h.93b3e97e.trap (all_functions.c.683e1e84_0.trap.tar.zst) (26 of 58)
+[2026-05-15 13:53:11] Importing endianness.h.1999a564.trap (all_functions.c.683e1e84_0.trap.tar.zst) (27 of 58)
+[2026-05-15 13:53:11] Importing endian.h.a1618c87.trap (all_functions.c.683e1e84_0.trap.tar.zst) (28 of 58)
+[2026-05-15 13:53:11] Importing byteswap.h.71d784ec.trap (all_functions.c.683e1e84_0.trap.tar.zst) (29 of 58)
+[2026-05-15 13:53:11] Importing uintn-identity.h.9abcabdc.trap (all_functions.c.683e1e84_0.trap.tar.zst) (30 of 58)
+[2026-05-15 13:53:11] Importing endian.h.513c49fd.trap (all_functions.c.683e1e84_0.trap.tar.zst) (31 of 58)
+[2026-05-15 13:53:11] Importing select.h.99c3570c.trap (all_functions.c.683e1e84_0.trap.tar.zst) (32 of 58)
+[2026-05-15 13:53:11] Importing __sigset_t.h.bf117439.trap (all_functions.c.683e1e84_0.trap.tar.zst) (33 of 58)
+[2026-05-15 13:53:11] Importing sigset_t.h.e0ac97d2.trap (all_functions.c.683e1e84_0.trap.tar.zst) (34 of 58)
+[2026-05-15 13:53:11] Importing struct_timeval.h.6beca501.trap (all_functions.c.683e1e84_0.trap.tar.zst) (35 of 58)
+[2026-05-15 13:53:11] Importing struct_timespec.h.9685da02.trap (all_functions.c.683e1e84_0.trap.tar.zst) (36 of 58)
+[2026-05-15 13:53:11] Importing select.h.0f16bd60.trap (all_functions.c.683e1e84_0.trap.tar.zst) (37 of 58)
+[2026-05-15 13:53:11] Importing pthreadtypes-arch.h.cfce5b81.trap (all_functions.c.683e1e84_0.trap.tar.zst) (38 of 58)
+[2026-05-15 13:53:11] Importing atomic_wide_counter.h.b7940da0.trap (all_functions.c.683e1e84_0.trap.tar.zst) (39 of 58)
+[2026-05-15 13:53:11] Importing struct_mutex.h.cfd16841.trap (all_functions.c.683e1e84_0.trap.tar.zst) (40 of 58)
+[2026-05-15 13:53:11] Importing struct_rwlock.h.e1b573cd.trap (all_functions.c.683e1e84_0.trap.tar.zst) (41 of 58)
+[2026-05-15 13:53:11] Importing thread-shared-types.h.81834387.trap (all_functions.c.683e1e84_0.trap.tar.zst) (42 of 58)
+[2026-05-15 13:53:11] Importing pthreadtypes.h.fd86d8b0.trap (all_functions.c.683e1e84_0.trap.tar.zst) (43 of 58)
+[2026-05-15 13:53:11] Importing types.h.cd7f2ca4.trap (all_functions.c.683e1e84_0.trap.tar.zst) (44 of 58)
+[2026-05-15 13:53:11] Importing stddef.h.8b3d2bdc.trap (all_functions.c.683e1e84_0.trap.tar.zst) (45 of 58)
+[2026-05-15 13:53:11] Importing alloca.h.ad0bb863.trap (all_functions.c.683e1e84_0.trap.tar.zst) (46 of 58)
+[2026-05-15 13:53:11] Importing stdlib-float.h.65c690d8.trap (all_functions.c.683e1e84_0.trap.tar.zst) (47 of 58)
+[2026-05-15 13:53:11] Importing stdlib.h.fa7a43de.trap (all_functions.c.683e1e84_0.trap.tar.zst) (48 of 58)
+[2026-05-15 13:53:11] Importing libc-header-start.h.c655c516.trap (all_functions.c.683e1e84_0.trap.tar.zst) (49 of 58)
+[2026-05-15 13:53:11] Importing stddef.h.d0dfc925.trap (all_functions.c.683e1e84_0.trap.tar.zst) (50 of 58)
+[2026-05-15 13:53:11] Importing __locale_t.h.4e00a482.trap (all_functions.c.683e1e84_0.trap.tar.zst) (51 of 58)
+[2026-05-15 13:53:11] Importing locale_t.h.7704a8c1.trap (all_functions.c.683e1e84_0.trap.tar.zst) (52 of 58)
+[2026-05-15 13:53:11] Importing stddef.h.2d9588f9.trap (all_functions.c.683e1e84_0.trap.tar.zst) (53 of 58)
+[2026-05-15 13:53:11] Importing strings.h.81755526.trap (all_functions.c.683e1e84_0.trap.tar.zst) (54 of 58)
+[2026-05-15 13:53:11] Importing string.h.8630e2fc.trap (all_functions.c.683e1e84_0.trap.tar.zst) (55 of 58)
+[2026-05-15 13:53:11] Importing all_functions.c.683e1e84.trap (all_functions.c.683e1e84_0.trap.tar.zst) (56 of 58)
+[2026-05-15 13:53:11] Importing 7135457_0.trap.zst (57 of 58)
+[2026-05-15 13:53:11] Importing sourceLocationPrefix.trap.gz (58 of 58)
+[2026-05-15 13:53:11] [PROGRESS] dataset import> Merging relations
+[2026-05-15 13:53:11] Merging 1 fragment for 'builtintypes'.
+[2026-05-15 13:53:11] Merged 1344 bytes (1.31 KiB) for 'builtintypes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'unspecifiedtype'.
+[2026-05-15 13:53:11] Merged 2840 bytes (2.77 KiB) for 'unspecifiedtype'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'files'.
+[2026-05-15 13:53:11] Merged 408 bytes for 'files'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'locations_default'.
+[2026-05-15 13:53:11] Merged 122400 bytes (119.53 KiB) for 'locations_default'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'link_targets'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'link_targets'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'locations_stmt'.
+[2026-05-15 13:53:11] Merged 1008 bytes for 'locations_stmt'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'locations_expr'.
+[2026-05-15 13:53:11] Merged 7848 bytes (7.66 KiB) for 'locations_expr'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'usertypes'.
+[2026-05-15 13:53:11] Merged 2328 bytes (2.27 KiB) for 'usertypes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'link_parent'.
+[2026-05-15 13:53:11] Merged 1656 bytes (1.62 KiB) for 'link_parent'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'usertypesize'.
+[2026-05-15 13:53:11] Merged 348 bytes for 'usertypesize'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'is_pod_class'.
+[2026-05-15 13:53:11] Merged 116 bytes for 'is_pod_class'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'is_standard_layout_class'.
+[2026-05-15 13:53:11] Merged 116 bytes for 'is_standard_layout_class'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'is_complete'.
+[2026-05-15 13:53:11] Merged 116 bytes for 'is_complete'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'membervariables'.
+[2026-05-15 13:53:11] Merged 1080 bytes (1.05 KiB) for 'membervariables'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'fieldoffsets'.
+[2026-05-15 13:53:11] Merged 1080 bytes (1.05 KiB) for 'fieldoffsets'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'var_decls'.
+[2026-05-15 13:53:11] Merged 9060 bytes (8.85 KiB) for 'var_decls'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'var_def'.
+[2026-05-15 13:53:11] Merged 392 bytes for 'var_def'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'derivedtypes'.
+[2026-05-15 13:53:11] Merged 1472 bytes (1.44 KiB) for 'derivedtypes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'pointerishsize'.
+[2026-05-15 13:53:11] Merged 564 bytes for 'pointerishsize'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'member'.
+[2026-05-15 13:53:11] Merged 1080 bytes (1.05 KiB) for 'member'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'namespaces'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'namespaces'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'specialnamequalifyingelements'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'specialnamequalifyingelements'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'mangled_name'.
+[2026-05-15 13:53:11] Merged 4116 bytes (4.02 KiB) for 'mangled_name'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'specifiers'.
+[2026-05-15 13:53:11] Merged 424 bytes for 'specifiers'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'numlines'.
+[2026-05-15 13:53:11] Merged 944 bytes for 'numlines'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'type_mentions'.
+[2026-05-15 13:53:11] Merged 3232 bytes (3.16 KiB) for 'type_mentions'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'typedefbase'.
+[2026-05-15 13:53:11] Merged 1304 bytes (1.27 KiB) for 'typedefbase'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'type_decls'.
+[2026-05-15 13:53:11] Merged 2340 bytes (2.29 KiB) for 'type_decls'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'type_decl_top'.
+[2026-05-15 13:53:11] Merged 700 bytes for 'type_decl_top'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'preprocdirects'.
+[2026-05-15 13:53:11] Merged 24528 bytes (23.95 KiB) for 'preprocdirects'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'preproctext'.
+[2026-05-15 13:53:11] Merged 15372 bytes (15.01 KiB) for 'preproctext'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'preproctrue'.
+[2026-05-15 13:53:11] Merged 1220 bytes (1.19 KiB) for 'preproctrue'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'preprocfalse'.
+[2026-05-15 13:53:11] Merged 716 bytes for 'preprocfalse'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'macroinvocations'.
+[2026-05-15 13:53:11] Merged 23232 bytes (22.69 KiB) for 'macroinvocations'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'comments'.
+[2026-05-15 13:53:11] Merged 9780 bytes (9.55 KiB) for 'comments'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'commentbinding'.
+[2026-05-15 13:53:11] Merged 5608 bytes (5.48 KiB) for 'commentbinding'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'containerparent'.
+[2026-05-15 13:53:11] Merged 552 bytes for 'containerparent'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'folders'.
+[2026-05-15 13:53:11] Merged 160 bytes for 'folders'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'preprocpair'.
+[2026-05-15 13:53:11] Merged 6216 bytes (6.07 KiB) for 'preprocpair'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'includes'.
+[2026-05-15 13:53:11] Merged 672 bytes for 'includes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'macro_argument_unexpanded'.
+[2026-05-15 13:53:11] Merged 5940 bytes (5.80 KiB) for 'macro_argument_unexpanded'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'macro_argument_expanded'.
+[2026-05-15 13:53:11] Merged 5940 bytes (5.80 KiB) for 'macro_argument_expanded'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'macroparent'.
+[2026-05-15 13:53:11] Merged 4416 bytes (4.31 KiB) for 'macroparent'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'type_def'.
+[2026-05-15 13:53:11] Merged 112 bytes for 'type_def'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'arraysizes'.
+[2026-05-15 13:53:11] Merged 272 bytes for 'arraysizes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'values'.
+[2026-05-15 13:53:11] Merged 2104 bytes (2.05 KiB) for 'values'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'exprs'.
+[2026-05-15 13:53:11] Merged 4260 bytes (4.16 KiB) for 'exprs'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'expr_types'.
+[2026-05-15 13:53:11] Merged 4260 bytes (4.16 KiB) for 'expr_types'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'valuebind'.
+[2026-05-15 13:53:11] Merged 2112 bytes (2.06 KiB) for 'valuebind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'inmacroexpansion'.
+[2026-05-15 13:53:11] Merged 1776 bytes (1.73 KiB) for 'inmacroexpansion'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'macrolocationbind'.
+[2026-05-15 13:53:11] Merged 1664 bytes (1.62 KiB) for 'macrolocationbind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'varspecifiers'.
+[2026-05-15 13:53:11] Merged 704 bytes for 'varspecifiers'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'functions'.
+[2026-05-15 13:53:11] Merged 2112 bytes (2.06 KiB) for 'functions'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'function_return_type'.
+[2026-05-15 13:53:11] Merged 1408 bytes (1.38 KiB) for 'function_return_type'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'function_prototyped'.
+[2026-05-15 13:53:11] Merged 676 bytes for 'function_prototyped'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'params'.
+[2026-05-15 13:53:11] Merged 5792 bytes (5.66 KiB) for 'params'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'fun_decls'.
+[2026-05-15 13:53:11] Merged 3520 bytes (3.44 KiB) for 'fun_decls'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'fun_def'.
+[2026-05-15 13:53:11] Merged 36 bytes for 'fun_def'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'fun_decl_specifiers'.
+[2026-05-15 13:53:11] Merged 2840 bytes (2.77 KiB) for 'fun_decl_specifiers'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'param_decl_bind'.
+[2026-05-15 13:53:11] Merged 4332 bytes (4.23 KiB) for 'param_decl_bind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'stmts'.
+[2026-05-15 13:53:11] Merged 492 bytes for 'stmts'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'routinetypes'.
+[2026-05-15 13:53:11] Merged 104 bytes for 'routinetypes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'routinetypeargs'.
+[2026-05-15 13:53:11] Merged 228 bytes for 'routinetypeargs'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'funbind'.
+[2026-05-15 13:53:11] Merged 160 bytes for 'funbind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'expr_isload'.
+[2026-05-15 13:53:11] Merged 104 bytes for 'expr_isload'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'exprparents'.
+[2026-05-15 13:53:11] Merged 1092 bytes (1.07 KiB) for 'exprparents'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'affectedbymacroexpansion'.
+[2026-05-15 13:53:11] Merged 376 bytes for 'affectedbymacroexpansion'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'stmtparents'.
+[2026-05-15 13:53:11] Merged 384 bytes for 'stmtparents'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'blockscope'.
+[2026-05-15 13:53:11] Merged 72 bytes for 'blockscope'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'function_entry_point'.
+[2026-05-15 13:53:11] Merged 72 bytes for 'function_entry_point'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'funspecifiers'.
+[2026-05-15 13:53:11] Merged 1400 bytes (1.37 KiB) for 'funspecifiers'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'iscall'.
+[2026-05-15 13:53:11] Merged 144 bytes for 'iscall'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'typespecifiers'.
+[2026-05-15 13:53:11] Merged 320 bytes for 'typespecifiers'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'varbind'.
+[2026-05-15 13:53:11] Merged 192 bytes for 'varbind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compgenerated'.
+[2026-05-15 13:53:11] Merged 80 bytes for 'compgenerated'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'sizeof_bind'.
+[2026-05-15 13:53:11] Merged 16 bytes for 'sizeof_bind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'valuetext'.
+[2026-05-15 13:53:11] Merged 456 bytes for 'valuetext'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'exprconv'.
+[2026-05-15 13:53:11] Merged 304 bytes for 'exprconv'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'conversionkinds'.
+[2026-05-15 13:53:11] Merged 216 bytes for 'conversionkinds'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'attributes'.
+[2026-05-15 13:53:11] Merged 10000 bytes (9.77 KiB) for 'attributes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'attribute_arg_value'.
+[2026-05-15 13:53:11] Merged 464 bytes for 'attribute_arg_value'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'attribute_args'.
+[2026-05-15 13:53:11] Merged 5060 bytes (4.94 KiB) for 'attribute_args'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'typeattributes'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'typeattributes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'funcattributes'.
+[2026-05-15 13:53:11] Merged 3992 bytes (3.90 KiB) for 'funcattributes'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'attribute_arg_constant'.
+[2026-05-15 13:53:11] Merged 1544 bytes (1.51 KiB) for 'attribute_arg_constant'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'attribute_arg_expr'.
+[2026-05-15 13:53:11] Merged 16 bytes for 'attribute_arg_expr'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'extractor_version'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'extractor_version'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'fileannotations'.
+[2026-05-15 13:53:11] Merged 992 bytes for 'fileannotations'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'localvariables'.
+[2026-05-15 13:53:11] Merged 24 bytes for 'localvariables'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'stmt_decl_bind'.
+[2026-05-15 13:53:11] Merged 24 bytes for 'stmt_decl_bind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'stmt_decl_entry_bind'.
+[2026-05-15 13:53:11] Merged 24 bytes for 'stmt_decl_entry_bind'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'if_then'.
+[2026-05-15 13:53:11] Merged 16 bytes for 'if_then'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compilations'.
+[2026-05-15 13:53:11] Merged 8 bytes for 'compilations'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compilation_args'.
+[2026-05-15 13:53:11] Merged 372 bytes for 'compilation_args'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compilation_compiling_files'.
+[2026-05-15 13:53:11] Merged 12 bytes for 'compilation_compiling_files'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compilation_time'.
+[2026-05-15 13:53:11] Merged 80 bytes for 'compilation_time'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'compilation_finished'.
+[2026-05-15 13:53:11] Merged 20 bytes for 'compilation_finished'.
+[2026-05-15 13:53:11] Merging 1 fragment for 'sourceLocationPrefix'.
+[2026-05-15 13:53:11] Merged 4 bytes for 'sourceLocationPrefix'.
+[2026-05-15 13:53:11] Saving string and id pools to disk.
+[2026-05-15 13:53:11] Finished importing TRAP files.
+[2026-05-15 13:53:11] Read 2.70 MiB of uncompressed TRAP data.
+[2026-05-15 13:53:11] Relation data size: 331.59 KiB (merge rate: 3.48 MiB/s)
+[2026-05-15 13:53:11] String pool size: 2.08 MiB
+[2026-05-15 13:53:11] ID pool size: 1.38 MiB
+[2026-05-15 13:53:11] [PROGRESS] dataset import> Finished writing database (relations: 331.59 KiB; string pool: 2.08 MiB).
+[2026-05-15 13:53:11] Pausing evaluation to close the cache at sequence stamp o+3
+[2026-05-15 13:53:11] The disk cache is freshly trimmed; leave it be.
+[2026-05-15 13:53:11] Unpausing evaluation
+[2026-05-15 13:53:11] Plumbing command codeql dataset import completed.
+[2026-05-15 13:53:11] [PROGRESS] database finalize> TRAP import complete (1.4s).
+[2026-05-15 13:53:11] Running plumbing command: codeql database cleanup --mode=trim -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db
+[2026-05-15 13:53:11] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2026-05-15 13:53:11] [PROGRESS] database cleanup> TRAP files cleaned up (2ms).
+[2026-05-15 13:53:11] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2026-05-15 13:53:11] [PROGRESS] database cleanup> Scratch directory cleaned up (4ms).
+[2026-05-15 13:53:11] Running plumbing command: codeql dataset cleanup --mode=trim -- /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp
+[2026-05-15 13:53:11] [PROGRESS] dataset cleanup> Cleaning up dataset in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp.
+[2026-05-15 13:53:11] Trimming disk cache at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp/default/cache in mode trim.
+[2026-05-15 13:53:11] Sequence stamp origin is -5913893405170185587
+[2026-05-15 13:53:11] Pausing evaluation to quickly trim memory at sequence stamp o+0
+[2026-05-15 13:53:11] Unpausing evaluation
+[2026-05-15 13:53:11] Pausing evaluation to zealously trim disk at sequence stamp o+1
+[2026-05-15 13:53:11] Unpausing evaluation
+[2026-05-15 13:53:11] Trimming completed (8ms): Trimmed disposable data from cache.
+[2026-05-15 13:53:11] Pausing evaluation to close the cache at sequence stamp o+2
+[2026-05-15 13:53:11] The disk cache is freshly trimmed; leave it be.
+[2026-05-15 13:53:11] Unpausing evaluation
+[2026-05-15 13:53:11] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2026-05-15 13:53:11] [PROGRESS] dataset cleanup> Finalizing dataset in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp
+[2026-05-15 13:53:11] [DETAILS] dataset cleanup> Finished deleting ID pool from /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db/db-cpp (1ms).
+[2026-05-15 13:53:11] Plumbing command codeql dataset cleanup completed.
+[2026-05-15 13:53:11] Plumbing command codeql database cleanup completed with status 0.
+[2026-05-15 13:53:11] [PROGRESS] database finalize> Finished zipping source archive (78.66 KiB).
+[2026-05-15 13:53:11] Plumbing command codeql database finalize completed.
+[2026-05-15 13:53:11] [PROGRESS] database create> Successfully created database at /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE122_Heap_Based_Buffer_Overflow/cwe_db.
+[2026-05-15 13:53:11] Terminating normally.

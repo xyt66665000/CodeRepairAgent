@@ -1,0 +1,10 @@
+---
+sourceLocationPrefix: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE242_Use_of_Inherently_Dangerous_Function/de_src
+baselineLinesOfCode: 382
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+creationMetadata:
+  cliVersion: 2.17.0
+  creationTime: 2026-05-15T13:38:49.056024473Z
+finalised: true

@@ -1,0 +1,10 @@
+---
+sourceLocationPrefix: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE835_Infinite_Loop/de_src
+baselineLinesOfCode: 374
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+creationMetadata:
+  cliVersion: 2.17.0
+  creationTime: 2026-05-15T16:30:41.618724883Z
+finalised: true

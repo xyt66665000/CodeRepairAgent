@@ -1,0 +1,570 @@
+[T 08:37:47 30924] CodeQL CLI version 2.17.0
+[T 08:37:47 30924] Initializing tracer.
+[T 08:37:47 30924] Initializing tags.
+[T 08:37:47 30924] ID set to 00000000000078CC_0000000000000001 (parent root)
+[T 08:37:47 30924] Initializing tracer.
+[T 08:37:47 30924] Initializing tags.
+[T 08:37:47 30924] ID set to 00000000000078CC_0000000000000002 (parent root)
+[T 08:37:47 30924] Warning: SEMMLE_EXEC and SEMMLE_EXECP not set. Falling back to path lookup on argv[0].
+[T 08:37:47 30924] ==== Candidate to intercept: /home/xyt19/tools/codeql/codeql/tools/linux64/runner-linux (canonical: /home/xyt19/tools/codeql/codeql/tools/linux64/runner-linux) ====
+[T 08:37:47 30924] Executing the following tracer actions:
+[T 08:37:47 30924] Tracer actions:
+[T 08:37:47 30924] pre_invocations(0)
+[T 08:37:47 30924] post_invocations(0)
+[T 08:37:47 30924] trace_languages(1): [cpp]
+[T 08:37:47 30924] Initializing tracer.
+[T 08:37:47 30924] Initializing tags.
+[T 08:37:47 30924] ID set to 00000000000078CC_0000000000000003 (parent 00000000000078CC_0000000000000002)
+[T 08:37:47 30924] ==== Candidate to intercept: gcc (canonical: /usr/bin/gcc) ====
+[T 08:37:47 30924] Lua: === Intercepted call to /usr/bin/gcc ===
+[T 08:37:47 30924] Executing the following tracer actions:
+[T 08:37:47 30924] Tracer actions:
+[T 08:37:47 30924] pre_invocations(0)
+[T 08:37:47 30924] post_invocations(1)
+[T 08:37:47 30924] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/gcc, -c, -Werror=implicit-function-declaration, -Werror=implicit-int, -Werror=incompatible-pointer-types, -Werror=int-conversion, -Werror=return-type, -fno-builtin, -fmax-errors=0, -I., all_functions.c]
+[T 08:37:47 30924] trace_languages(1): [cpp]
+[T 08:37:47 30928] Initializing tracer.
+[T 08:37:47 30928] Initializing tags.
+[T 08:37:47 30928] ID set to 00000000000078D0_0000000000000001 (parent 00000000000078CC_0000000000000003)
+[T 08:37:47 30928] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30928] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30928] Executing the following tracer actions:
+[T 08:37:47 30928] Tracer actions:
+[T 08:37:47 30928] pre_invocations(0)
+[T 08:37:47 30928] post_invocations(1)
+[T 08:37:47 30928] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -I, ., -imultiarch, x86_64-linux-gnu, all_functions.c, -quiet, -dumpbase, all_functions.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -Werror=implicit-function-declaration, -Werror=implicit-int, -Werror=incompatible-pointer-types, -Werror=int-conversion, -Werror=return-type, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccZQYm1z.s]
+[T 08:37:47 30928] trace_languages(1): [cpp]
+[T 08:37:47 30930] Attempting to switch stdout/stderr to 4...
+[T 08:37:47 30930] Initializing tracer.
+[T 08:37:47 30930] Initializing tags.
+[T 08:37:47 30930] ID set to 00000000000078D2_0000000000000001 (parent 00000000000078D0_0000000000000001)
+[E 16:37:47 30930] CodeQL C/C++ Extractor 2.17.0
+[E 16:37:47 30930] Current directory: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src
+[E 16:37:47 30930] Command: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor --mimic /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -I . -imultiarch x86_64-linux-gnu all_functions.c -quiet -dumpbase all_functions.c -dumpbase-ext .c -mtune=generic -march=x86-64 -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccZQYm1z.s
+Warning: Could not open file '/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/compiler_mimic_cache/e7e1a3c46b8a'
+Warning: Could not open file '/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/compiler_mimic_cache/24ce69139670'
+[T 08:37:47 30931] Initializing tracer.
+[T 08:37:47 30931] Initializing tags.
+[T 08:37:47 30931] ID set to 00000000000078D3_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30931] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30931] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30931] Executing the following tracer actions:
+[T 08:37:47 30931] Tracer actions:
+[T 08:37:47 30931] pre_invocations(0)
+[T 08:37:47 30931] post_invocations(1)
+[T 08:37:47 30931] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, --version]
+[T 08:37:47 30931] trace_languages(1): [cpp]
+[T 08:37:47 30933] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30933] Initializing tracer.
+[T 08:37:47 30933] Initializing tags.
+[T 08:37:47 30933] ID set to 00000000000078D5_0000000000000001 (parent 00000000000078D3_0000000000000001)
+[E 16:37:47 30933] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30933] Extractor exited successfully
+[T 08:37:47 30931] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30934] Initializing tracer.
+[T 08:37:47 30934] Initializing tags.
+[T 08:37:47 30934] ID set to 00000000000078D6_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30934] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30934] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30934] Executing the following tracer actions:
+[T 08:37:47 30934] Tracer actions:
+[T 08:37:47 30934] pre_invocations(0)
+[T 08:37:47 30934] post_invocations(1)
+[T 08:37:47 30934] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, --help]
+[T 08:37:47 30934] trace_languages(1): [cpp]
+[T 08:37:47 30936] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30936] Initializing tracer.
+[T 08:37:47 30936] Initializing tags.
+[T 08:37:47 30936] ID set to 00000000000078D8_0000000000000001 (parent 00000000000078D6_0000000000000001)
+[E 16:37:47 30936] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30936] Extractor exited successfully
+[T 08:37:47 30934] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30937] Initializing tracer.
+[T 08:37:47 30937] Initializing tags.
+[T 08:37:47 30937] ID set to 00000000000078D9_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30937] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30937] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30937] Executing the following tracer actions:
+[T 08:37:47 30937] Tracer actions:
+[T 08:37:47 30937] pre_invocations(0)
+[T 08:37:47 30937] post_invocations(1)
+[T 08:37:47 30937] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -version, --help]
+[T 08:37:47 30937] trace_languages(1): [cpp]
+[T 08:37:47 30939] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30939] Initializing tracer.
+[T 08:37:47 30939] Initializing tags.
+[T 08:37:47 30939] ID set to 00000000000078DB_0000000000000001 (parent 00000000000078D9_0000000000000001)
+[E 16:37:47 30939] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30939] Extractor exited successfully
+[T 08:37:47 30937] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30940] Initializing tracer.
+[T 08:37:47 30940] Initializing tags.
+[T 08:37:47 30940] ID set to 00000000000078DC_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30940] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30940] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30940] Executing the following tracer actions:
+[T 08:37:47 30940] Tracer actions:
+[T 08:37:47 30940] pre_invocations(0)
+[T 08:37:47 30940] post_invocations(1)
+[T 08:37:47 30940] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -nostdinc, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_2_30930_115756.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_1_30930_115737.c]
+[T 08:37:47 30940] trace_languages(1): [cpp]
+[T 08:37:47 30942] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30942] Initializing tracer.
+[T 08:37:47 30942] Initializing tags.
+[T 08:37:47 30942] ID set to 00000000000078DE_0000000000000001 (parent 00000000000078DC_0000000000000001)
+[E 16:37:47 30942] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30942] Extractor exited successfully
+[T 08:37:47 30940] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30943] Initializing tracer.
+[T 08:37:47 30943] Initializing tags.
+[T 08:37:47 30943] ID set to 00000000000078DF_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30943] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30943] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30943] Executing the following tracer actions:
+[T 08:37:47 30943] Tracer actions:
+[T 08:37:47 30943] pre_invocations(0)
+[T 08:37:47 30943] post_invocations(1)
+[T 08:37:47 30943] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -nostdinc, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_4_30930_131468.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_3_30930_131436.c]
+[T 08:37:47 30943] trace_languages(1): [cpp]
+[T 08:37:47 30945] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30945] Initializing tracer.
+[T 08:37:47 30945] Initializing tags.
+[T 08:37:47 30945] ID set to 00000000000078E1_0000000000000001 (parent 00000000000078DF_0000000000000001)
+[E 16:37:47 30945] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30945] Extractor exited successfully
+[T 08:37:47 30943] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 16:37:47 30930] Checking whether C compilation already happened.
+[E 16:37:47 30930] Checking for tag c-compilation-happened
+[E 16:37:47 30930] Checking CODEQL_TRACER_DB_ID 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Locking DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Locked DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Unlocking DB
+[E 16:37:47 30930] Unlocked DB
+[E 16:37:47 30930] Looks like C compilation didn't already happen.
+[E 16:37:47 30930] Checking whether C compilation has been attempted.
+[E 16:37:47 30930] Checking for tag c-compilation-attempted
+[E 16:37:47 30930] Checking CODEQL_TRACER_DB_ID 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Locking DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Locked DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Unlocking DB
+[E 16:37:47 30930] Unlocked DB
+[E 16:37:47 30930] Marking C compilation as attempted.
+[E 16:37:47 30930] Setting tag c-compilation-attempted
+[E 16:37:47 30930] Starting from CODEQL_TRACER_DB_ID 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Locking DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Locked DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Set tag for 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Set tag for 00000000000078CC_0000000000000003
+[E 16:37:47 30930] Set tag for 00000000000078CC_0000000000000002
+[E 16:37:47 30930] Set tag for root
+[E 16:37:47 30930] Unlocking DB
+[E 16:37:47 30930] Unlocked DB
+Warning: Could not open file '/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/compiler_mimic_cache/acd4015013b9'
+[T 08:37:47 30946] Initializing tracer.
+[T 08:37:47 30946] Initializing tags.
+[T 08:37:47 30946] ID set to 00000000000078E2_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30946] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30946] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30946] Executing the following tracer actions:
+[T 08:37:47 30946] Tracer actions:
+[T 08:37:47 30946] pre_invocations(0)
+[T 08:37:47 30946] post_invocations(1)
+[T 08:37:47 30946] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -v, -fsyntax-only, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_6_30930_143873]
+[T 08:37:47 30946] trace_languages(1): [cpp]
+[T 08:37:47 30948] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30948] Initializing tracer.
+[T 08:37:47 30948] Initializing tags.
+[T 08:37:47 30948] ID set to 00000000000078E4_0000000000000001 (parent 00000000000078E2_0000000000000001)
+[E 16:37:47 30948] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30948] Extractor exited successfully
+[T 08:37:47 30946] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30949] Initializing tracer.
+[T 08:37:47 30949] Initializing tags.
+[T 08:37:47 30949] ID set to 00000000000078E5_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30949] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30949] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30949] Executing the following tracer actions:
+[T 08:37:47 30949] Tracer actions:
+[T 08:37:47 30949] pre_invocations(0)
+[T 08:37:47 30949] post_invocations(1)
+[T 08:37:47 30949] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -E, -dM, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_7_30930_158656]
+[T 08:37:47 30949] trace_languages(1): [cpp]
+[T 08:37:47 30951] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30951] Initializing tracer.
+[T 08:37:47 30951] Initializing tags.
+[T 08:37:47 30951] ID set to 00000000000078E7_0000000000000001 (parent 00000000000078E5_0000000000000001)
+[E 16:37:47 30951] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30951] Extractor exited successfully
+[T 08:37:47 30949] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30952] Initializing tracer.
+[T 08:37:47 30952] Initializing tags.
+[T 08:37:47 30952] ID set to 00000000000078E8_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30952] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30952] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30952] Executing the following tracer actions:
+[T 08:37:47 30952] Tracer actions:
+[T 08:37:47 30952] pre_invocations(0)
+[T 08:37:47 30952] post_invocations(1)
+[T 08:37:47 30952] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_9_30930_173893.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_8_30930_173836.c]
+[T 08:37:47 30952] trace_languages(1): [cpp]
+[T 08:37:47 30954] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30954] Initializing tracer.
+[T 08:37:47 30954] Initializing tags.
+[T 08:37:47 30954] ID set to 00000000000078EA_0000000000000001 (parent 00000000000078E8_0000000000000001)
+[E 16:37:47 30954] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30954] Extractor exited successfully
+[T 08:37:47 30952] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30955] Initializing tracer.
+[T 08:37:47 30955] Initializing tags.
+[T 08:37:47 30955] ID set to 00000000000078EB_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30955] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30955] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30955] Executing the following tracer actions:
+[T 08:37:47 30955] Tracer actions:
+[T 08:37:47 30955] pre_invocations(0)
+[T 08:37:47 30955] post_invocations(1)
+[T 08:37:47 30955] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_11_30930_185167.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_10_30930_185151.c]
+[T 08:37:47 30955] trace_languages(1): [cpp]
+[T 08:37:47 30957] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30957] Initializing tracer.
+[T 08:37:47 30957] Initializing tags.
+[T 08:37:47 30957] ID set to 00000000000078ED_0000000000000001 (parent 00000000000078EB_0000000000000001)
+[E 16:37:47 30957] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30957] Extractor exited successfully
+[T 08:37:47 30955] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30958] Initializing tracer.
+[T 08:37:47 30958] Initializing tags.
+[T 08:37:47 30958] ID set to 00000000000078EE_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30958] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30958] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30958] Executing the following tracer actions:
+[T 08:37:47 30958] Tracer actions:
+[T 08:37:47 30958] pre_invocations(0)
+[T 08:37:47 30958] post_invocations(1)
+[T 08:37:47 30958] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_13_30930_196017.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_12_30930_195998.c]
+[T 08:37:47 30958] trace_languages(1): [cpp]
+[T 08:37:47 30960] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30960] Initializing tracer.
+[T 08:37:47 30960] Initializing tags.
+[T 08:37:47 30960] ID set to 00000000000078F0_0000000000000001 (parent 00000000000078EE_0000000000000001)
+[E 16:37:47 30960] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30960] Extractor exited successfully
+[T 08:37:47 30958] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30961] Initializing tracer.
+[T 08:37:47 30961] Initializing tags.
+[T 08:37:47 30961] ID set to 00000000000078F1_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30961] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30961] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30961] Executing the following tracer actions:
+[T 08:37:47 30961] Tracer actions:
+[T 08:37:47 30961] pre_invocations(0)
+[T 08:37:47 30961] post_invocations(1)
+[T 08:37:47 30961] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_15_30930_214087.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_14_30930_214052.c]
+[T 08:37:47 30961] trace_languages(1): [cpp]
+[T 08:37:47 30963] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30963] Initializing tracer.
+[T 08:37:47 30963] Initializing tags.
+[T 08:37:47 30963] ID set to 00000000000078F3_0000000000000001 (parent 00000000000078F1_0000000000000001)
+[E 16:37:47 30963] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30963] Extractor exited successfully
+[T 08:37:47 30961] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30964] Initializing tracer.
+[T 08:37:47 30964] Initializing tags.
+[T 08:37:47 30964] ID set to 00000000000078F4_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30964] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30964] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30964] Executing the following tracer actions:
+[T 08:37:47 30964] Tracer actions:
+[T 08:37:47 30964] pre_invocations(0)
+[T 08:37:47 30964] post_invocations(1)
+[T 08:37:47 30964] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_17_30930_224774.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_16_30930_224759.c]
+[T 08:37:47 30964] trace_languages(1): [cpp]
+[T 08:37:47 30966] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30966] Initializing tracer.
+[T 08:37:47 30966] Initializing tags.
+[T 08:37:47 30966] ID set to 00000000000078F6_0000000000000001 (parent 00000000000078F4_0000000000000001)
+[E 16:37:47 30966] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30966] Extractor exited successfully
+[T 08:37:47 30964] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30967] Initializing tracer.
+[T 08:37:47 30967] Initializing tags.
+[T 08:37:47 30967] ID set to 00000000000078F7_0000000000000001 (parent 00000000000078D2_0000000000000001)
+[T 08:37:47 30967] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30967] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30967] Executing the following tracer actions:
+[T 08:37:47 30967] Tracer actions:
+[T 08:37:47 30967] pre_invocations(0)
+[T 08:37:47 30967] post_invocations(1)
+[T 08:37:47 30967] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -imultiarch, x86_64-linux-gnu, -mtune=generic, -march=x86-64, -fno-builtin, -fmax-errors=0, -fasynchronous-unwind-tables, -fstack-protector-strong, -fstack-clash-protection, -fcf-protection, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_19_30930_238656.o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_18_30930_238639.c]
+[T 08:37:47 30967] trace_languages(1): [cpp]
+[T 08:37:47 30969] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30969] Initializing tracer.
+[T 08:37:47 30969] Initializing tags.
+[T 08:37:47 30969] ID set to 00000000000078F9_0000000000000001 (parent 00000000000078F7_0000000000000001)
+[E 16:37:47 30969] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30969] Extractor exited successfully
+[T 08:37:47 30967] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 16:37:47 30930] Processed command line: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor --trapfolder /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/trap/cpp --src_archive /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src --object_filename /tmp/ccZQYm1z.s -w --error_limit 1000 --disable_system_macros --variadic_macros --incognito --gcc --gnu_version 130300 --target linux_x86_64 '-D__DBL_MIN_EXP__=(-1021)' -D__UINT_LEAST16_MAX__=0xffff -D__FLT16_HAS_QUIET_NAN__=1 -D__ATOMIC_ACQUIRE=2 -D__FLT128_MAX_10_EXP__=4932 -D__FLT_MIN__=1.17549435082228750796873653722224568e-38F -D__GCC_IEC_559_COMPLEX=2 '-D__UINT_LEAST8_TYPE__=unsigned char' -D__SIZEOF_FLOAT80__=16 -D__BFLT16_DENORM_MIN__=9.18354961579912115600575419704879436e-41BF16 '-D__INTMAX_C(c)=c ## L' -D__CHAR_BIT__=8 -D__UINT8_MAX__=0xff -D__SCHAR_WIDTH__=8 -D__WINT_MAX__=0xffffffffU '-D__FLT32_MIN_EXP__=(-125)' '-D__BFLT16_NORM_MAX__=3.38953138925153547590470800371487867e+38BF16' '-D__BFLT16_MIN_10_EXP__=(-37)' -D__ORDER_LITTLE_ENDIAN__=1234 -D__WCHAR_MAX__=0x7fffffff -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8=1 -D__GCC_ATOMIC_CHAR_LOCK_FREE=2 -D__GCC_IEC_559=2 -D__FLT32X_DECIMAL_DIG__=17 -D__FLT_EVAL_METHOD__=0 -D__FLT64_DECIMAL_DIG__=17 -D__CET__=3 -D__GCC_ATOMIC_CHAR32_T_LOCK_FREE=2 -D__UINT_FAST64_MAX__=0xffffffffffffffffUL -D__SIG_ATOMIC_TYPE__=int '-D__DBL_MIN_10_EXP__=(-307)' -D__FINITE_MATH_ONLY__=0 -D__FLT32X_MAX_EXP__=1024 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1 -D__FLT32_HAS_DENORM__=1 -D__UINT_FAST8_MAX__=0xff -D__FLT32_MAX_10_EXP__=38 -D__DEC64_MAX_EXP__=385 '-D__INT8_C(c)=c' -D__INT_LEAST8_WIDTH__=8 -D__UINT_LEAST64_MAX__=0xffffffffffffffffUL -D__SHRT_MAX__=0x7fff '-D__LDBL_MAX__=1.18973149535723176502126385303097021e+4932L' -D__FLT64X_MAX_10_EXP__=4932 -D__BFLT16_MAX_10_EXP__=38 -D__BFLT16_MAX_EXP__=128 -D__LDBL_IS_IEC_60559__=1 -D__FLT64X_HAS_QUIET_NAN__=1 -D__UINT_LEAST8_MAX__=0xff -D__GCC_ATOMIC_BOOL_LOCK_FREE=2 -D__FLT128_DENORM_MIN__=6.47517511943802511092443895822764655e-4966F128 '-D__UINTMAX_TYPE__=long unsigned int' -D__BFLT16_DECIMAL_DIG__=4 -D__linux=1 -D__DEC32_EPSILON__=1E-6DF -D__FLT_EVAL_METHOD_TS_18661_3__=0 -D__UINT32_MAX__=0xffffffffU '-D__DBL_DENORM_MIN__=((double)4.94065645841246544176568792868221372e-324L)' '-D__FLT128_MIN_EXP__=(-16381)' -D__WINT_MIN__=0U '-D__FLT128_MIN_10_EXP__=(-4931)' -D__FLT32X_IS_IEC_60559__=1 -D__INT_LEAST16_WIDTH__=16 -D__SCHAR_MAX__=0x7f -D__FLT128_MANT_DIG__=113 '-D__WCHAR_MIN__=(-__WCHAR_MAX__ - 1)' '-D__INT64_C(c)=c ## L' -D__SSP_STRONG__=3 -D__GCC_ATOMIC_POINTER_LOCK_FREE=2 -D__ATOMIC_SEQ_CST=5 -D__unix=1 -D__INT_LEAST64_MAX__=0x7fffffffffffffffL -D__FLT32X_MANT_DIG__=53 -D__FLT64X_EPSILON__=1.08420217248550443400745280086994171e-19F64x '-D__DEC64_MIN_EXP__=(-382)' -D__DBL_DIG__=15 -D__FLT_EPSILON__=1.19209289550781250000000000000000000e-7F -D__SHRT_WIDTH__=16 -D__FLT32_IS_IEC_60559__=1 -D__LDBL_MIN__=3.36210314311209350626267781732175260e-4932L -D__STDC_UTF_16__=1 -D__DBL_IS_IEC_60559__=1 -D__DEC32_MAX__=9.999999E96DF -D__FLT64X_DENORM_MIN__=3.64519953188247460252840593361941982e-4951F64x -D__FLT32X_HAS_INFINITY__=1 -D__unix__=1 -D__INT_WIDTH__=32 -D__STDC_IEC_559__=1 -D__STDC_ISO_10646__=201706L -D__DECIMAL_DIG__=21 -D__STDC_IEC_559_COMPLEX__=1 -D__FLT64_EPSILON__=2.22044604925031308084726333618164062e-16F64 -D__gnu_linux__=1 -D__FLT128_IS_IEC_60559__=1 '-D__FLT64X_MIN_10_EXP__=(-4931)' -D__LDBL_HAS_QUIET_NAN__=1 '-D__FLT16_MIN_EXP__=(-13)' -D__FLT64_MANT_DIG__=53 -D__FLT64X_MANT_DIG__=64 -D__BFLT16_DIG__=2 -D__pie__=2 -D__MMX__=1 -D__FLT_HAS_DENORM__=1 -D__SIZEOF_LONG_DOUBLE__=16 -D__BIGGEST_ALIGNMENT__=16 -D__FLT64_MAX_10_EXP__=308 -D__BFLT16_IS_IEC_60559__=0 -D__FLT16_MAX_10_EXP__=4 '-D__DBL_MAX__=((double)1.79769313486231570814527423731704357e+308L)' -D__INT_FAST32_MAX__=0x7fffffffffffffffL -D__DBL_HAS_INFINITY__=1 -D__INT64_MAX__=0x7fffffffffffffffL -D__SIZEOF_FLOAT__=4 -D__HAVE_SPECULATION_SAFE_VALUE=1 '-D__DEC32_MIN_EXP__=(-94)' -D__INTPTR_WIDTH__=64 -D__UINT_LEAST32_MAX__=0xffffffffU -D__FLT32X_HAS_DENORM__=1 '-D__INT_FAST16_TYPE__=long int' -D__MMX_WITH_SSE__=1 -D__LDBL_HAS_DENORM__=1 -D__SEG_GS=1 -D__BFLT16_EPSILON__=7.81250000000000000000000000000000000e-3BF16 -D__FLT128_HAS_INFINITY__=1 -D__DEC32_MIN__=1E-95DF -D__DBL_MAX_EXP__=1024 -D__WCHAR_WIDTH__=32 '-D__FLT32_MAX__=3.40282346638528859811704183484516925e+38F32' -D__DEC128_EPSILON__=1E-33DL -D__FLT16_DECIMAL_DIG__=5 -D__SSE2_MATH__=1 -D__ATOMIC_HLE_RELEASE=131072 -D__PTRDIFF_MAX__=0x7fffffffffffffffL -D__amd64=1 -D__ATOMIC_HLE_ACQUIRE=65536 -D__LONG_LONG_MAX__=0x7fffffffffffffffLL -D__SIZEOF_SIZE_T__=8 -D__BFLT16_HAS_INFINITY__=1 '-D__FLT64X_MIN_EXP__=(-16381)' -D__SIZEOF_WINT_T__=4 -D__LONG_LONG_WIDTH__=64 -D__FLT32_MAX_EXP__=128 -D__GXX_ABI_VERSION=1018 '-D__FLT_MIN_EXP__=(-125)' -D__GCC_HAVE_DWARF2_CFI_ASM=1 -D__INT16_MAX__=0x7fff -D__x86_64=1 '-D__INT_FAST64_TYPE__=long int' '-D__BFLT16_MAX__=3.38953138925153547590470800371487867e+38BF16' -D__BFLT16_HAS_DENORM__=1 -D__FLT64_DENORM_MIN__=4.94065645841246544176568792868221372e-324F64 -D__FLT16_DENORM_MIN__=5.96046447753906250000000000000000000e-8F16 -D__FLT128_EPSILON__=1.92592994438723585305597794258492732e-34F128 '-D__FLT64X_NORM_MAX__=1.18973149535723176502126385303097021e+4932F64x' -D__SIZEOF_POINTER__=8 '-D__SIZE_TYPE__=long unsigned int' -D__LP64__=1 -D__DBL_HAS_QUIET_NAN__=1 -D__FLT32X_EPSILON__=2.22044604925031308084726333618164062e-16F32x -D__LDBL_MAX_EXP__=16384 -D__DECIMAL_BID_FORMAT__=1 '-D__FLT64_MIN_EXP__=(-1021)' '-D__FLT64_MIN_10_EXP__=(-307)' '-D__FLT16_MIN_10_EXP__=(-4)' -D__FLT64X_DECIMAL_DIG__=21 -D__DEC128_MIN__=1E-6143DL -D__REGISTER_PREFIX__= -D__UINT16_MAX__=0xffff -D__DBL_HAS_DENORM__=1 -D__FLT32_MIN__=1.17549435082228750796873653722224568e-38F32 '-D__UINT8_TYPE__=unsigned char' -D__FLT_DIG__=6 -D__NO_INLINE__=1 -D__DEC_EVAL_METHOD__=2 -D__FLT_MANT_DIG__=24 -D__LDBL_DECIMAL_DIG__=21 '-D__UINT64_C(c)=c ## UL' -D_STDC_PREDEF_H=1 -D__INT_LEAST32_MAX__=0x7fffffff -D__GCC_ATOMIC_INT_LOCK_FREE=2 -D__FLT128_MAX_EXP__=16384 -D__FLT32_MANT_DIG__=24 -D__FLOAT_WORD_ORDER__=__ORDER_LITTLE_ENDIAN__ '-D__FLT32X_MIN_EXP__=(-1021)' -D__STDC_IEC_60559_COMPLEX__=201404L -D__BFLT16_MIN__=1.17549435082228750796873653722224568e-38BF16 -D__FLT128_HAS_DENORM__=1 -D__FLT32_DECIMAL_DIG__=9 -D__FLT128_DIG__=33 '-D__INT32_C(c)=c' -D__DEC64_EPSILON__=1E-15DD -D__ORDER_PDP_ENDIAN__=3412 '-D__DEC128_MIN_EXP__=(-6142)' -D__DEC128_MAX__=9.999999999999999999999999999999999E6144DL '-D__INT_FAST32_TYPE__=long int' '-D__UINT_LEAST16_TYPE__=short unsigned int' -D__DEC128_MAX_EXP__=6145 -Dunix=1 -D__UINT64_MAX__=0xffffffffffffffffUL -D__FLT_IS_IEC_60559__=1 '-D__GNUC_WIDE_EXECUTION_CHARSET_NAME="UTF-32LE"' -D__FLT64X_DIG__=18 '-D__INT8_TYPE__=signed char' -D__ELF__=1 -D__GCC_ASM_FLAG_OUTPUTS__=1 '-D__UINT32_TYPE__=unsigned int' -D__BFLT16_HAS_QUIET_NAN__=1 -D__FLT_RADIX__=2 '-D__INT_LEAST16_TYPE__=short int' -D__LDBL_EPSILON__=1.08420217248550443400745280086994171e-19L '-D__UINTMAX_C(c)=c ## UL' -D__FLT16_DIG__=3 -D__SSE_MATH__=1 -D__k8=1 -D__FLT32X_MIN__=2.22507385850720138309023271733240406e-308F32x -D__SIG_ATOMIC_MAX__=0x7fffffff -D__GCC_ATOMIC_WCHAR_T_LOCK_FREE=2 -D__USER_LABEL_PREFIX__= -D__STDC_IEC_60559_BFP__=201404L -D__SIZEOF_PTRDIFF_T__=8 -D__FLT64X_HAS_INFINITY__=1 -D__FLT32_HAS_INFINITY__=1 -D__SIZEOF_LONG__=8 -D__LDBL_DIG__=18 -D__FLT64_IS_IEC_60559__=1 -D__x86_64__=1 -D__FLT16_IS_IEC_60559__=1 -D__FLT16_MAX_EXP__=16 -D__DEC32_SUBNORMAL_MIN__=0.000001E-95DF -D__INT_FAST16_MAX__=0x7fffffffffffffffL -D__GCC_CONSTRUCTIVE_SIZE=64 -D__FLT64_DIG__=15 -D__UINT_FAST32_MAX__=0xffffffffffffffffUL '-D__UINT_LEAST64_TYPE__=long unsigned int' -D__FLT16_EPSILON__=9.76562500000000000000000000000000000e-4F16 -D__FLT_HAS_QUIET_NAN__=1 -D__FLT_MAX_10_EXP__=38 -D__LONG_MAX__=0x7fffffffffffffffL -D__FLT64X_HAS_DENORM__=1 -D__DEC128_SUBNORMAL_MIN__=0.000000000000000000000000000000001E-6143DL -D__FLT_HAS_INFINITY__=1 '-D__GNUC_EXECUTION_CHARSET_NAME="UTF-8"' '-D__UINT_FAST16_TYPE__=long unsigned int' -D__DEC64_MAX__=9.999999999999999E384DD -D__INT_FAST32_WIDTH__=64 -D__PRAGMA_REDEFINE_EXTNAME=1 -D__SIZE_WIDTH__=64 -D__SEG_FS=1 -D__INT_LEAST16_MAX__=0x7fff '-D__FLT16_NORM_MAX__=6.55040000000000000000000000000000000e+4F16' -D__DEC64_MANT_DIG__=16 -D__FLT32_DENORM_MIN__=1.40129846432481707092372958328991613e-45F32 -D__SIG_ATOMIC_WIDTH__=32 '-D__INT_LEAST64_TYPE__=long int' '-D__INT16_TYPE__=short int' '-D__INT_LEAST8_TYPE__=signed char' '-D__FLT16_MAX__=6.55040000000000000000000000000000000e+4F16' -D__FLT128_MIN__=3.36210314311209350626267781732175260e-4932F128 -D__SIZEOF_INT__=4 -D__DEC32_MAX_EXP__=97 -D__INT_FAST8_MAX__=0x7f '-D__FLT128_MAX__=1.18973149535723176508575932662800702e+4932F128' -D__INTPTR_MAX__=0x7fffffffffffffffL -Dlinux=1 -D__FLT64_HAS_QUIET_NAN__=1 '-D__FLT32_MIN_10_EXP__=(-37)' -D__FLT32X_DIG__=15 '-D__UINT16_C(c)=c' -D__PTRDIFF_WIDTH__=64 -D__LDBL_MANT_DIG__=64 -D__INT_FAST16_WIDTH__=64 -D__FLT64_HAS_INFINITY__=1 '-D__FLT64X_MAX__=1.18973149535723176502126385303097021e+4932F64x' -D__FLT16_HAS_INFINITY__=1 '-D__SIG_ATOMIC_MIN__=(-__SIG_ATOMIC_MAX__ - 1)' -D__code_model_small__=1 -D__GCC_ATOMIC_LONG_LOCK_FREE=2 -D__DEC32_MANT_DIG__=7 -D__FLT16_MANT_DIG__=11 -D__k8__=1 '-D__INTPTR_TYPE__=long int' '-D__UINT16_TYPE__=short unsigned int' -D__WCHAR_TYPE__=int -D__pic__=2 -D__UINTPTR_MAX__=0xffffffffffffffffUL -D__INT_FAST64_WIDTH__=64 -D__LDBL_HAS_INFINITY__=1 -D__INT_FAST64_MAX__=0x7fffffffffffffffL -D__GCC_ATOMIC_TEST_AND_SET_TRUEVAL=1 '-D__FLT_NORM_MAX__=3.40282346638528859811704183484516925e+38F' -D__FLT64X_MAX_EXP__=16384 '-D__UINT_FAST64_TYPE__=long unsigned int' '-D__BFLT16_MIN_EXP__=(-125)' -D__INT_MAX__=0x7fffffff -D__linux__=1 '-D__INT64_TYPE__=long int' -D__FLT_MAX_EXP__=128 -D__ORDER_BIG_ENDIAN__=4321 -D__DBL_MANT_DIG__=53 -D__SIZEOF_FLOAT128__=16 -D__BFLT16_MANT_DIG__=8 -D__GCC_ATOMIC_CHAR16_T_LOCK_FREE=2 -D__DEC64_MIN__=1E-383DD '-D__WINT_TYPE__=unsigned int' '-D__UINT_LEAST32_TYPE__=unsigned int' -D__SIZEOF_SHORT__=2 '-D__FLT32_NORM_MAX__=3.40282346638528859811704183484516925e+38F32' -D__SSE__=1 '-D__LDBL_MIN_EXP__=(-16381)' '-D__FLT64_MAX__=1.79769313486231570814527423731704357e+308F64' -D__amd64__=1 -D__WINT_WIDTH__=32 -D__INT_LEAST8_MAX__=0x7f -D__INT_LEAST64_WIDTH__=64 -D__FLT32X_MAX_10_EXP__=308 -D__SIZEOF_INT128__=16 -D__FLT16_MIN__=6.10351562500000000000000000000000000e-5F16 -D__FLT64X_IS_IEC_60559__=1 -D__LDBL_MAX_10_EXP__=4932 -D__ATOMIC_RELAXED=0 '-D__DBL_EPSILON__=((double)2.22044604925031308084726333618164062e-16L)' -D__INT_LEAST32_TYPE__=int -D_LP64=1 '-D__UINT8_C(c)=c' -D__FLT64_MAX_EXP__=1024 -D__SIZEOF_WCHAR_T__=4 '-D__UINT64_TYPE__=long unsigned int' '-D__FLT128_NORM_MAX__=1.18973149535723176508575932662800702e+4932F128' '-D__FLT64_NORM_MAX__=1.79769313486231570814527423731704357e+308F64' -D__FLT128_HAS_QUIET_NAN__=1 -D__INTMAX_MAX__=0x7fffffffffffffffL '-D__INT_FAST8_TYPE__=signed char' -D__FLT64X_MIN__=3.36210314311209350626267781732175260e-4932F64x -D__FLT64_HAS_DENORM__=1 -D__FLT32_EPSILON__=1.19209289550781250000000000000000000e-7F32 -D__FLT16_HAS_DENORM__=1 -D__DBL_DECIMAL_DIG__=17 -D__STDC_UTF_32__=1 -D__INT_FAST8_WIDTH__=8 -D__FXSR__=1 '-D__FLT32X_MAX__=1.79769313486231570814527423731704357e+308F32x' '-D__DBL_NORM_MAX__=((double)1.79769313486231570814527423731704357e+308L)' -D__BYTE_ORDER__=__ORDER_LITTLE_ENDIAN__ -D__GCC_DESTRUCTIVE_SIZE=64 -D__INTMAX_WIDTH__=64 -D__FLT32_DIG__=6 '-D__UINT32_C(c)=c ## U' -D__FLT_DENORM_MIN__=1.40129846432481707092372958328991613e-45F -D__INT8_MAX__=0x7f -D__LONG_WIDTH__=64 '-D__DBL_MIN__=((double)2.22507385850720138309023271733240406e-308L)' -D__PIC__=2 -D__INT32_MAX__=0x7fffffff '-D__UINT_FAST32_TYPE__=long unsigned int' '-D__FLT32X_NORM_MAX__=1.79769313486231570814527423731704357e+308F32x' '-D__FLT_MAX__=3.40282346638528859811704183484516925e+38F' -D__SSE2__=1 -D__INT32_TYPE__=int -D__SIZEOF_DOUBLE__=8 '-D__FLT_MIN_10_EXP__=(-37)' -D__FLT64_MIN__=2.22507385850720138309023271733240406e-308F64 -D__INT_LEAST32_WIDTH__=32 '-D__INTMAX_TYPE__=long int' -D__FLT32X_HAS_QUIET_NAN__=1 -D__ATOMIC_CONSUME=1 -D__UINTMAX_MAX__=0xffffffffffffffffUL -D__PIE__=2 -D__FLT32X_DENORM_MIN__=4.94065645841246544176568792868221372e-324F32x -D__DBL_MAX_10_EXP__=308 -D__LDBL_DENORM_MIN__=3.64519953188247460252840593361941982e-4951L '-D__INT16_C(c)=c' '-D__PTRDIFF_TYPE__=long int' '-D__FLT32X_MIN_10_EXP__=(-307)' '-D__UINTPTR_TYPE__=long unsigned int' -D__DEC64_SUBNORMAL_MIN__=0.000000000000001E-383DD -D__DEC128_MANT_DIG__=34 '-D__LDBL_MIN_10_EXP__=(-4931)' -D__SIZEOF_LONG_LONG__=8 -D__FLT128_DECIMAL_DIG__=36 -D__GCC_ATOMIC_LLONG_LOCK_FREE=2 -D__FLT32_HAS_QUIET_NAN__=1 -D__FLT_DECIMAL_DIG__=9 -D__UINT_FAST16_MAX__=0xffffffffffffffffUL '-D__LDBL_NORM_MAX__=1.18973149535723176502126385303097021e+4932L' -D__GCC_ATOMIC_SHORT_LOCK_FREE=2 -D__SIZE_MAX__=0xffffffffffffffffUL '-D__UINT_FAST8_TYPE__=unsigned char' -D__ATOMIC_ACQ_REL=4 -D__ATOMIC_RELEASE=3 -I. -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include -- all_functions.c
+[E 16:37:47 30930] CODEQL_EXTRACTOR_CPP_TRAP_CACHING is not set
+[E 16:37:47 30930] CODEQL_EXTRACTOR_CPP_OPTION_TRAP_CACHE_WRITE is not set
+[E 16:37:47 30930] CODEQL_EXTRACTOR_CPP_OPTION_TRAP_CACHE_DIR is not set
+[E 16:37:47 30930] Initialising TRAP cache at path: a8/0ca6/a6de0aff922cbb6b6a7ea366a377
+[E 16:37:47 30930] Not using TRAP cache
+[E 16:37:47 30930] TRAP cache miss
+[E 16:37:47 30930] Starting compilation TRAP /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/trap/cpp/compilations/62/40723385_0.trap.zst
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src/all_functions.c
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src/defs.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/string.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/libc-header-start.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/features.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/features-time64.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/timesize.h
+[E 16:37:47 30930] Already archived /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/stdc-predef.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/sys/cdefs.h
+[E 16:37:47 30930] Already archived /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/wordsize.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/long-double.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/gnu/stubs.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/gnu/stubs-64.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
+[E 16:37:47 30930] Archiving /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/include/strings.h
+[E 16:37:47 30930] Already archived /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/src/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+[E 16:37:47 30930] Creating trap tarball /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/trap/cpp/tarballs/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src/all_functions.c.b7978b8a_0.trap.tar.zst
+[E 16:37:47 30930] Emitting trap files for all_functions.c
+[E 16:37:47 30930] Opening existencedb in /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/existencedb/db
+[E 16:37:47 30930] Wrote 19 files to /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/trap/cpp/tarballs/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src/all_functions.c.b7978b8a_0.trap.tar.zst
+[E 16:37:47 30930] Finished compilation TRAP /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/trap/cpp/compilations/62/40723385_0.trap.zst
+[E 16:37:47 30930] Marking C compilation as happened.
+[E 16:37:47 30930] Setting tag c-compilation-happened
+[E 16:37:47 30930] Starting from CODEQL_TRACER_DB_ID 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Locking DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Locked DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30930] Set tag for 00000000000078D0_0000000000000001
+[E 16:37:47 30930] Set tag for 00000000000078CC_0000000000000003
+[E 16:37:47 30930] Set tag for 00000000000078CC_0000000000000002
+[E 16:37:47 30930] Set tag for root
+[E 16:37:47 30930] Unlocking DB
+[E 16:37:47 30930] Unlocked DB
+[E 16:37:47 30930] Extractor exited successfully
+[T 08:37:47 30928] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30970] Initializing tracer.
+[T 08:37:47 30970] Initializing tags.
+[T 08:37:47 30970] ID set to 00000000000078FA_0000000000000001 (parent 00000000000078CC_0000000000000003)
+[T 08:37:47 30970] ==== Candidate to intercept: as (canonical: /usr/bin/as) ====
+[T 08:37:47 30970] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:37:47 30970] Executing the following tracer actions:
+[T 08:37:47 30970] Tracer actions:
+[T 08:37:47 30970] pre_invocations(0)
+[T 08:37:47 30970] post_invocations(1)
+[T 08:37:47 30970] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, -I, ., --64, -o, all_functions.o, /tmp/ccZQYm1z.s]
+[T 08:37:47 30970] trace_languages(1): [cpp]
+[T 08:37:47 30972] Attempting to switch stdout/stderr to 4...
+[T 08:37:47 30972] Initializing tracer.
+[T 08:37:47 30972] Initializing tags.
+[T 08:37:47 30972] ID set to 00000000000078FC_0000000000000001 (parent 00000000000078FA_0000000000000001)
+[E 16:37:47 30972] CodeQL C/C++ Extractor 2.17.0
+[E 16:37:47 30972] Current directory: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src
+[E 16:37:47 30972] Command: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor --assembler --codeql-assembler-executable /usr/bin/as -I . --64 -o all_functions.o /tmp/ccZQYm1z.s
+[E 16:37:47 30972] Extractor exited after mimicking assembler
+[T 08:37:47 30970] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30973] Attempting to switch stdout/stderr to 4...
+[T 08:37:47 30973] Initializing tracer.
+[T 08:37:47 30973] Initializing tags.
+[T 08:37:47 30973] ID set to 00000000000078FD_0000000000000001 (parent 00000000000078CC_0000000000000003)
+[E 16:37:47 30973] CodeQL C/C++ Extractor 2.17.0
+[E 16:37:47 30973] Current directory: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/de_src
+[E 16:37:47 30973] Command: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor --mimic /usr/bin/gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I. all_functions.c
+Warning: Could not open file '/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/compiler_mimic_cache/b2465e5e020e'
+Warning: Could not open file '/home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/compiler_mimic_cache/ba743dfb6dc1'
+[T 08:37:47 30974] Initializing tracer.
+[T 08:37:47 30974] Initializing tags.
+[T 08:37:47 30974] ID set to 00000000000078FE_0000000000000001 (parent 00000000000078FD_0000000000000001)
+[T 08:37:47 30974] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:37:47 30974] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:37:47 30974] Executing the following tracer actions:
+[T 08:37:47 30974] Tracer actions:
+[T 08:37:47 30974] pre_invocations(0)
+[T 08:37:47 30974] post_invocations(1)
+[T 08:37:47 30974] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, --version]
+[T 08:37:47 30974] trace_languages(1): [cpp]
+[T 08:37:47 30976] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30976] Initializing tracer.
+[T 08:37:47 30976] Initializing tags.
+[T 08:37:47 30976] ID set to 0000000000007900_0000000000000001 (parent 00000000000078FE_0000000000000001)
+[E 16:37:47 30976] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30976] Extractor exited successfully
+[T 08:37:47 30974] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30977] Initializing tracer.
+[T 08:37:47 30977] Initializing tags.
+[T 08:37:47 30977] ID set to 0000000000007901_0000000000000001 (parent 00000000000078FD_0000000000000001)
+[T 08:37:47 30977] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:37:47 30977] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:37:47 30977] Executing the following tracer actions:
+[T 08:37:47 30977] Tracer actions:
+[T 08:37:47 30977] pre_invocations(0)
+[T 08:37:47 30977] post_invocations(1)
+[T 08:37:47 30977] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, --help]
+[T 08:37:47 30977] trace_languages(1): [cpp]
+[T 08:37:47 30979] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30979] Initializing tracer.
+[T 08:37:47 30979] Initializing tags.
+[T 08:37:47 30979] ID set to 0000000000007903_0000000000000001 (parent 0000000000007901_0000000000000001)
+[E 16:37:47 30979] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30979] Extractor exited successfully
+[T 08:37:47 30977] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30980] Initializing tracer.
+[T 08:37:47 30980] Initializing tags.
+[T 08:37:47 30980] ID set to 0000000000007904_0000000000000001 (parent 00000000000078FD_0000000000000001)
+[T 08:37:47 30980] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:37:47 30980] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:37:47 30980] Executing the following tracer actions:
+[T 08:37:47 30980] Tracer actions:
+[T 08:37:47 30980] pre_invocations(0)
+[T 08:37:47 30980] post_invocations(1)
+[T 08:37:47 30980] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_2_30973_330356.o, -c, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_1_30973_330309.c]
+[T 08:37:47 30980] trace_languages(1): [cpp]
+[T 08:37:47 30982] Initializing tracer.
+[T 08:37:47 30982] Initializing tags.
+[T 08:37:47 30982] ID set to 0000000000007906_0000000000000001 (parent 0000000000007904_0000000000000001)
+[T 08:37:47 30982] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30982] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30982] Executing the following tracer actions:
+[T 08:37:47 30982] Tracer actions:
+[T 08:37:47 30982] pre_invocations(0)
+[T 08:37:47 30982] post_invocations(1)
+[T 08:37:47 30982] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -imultiarch, x86_64-linux-gnu, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_1_30973_330309.c, -quiet, -dumpdir, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//, -dumpbase, semmle_2_30973_330356.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccD1DruE.s]
+[T 08:37:47 30982] trace_languages(1): [cpp]
+[T 08:37:47 30984] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30984] Initializing tracer.
+[T 08:37:47 30984] Initializing tags.
+[T 08:37:47 30984] ID set to 0000000000007908_0000000000000001 (parent 0000000000007906_0000000000000001)
+[E 16:37:47 30984] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30984] Extractor exited successfully
+[T 08:37:47 30982] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30985] Initializing tracer.
+[T 08:37:47 30985] Initializing tags.
+[T 08:37:47 30985] ID set to 0000000000007909_0000000000000001 (parent 0000000000007904_0000000000000001)
+[T 08:37:47 30985] ==== Candidate to intercept: as (canonical: /usr/bin/as) ====
+[T 08:37:47 30985] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:37:47 30985] Executing the following tracer actions:
+[T 08:37:47 30985] Tracer actions:
+[T 08:37:47 30985] pre_invocations(0)
+[T 08:37:47 30985] post_invocations(1)
+[T 08:37:47 30985] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, --64, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_2_30973_330356.o, /tmp/ccD1DruE.s]
+[T 08:37:47 30985] trace_languages(1): [cpp]
+[T 08:37:47 30987] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30987] Initializing tracer.
+[T 08:37:47 30987] Initializing tags.
+[T 08:37:47 30987] ID set to 000000000000790B_0000000000000001 (parent 0000000000007909_0000000000000001)
+[E 16:37:47 30987] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30987] Extractor exited successfully
+[T 08:37:47 30985] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30988] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30988] Initializing tracer.
+[T 08:37:47 30988] Initializing tags.
+[T 08:37:47 30988] ID set to 000000000000790C_0000000000000001 (parent 0000000000007904_0000000000000001)
+[E 16:37:47 30988] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30988] Extractor exited successfully
+[T 08:37:47 30980] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30989] Initializing tracer.
+[T 08:37:47 30989] Initializing tags.
+[T 08:37:47 30989] ID set to 000000000000790D_0000000000000001 (parent 00000000000078FD_0000000000000001)
+[T 08:37:47 30989] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:37:47 30989] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:37:47 30989] Executing the following tracer actions:
+[T 08:37:47 30989] Tracer actions:
+[T 08:37:47 30989] pre_invocations(0)
+[T 08:37:47 30989] post_invocations(1)
+[T 08:37:47 30989] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_2_30973_330356.o, -c, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_1_30973_330309.c, -v, -iwithprefix, 80AD44EC-F542-4CCF-8C9F-328EB87D7D35]
+[T 08:37:47 30989] trace_languages(1): [cpp]
+[T 08:37:47 30991] Initializing tracer.
+[T 08:37:47 30991] Initializing tags.
+[T 08:37:47 30991] ID set to 000000000000790F_0000000000000001 (parent 000000000000790D_0000000000000001)
+[T 08:37:47 30991] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 30991] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 30991] Executing the following tracer actions:
+[T 08:37:47 30991] Tracer actions:
+[T 08:37:47 30991] pre_invocations(0)
+[T 08:37:47 30991] post_invocations(1)
+[T 08:37:47 30991] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -v, -imultiarch, x86_64-linux-gnu, -iwithprefix, 80AD44EC-F542-4CCF-8C9F-328EB87D7D35, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_1_30973_330309.c, -quiet, -dumpdir, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//, -dumpbase, semmle_2_30973_330356.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -version, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccFU7NX2.s]
+[T 08:37:47 30991] trace_languages(1): [cpp]
+[T 08:37:47 30993] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30993] Initializing tracer.
+[T 08:37:47 30993] Initializing tags.
+[T 08:37:47 30993] ID set to 0000000000007911_0000000000000001 (parent 000000000000790F_0000000000000001)
+[E 16:37:47 30993] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30993] Extractor exited successfully
+[T 08:37:47 30991] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30994] Initializing tracer.
+[T 08:37:47 30994] Initializing tags.
+[T 08:37:47 30994] ID set to 0000000000007912_0000000000000001 (parent 000000000000790D_0000000000000001)
+[T 08:37:47 30994] ==== Candidate to intercept: as (canonical: /usr/bin/as) ====
+[T 08:37:47 30994] Lua: === Intercepted call to /usr/bin/as ===
+[T 08:37:47 30994] Executing the following tracer actions:
+[T 08:37:47 30994] Tracer actions:
+[T 08:37:47 30994] pre_invocations(0)
+[T 08:37:47 30994] post_invocations(1)
+[T 08:37:47 30994] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--assembler, --codeql-assembler-executable, /usr/bin/as, -v, --64, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_2_30973_330356.o, /tmp/ccFU7NX2.s]
+[T 08:37:47 30994] trace_languages(1): [cpp]
+[T 08:37:47 30996] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30996] Initializing tracer.
+[T 08:37:47 30996] Initializing tags.
+[T 08:37:47 30996] ID set to 0000000000007914_0000000000000001 (parent 0000000000007912_0000000000000001)
+[E 16:37:47 30996] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30996] Extractor exited successfully
+[T 08:37:47 30994] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30997] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 30997] Initializing tracer.
+[T 08:37:47 30997] Initializing tags.
+[T 08:37:47 30997] ID set to 0000000000007915_0000000000000001 (parent 000000000000790D_0000000000000001)
+[E 16:37:47 30997] Mimicry classification suppression detected; exiting.
+[E 16:37:47 30997] Extractor exited successfully
+[T 08:37:47 30989] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 30998] Initializing tracer.
+[T 08:37:47 30998] Initializing tags.
+[T 08:37:47 30998] ID set to 0000000000007916_0000000000000001 (parent 00000000000078FD_0000000000000001)
+[T 08:37:47 30998] ==== Candidate to intercept: /usr/bin/gcc (canonical: /usr/bin/x86_64-linux-gnu-gcc-13) ====
+[T 08:37:47 30998] Lua: === Intercepted call to /usr/bin/x86_64-linux-gnu-gcc-13 ===
+[T 08:37:47 30998] Executing the following tracer actions:
+[T 08:37:47 30998] Tracer actions:
+[T 08:37:47 30998] pre_invocations(0)
+[T 08:37:47 30998] post_invocations(1)
+[T 08:37:47 30998] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/bin/x86_64-linux-gnu-gcc-13, -nostdinc, -o, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_4_30973_399833.o, -c, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_3_30973_399764.c]
+[T 08:37:47 30998] trace_languages(1): [cpp]
+[T 08:37:47 31000] Initializing tracer.
+[T 08:37:47 31000] Initializing tags.
+[T 08:37:47 31000] ID set to 0000000000007918_0000000000000001 (parent 0000000000007916_0000000000000001)
+[T 08:37:47 31000] ==== Candidate to intercept: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 (canonical: /usr/libexec/gcc/x86_64-linux-gnu/13/cc1) ====
+[T 08:37:47 31000] Lua: === Intercepted call to /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 ===
+[T 08:37:47 31000] Executing the following tracer actions:
+[T 08:37:47 31000] Tracer actions:
+[T 08:37:47 31000] pre_invocations(0)
+[T 08:37:47 31000] post_invocations(1)
+[T 08:37:47 31000] invocation: /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor, args: [--mimic, /usr/libexec/gcc/x86_64-linux-gnu/13/cc1, -quiet, -nostdinc, -imultiarch, x86_64-linux-gnu, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//semmle_3_30973_399764.c, -quiet, -dumpdir, /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tmp//, -dumpbase, semmle_4_30973_399833.c, -dumpbase-ext, .c, -mtune=generic, -march=x86-64, -fasynchronous-unwind-tables, -fstack-protector-strong, -Wformat, -Wformat-security, -fstack-clash-protection, -fcf-protection, -o, /tmp/ccXCeFiM.s]
+[T 08:37:47 31000] trace_languages(1): [cpp]
+[T 08:37:47 31002] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 31002] Initializing tracer.
+[T 08:37:47 31002] Initializing tags.
+[T 08:37:47 31002] ID set to 000000000000791A_0000000000000001 (parent 0000000000007918_0000000000000001)
+[E 16:37:47 31002] Mimicry classification suppression detected; exiting.
+[E 16:37:47 31002] Extractor exited successfully
+[T 08:37:47 31000] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[T 08:37:47 31003] Attempting to switch stdout/stderr to 7...
+[T 08:37:47 31003] Initializing tracer.
+[T 08:37:47 31003] Initializing tags.
+[T 08:37:47 31003] ID set to 000000000000791B_0000000000000001 (parent 0000000000007916_0000000000000001)
+[E 16:37:47 31003] Mimicry classification suppression detected; exiting.
+[E 16:37:47 31003] Extractor exited successfully
+[T 08:37:47 30998] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.
+[E 16:37:47 30973] Checking whether C compilation already happened.
+[E 16:37:47 30973] Checking for tag c-compilation-happened
+[E 16:37:47 30973] Checking CODEQL_TRACER_DB_ID 00000000000078CC_0000000000000003
+[E 16:37:47 30973] Locking DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30973] Locked DB /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE121_Stack_Based_Buffer_Overflow/cwe_db/working/tags.db
+[E 16:37:47 30973] Unlocking DB
+[E 16:37:47 30973] Unlocked DB
+[E 16:37:47 30973] Exiting as C compilation already happened.
+[T 08:37:47 30924] Extractor /home/xyt19/tools/codeql/codeql/cpp/tools/linux64/extractor terminated with exit code 0.

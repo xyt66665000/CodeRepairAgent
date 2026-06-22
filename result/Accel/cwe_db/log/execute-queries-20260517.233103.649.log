@@ -1,0 +1,158 @@
+[2026-05-17 23:31:03] This is codeql execute queries -J-Xmx1493M --verbosity=progress --logdir=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/log --evaluator-log-level=5 --warnings=show --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --rerun --interpret-passthrough=null,--format=sarifv2.1.0,-o=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_results/results.json,--max-paths=4,--csv-location-format=line-column,--print-diagnostics-summary,--print-metrics-summary,--qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml,--,/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db,/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql --output=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/results -- /home/xyt19/CodeFixAgent/CodeRepairCase/Accel/cwe_db/db-cpp /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:31:03] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --format=json -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:31:04] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:31:04] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql"
+                      ]
+[2026-05-17 23:31:04] Creating executor with 1 threads.
+[2026-05-17 23:31:04] Calling plumbing command: codeql resolve extensions --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:31:04] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --allow-library-packs --format startingpacks -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql
+[2026-05-17 23:31:04] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:31:04] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src"
+                      ]
+[2026-05-17 23:31:04] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml -- /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/util: 0.2.13
+[2026-05-17 23:31:04] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:31:04] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { },
+                        "threatModels" : { },
+                        "extensionPacks" : [ ]
+                      }
+[2026-05-17 23:31:04] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/xyt19/CodeFixAgent/CodeRepairCase/Accel/qlconfig.yml --query=/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql --format=json
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> Resolving query at normalized path /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src.
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> Adding compilation cache at /home/xyt19/.codeql/compile-cache.
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> Resolving library dependencies from /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/qlpack.yml.
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-queries: 0.9.9 {codeql/cpp-queries: not 0.9.9 {root: codeql/cpp-queries@0.9.9}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 1] codeql/cpp-queries: 0.9.9
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/util: * [*] {codeql/cpp-queries: * [*], codeql/util: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/util@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/suite-helpers: * [*] {codeql/cpp-queries: * [*], codeql/suite-helpers: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/suite-helpers@0.7.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/cpp-all: * [*] {codeql/cpp-queries: * [*], codeql/cpp-all: not * [*] {dependency: codeql/cpp-queries@* [*] requires codeql/cpp-all@0.12.10}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/cpp-all: * [*], codeql/util: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 2] codeql/cpp-all: 0.12.10
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/tutorial: * [*] {codeql/cpp-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/tutorial@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/ssa: * [*] {codeql/cpp-all: * [*], codeql/ssa: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/ssa@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/rangeanalysis: * [*] {codeql/cpp-all: * [*], codeql/rangeanalysis: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/rangeanalysis@0.0.12}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/dataflow: * [*] {codeql/cpp-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/cpp-all@* [*] requires codeql/dataflow@0.2.4}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 3] codeql/dataflow: 0.2.4
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@0.2.13}}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/rangeanalysis: * [*], codeql/util: not * [*] {dependency: codeql/rangeanalysis@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 4] codeql/rangeanalysis: 0.0.12
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 5] codeql/ssa: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 6] codeql/suite-helpers: 0.7.13
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 7] codeql/tutorial: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@0.2.13}
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 8] codeql/typetracking: 0.2.13
+[2026-05-17 23:31:04] [SPAMMY] resolve library-path> [DECISION 9] codeql/util: 0.2.13
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> QL pack dependencies for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src resolved OK.
+[2026-05-17 23:31:04] [DETAILS] resolve library-path> Found dbscheme through QL packs: /home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme.
+[2026-05-17 23:31:04] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src",
+                          "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/dataflow",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/rangeanalysis",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/ssa",
+                          "/home/xyt19/tools/codeql/ql/codeql/misc/suite-helpers",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/tutorial",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/typetracking",
+                          "/home/xyt19/tools/codeql/ql/codeql/shared/util"
+                        ],
+                        "dbscheme" : "/home/xyt19/tools/codeql/ql/codeql/cpp/ql/lib/semmlecode.cpp.dbscheme",
+                        "compilationCache" : [
+                          "/home/xyt19/.codeql/compile-cache"
+                        ],
+                        "relativeName" : "codeql/cpp-queries/cgc/MyAccel.ql",
+                        "qlPackName" : "codeql/cpp-queries"
+                      }
+[2026-05-17 23:31:04] [PROGRESS] execute queries> Compiling query plan for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:31:04] [DETAILS] execute queries> Resolving imports for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:31:05] Resolved file set for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql hashes to 02e6ed80f3ef1b557901f74a2c0457ad67d3cadd.
+[2026-05-17 23:31:05] [DETAILS] execute queries> Checking QL for /home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql.
+[2026-05-17 23:31:05] ExternalModuleBindingPass ...
+[2026-05-17 23:31:05] ExternalModuleBindingPass time: 00:00.481
+[2026-05-17 23:31:05] CollectInstantiationsPass ...
+[2026-05-17 23:31:05] CollectInstantiationsPass time: 00:00.059
+[2026-05-17 23:31:05] Ql checks ...
+[2026-05-17 23:31:08] Ql checks time: 00:02.391
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:46,26-36)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:50,9-19)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:64,31-41)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:65,23-33)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:66,23-33)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:73,26-36)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:75,64-74)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:77,66-76)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:77,28-38)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:84,34-44)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:90,32-42)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:103,23-33)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:104,24-34)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:105,35-45)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:110,29-39)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:116,28-38)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:117,28-38)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:119,34-44)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:120,34-44)
+[2026-05-17 23:31:09] [ERROR] execute queries> ERROR: stripCasts() cannot be resolved for type Expr::Expr (/home/xyt19/tools/codeql/ql/codeql/cpp/ql/src/cgc/MyAccel.ql:121,32-42)
+[2026-05-17 23:31:09] Sequence stamp origin is -5913002318718771171
+[2026-05-17 23:31:09] Pausing evaluation to close the cache at sequence stamp o+0
+[2026-05-17 23:31:09] The disk cache is freshly trimmed; leave it be.
+[2026-05-17 23:31:09] Unpausing evaluation
+[2026-05-17 23:31:09] Exiting with code 2

@@ -1,0 +1,10 @@
+---
+sourceLocationPrefix: /home/xyt19/CodeFixAgent/juliet-test-suite-c/decomplier/de_CWE134_Uncontrolled_Format_String/de_src
+baselineLinesOfCode: 441
+unicodeNewlines: false
+columnKind: utf8
+primaryLanguage: cpp
+creationMetadata:
+  cliVersion: 2.17.0
+  creationTime: 2026-05-15T06:39:01.182511311Z
+finalised: true
