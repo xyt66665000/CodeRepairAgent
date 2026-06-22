@@ -302,4 +302,3 @@ Rollbacks: N phase(s) rolled back (pipeline continued without them)
 Compilation verified: yes
 Final artifacts: <file>.c, <file>.o
 ```
-

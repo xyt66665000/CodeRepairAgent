@@ -191,4 +191,3 @@ For each error, prefer: `compile → read code slice → patch apply`. Read targ
 Compilation succeeds when the exact following command produces a `.o` file with no errors:
 `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
 ```
-

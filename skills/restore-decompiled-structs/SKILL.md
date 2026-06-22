@@ -605,4 +605,3 @@ After restoration, verify:
 - [ ] Type inferences are justified by context (not guessed)
 - [ ] Code compiles with ` gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
 - [ ] Original control flow is unchanged
-
