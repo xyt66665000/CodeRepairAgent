@@ -19,7 +19,7 @@
 | [restore-function-signatures](./skills/restore-function-signatures/) | 函数签名恢复 |
 | [variable-semantic-recovery](./skills/variable-semantic-recovery/) | 变量语义恢复 |
 
-## 管线流程
+## pipeline流程
 
 ```
 INPUT: 反编译 .c 文件
