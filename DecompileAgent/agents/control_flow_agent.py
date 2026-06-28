@@ -251,7 +251,7 @@ Your task is to normalize goto/label patterns in the .c file(s) into structured 
 - Unrecognized patterns → leave as-is (state machines, long-distance gotos for error cleanup).
 
 ### Compilation:
-Use: `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
+Use the compile command shown in the Parse GCC Errors tool description.
 
 Report: loops, switches, if-else, short-circuit, ternary recovered, gotos preserved (ambiguous).
 If no goto/label patterns, report skip reason.

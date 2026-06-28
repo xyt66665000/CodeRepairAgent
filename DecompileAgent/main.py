@@ -13,7 +13,7 @@ Pipeline order:
   Phase 5: control-flow-normalizer     — Normalize goto/label into structured CFG
 
 Usage:
-  python main.py -d /path/to/dir        # Run full pipeline on all .c files
+  python main.py -d /path/to/dir        # Run default phases 1-2 on all .c files
   python main.py -d /path/to/dir -p 1   # Run only Phase 1
   python main.py -d /path/to/dir -p 1,2,3  # Run specific phases
 """
@@ -42,7 +42,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python main.py -d ./output                # Full pipeline
+  python main.py -d ./output                # Default phases 1-2
   python main.py -d ./output -p 1           # Phase 1 only (compile repair)
   python main.py -d ./output -p 1,2         # Phases 1-2 only
   python main.py -d ./output -f test.c      # Process single file
@@ -66,7 +66,7 @@ Examples:
         "-p", "--phases",
         type=str,
         default=None,
-        help="Comma-separated phase numbers to run, e.g. '1,2,3' (default: all 1-5)",
+        help="Comma-separated phase numbers to run, e.g. '1,2,3' (default: 1,2)",
     )
     parser.add_argument(
         "--single",
@@ -109,7 +109,7 @@ Examples:
             sys.exit(1)
 
     cprint(f"Compile command: {compile_cmd}", color="blue")
-    cprint(f"Phases: {phases_to_run or 'all (1-5)'}", color="blue")
+    cprint(f"Phases: {phases_to_run or 'default (1,2)'}", color="blue")
 
     # ── Single file mode ──
     if args.single or args.file:
@@ -146,6 +146,7 @@ Examples:
     result = run_pipeline_batch(
         base_dir=base_dir,
         compile_cmd=compile_cmd,
+        phases_to_run=phases_to_run,
         verbose=verbose,
     )
 

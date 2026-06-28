@@ -86,7 +86,7 @@ def preprocess_c_file(filepath: str) -> None:
     last_include = 0
     for m in re.finditer(r'^#include\s+[<\"].*[>\"]\s*$', content, re.MULTILINE):
         last_include = m.end()
-    if last_include > 0:
+    if last_include > 0 and GENERIC_CALLING_CONVENTIONS not in content:
         # Insert after the newline following the last #include
         nl_after = content.find("\n", last_include)
         if nl_after != -1:
@@ -157,7 +157,7 @@ them one category at a time. Do NOT re-add calling-convention macros.
 - Mark every modification with a C comment: `// Modified: <reason>`.
 
 ## Compilation Command
-Use: gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.
+Use the compile command shown in the Parse GCC Errors tool description.
 
 ## Self-Check Before Every Cast Fix
 Before fixing "incompatible pointer types" or "int-conversion":
@@ -195,7 +195,7 @@ File-specific issues you may still need to handle:
 Start by running Parse GCC Errors to see what remains, then fix errors systematically.
 
 ### Compilation Check:
-- Use the exact command: `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
+- Use the compile command shown in the Parse GCC Errors tool description.
 - A successful result means a `.o` file is generated with ZERO errors.
 - Do NOT add any redundant suffixes or prefixes to the output `.o` file name.
 
@@ -230,7 +230,7 @@ Start by running Parse GCC Errors to see what remains, then fix errors systemati
 def run_decompile_repair(
     base_dir: str,
     compile_cmd: str = DEFAULT_COMPILE_CMD,
-    max_iterations: int = 1000,
+    max_iterations: int = 500,
     verbose: bool = True,
 ) -> Tuple[bool, str]:
     """Run Phase 1: decompile repair.

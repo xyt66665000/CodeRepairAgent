@@ -11,6 +11,7 @@ import os
 import json
 import subprocess
 import re
+import shlex
 import tiktoken
 import ast
 import traceback
@@ -38,6 +39,11 @@ MODEL_NAME = os.getenv("MODEL_NAME")
 MAX_CONTEXT_WINDOW = int(os.getenv("MAX_CONTEXT_WINDOW", "128000"))
 TOOL_MAX_OUTPUT_TOKENS = int(os.getenv("TOOL_MAX_OUTPUT_TOKENS", "32768"))
 LLM_MAX_OUTPUT_TOKENS = int(os.getenv("LLM_MAX_OUTPUT_TOKENS", "16384"))
+LLM_REQUEST_TIMEOUT_SECONDS = float(os.getenv("LLM_REQUEST_TIMEOUT_SECONDS", "180"))
+TOOL_COMMAND_TIMEOUT_SECONDS = float(os.getenv("TOOL_COMMAND_TIMEOUT_SECONDS", "120"))
+COMPILE_TIMEOUT_SECONDS = float(os.getenv("COMPILE_TIMEOUT_SECONDS", "120"))
+LOGGER_CLOSE_TIMEOUT_SECONDS = float(os.getenv("LOGGER_CLOSE_TIMEOUT_SECONDS", "5"))
+GCC_MAX_ERRORS = int(os.getenv("GCC_MAX_ERRORS", "100"))
 
 PRINT_MAX_MESSAGE_TOKENS = int(os.getenv("REPAIR_AGENT_PRINT_MAX_MESSAGE_TOKENS", "600"))
 PRINT_MAX_OBSERVATION_TOKENS = int(os.getenv("REPAIR_AGENT_PRINT_MAX_OBSERVATION_TOKENS", "600"))
@@ -56,7 +62,7 @@ enc = tiktoken.encoding_for_model("gpt-4o")
 DEFAULT_COMPILE_CMD = (
     "gcc -c -Werror=implicit-function-declaration -Werror=implicit-int "
     "-Werror=incompatible-pointer-types -Werror=int-conversion "
-    "-Werror=return-type -fno-builtin -fmax-errors=0 -I."
+    f"-Werror=return-type -fno-builtin -fmax-errors={GCC_MAX_ERRORS} -I."
 )
 
 # ---------------------------------------------------------------------------
@@ -203,16 +209,20 @@ def build_common_tools(
 
     def terminal(cmd: str) -> str:
         cmd = clear_quote(cmd)
-        response = subprocess.run(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            encoding="utf-8",
-            text=True,
-            shell=True,
-            errors="ignore",
-            cwd=base_dir,
-        )
+        try:
+            response = subprocess.run(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                encoding="utf-8",
+                text=True,
+                shell=True,
+                errors="ignore",
+                cwd=base_dir,
+                timeout=TOOL_COMMAND_TIMEOUT_SECONDS,
+            )
+        except subprocess.TimeoutExpired:
+            return f"Command timed out after {TOOL_COMMAND_TIMEOUT_SECONDS:g} seconds."
         output = f"stdout:\n{response.stdout.strip()}\n\nstderr:\n{response.stderr.strip()}\n"
         token_ids = enc.encode(output)
         if len(token_ids) <= TOOL_MAX_OUTPUT_TOKENS:
@@ -419,14 +429,17 @@ def build_common_tools(
 
         try:
             compile_proc = subprocess.run(
-                ["gcc", "-c", "-w", "-fmax-errors=0", "-I.", c_file],
+                shlex.split(compile_cmd) + [c_file],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 encoding="utf-8",
                 text=True,
                 errors="ignore",
                 cwd=base_dir,
+                timeout=COMPILE_TIMEOUT_SECONDS,
             )
+        except subprocess.TimeoutExpired:
+            return f"Compilation timed out after {COMPILE_TIMEOUT_SECONDS:g} seconds."
         except Exception as exc:
             return f"Failed to run gcc: {exc}"
 
@@ -500,7 +513,7 @@ def build_common_tools(
             name="Parse GCC Errors",
             func=parse_gcc_errors,
             description=(
-                "Run `gcc -c -w -fmax-errors=0` on a C file and return formatted diagnostics.\n"
+                f"Run `{compile_cmd}` on a C file and return formatted diagnostics.\n"
                 'Input JSON/dict: {"file":"1.c", "line": 12, "limit": 5} or CLI-like "1.c -l 12 -n 5".\n'
                 "Output: formatted errors or success message (may be truncated)."
             ),
@@ -597,6 +610,7 @@ def call_llm(client: OpenAI, messages: List[Dict[str, str]], max_tokens: int) ->
         messages=messages,
         temperature=0,
         max_tokens=max_tokens,
+        timeout=LLM_REQUEST_TIMEOUT_SECONDS,
     )
     return resp.choices[0].message.content or ""
 
@@ -645,7 +659,7 @@ class AsyncJsonlLogger:
 
     def close(self) -> None:
         self._queue.put(None)
-        self._thread.join()
+        self._thread.join(timeout=LOGGER_CLOSE_TIMEOUT_SECONDS)
 
     def _worker(self) -> None:
         log_dir = os.path.dirname(self.log_path)
@@ -917,7 +931,13 @@ Return STRICT JSON only, in one of these forms:
                 token_count = sum(token_len(m["content"]) for m in messages)
                 cprint(f"\n[iteration {iteration}] context={_fmt_token_usage(token_count, self.max_context_tokens)}")
 
-            response = call_llm(self.client, messages, max_tokens=LLM_MAX_OUTPUT_TOKENS)
+            try:
+                response = call_llm(self.client, messages, max_tokens=LLM_MAX_OUTPUT_TOKENS)
+            except Exception as exc:
+                return {
+                    "output": f"LLM request failed: {exc}",
+                    "status": "failure",
+                }
             thought, action, action_input, final_answer = _parse_react_response(response)
 
             if self.verbose:
@@ -1010,18 +1030,20 @@ def compile_c_file(base_dir: str, c_file: str, compile_cmd: str = DEFAULT_COMPIL
     """Compile a .c file and return (success: bool, output: str)."""
     try:
         proc = subprocess.run(
-            f"{compile_cmd} {c_file}",
+            shlex.split(compile_cmd) + [c_file],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             encoding="utf-8",
             text=True,
-            shell=True,
             errors="ignore",
             cwd=base_dir,
+            timeout=COMPILE_TIMEOUT_SECONDS,
         )
         output = f"{proc.stderr}\n{proc.stdout}".strip()
         success = proc.returncode == 0
         return success, output
+    except subprocess.TimeoutExpired:
+        return False, f"Compilation timed out after {COMPILE_TIMEOUT_SECONDS:g} seconds."
     except Exception as exc:
         return False, f"Compilation failed: {exc}"
 

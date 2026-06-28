@@ -182,7 +182,7 @@ Your task is to recover meaningful variable names and correct types in the .c fi
 - If _DWORD used in pointer contexts on 64-bit → annotate and keep, do NOT retype
 
 ### Compilation:
-Use: `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
+Use the compile command shown in the Parse GCC Errors tool description.
 
 Report: number of names recovered, types recovered, and skipped (ambiguous).
 If no generic names or type degradation, report skip reason.

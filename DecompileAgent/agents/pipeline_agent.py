@@ -57,7 +57,7 @@ load_dotenv()
 # Phase configuration
 # ---------------------------------------------------------------------------
 
-MAX_RETRY_ATTEMPTS = 3
+MAX_RETRY_ATTEMPTS = 2
 
 
 class PhaseConfig:
@@ -149,7 +149,7 @@ def run_pipeline(
         base_dir: Directory containing the .c file.
         c_file: Name of the .c file to process.
         compile_cmd: GCC compile command to use for verification.
-        phases_to_run: Optional list of phase numbers to run (default: all 1-5).
+        phases_to_run: Optional list of phase numbers to run (default: phases 1-2).
         verbose: Print detailed progress.
 
     Returns:
@@ -163,7 +163,7 @@ def run_pipeline(
         }
 
     if phases_to_run is None:
-        phases_to_run = [1, 2, 3, 4, 5]
+        phases_to_run = [1, 2]
 
     # Phase configurations
     phases: List[PhaseConfig] = [
@@ -342,6 +342,7 @@ def _generate_report(
 def run_pipeline_batch(
     base_dir: str,
     compile_cmd: str = DEFAULT_COMPILE_CMD,
+    phases_to_run: Optional[List[int]] = None,
     verbose: bool = True,
 ) -> Dict[str, Any]:
     """Run the pipeline on all .c files in a directory.
@@ -386,6 +387,7 @@ def run_pipeline_batch(
                 base_dir=folder_path,
                 c_file=c_file,
                 compile_cmd=compile_cmd,
+                phases_to_run=phases_to_run,
                 verbose=verbose,
             )
             all_results.append(result)

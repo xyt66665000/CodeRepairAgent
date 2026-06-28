@@ -17,6 +17,7 @@ model_name = os.getenv("MODEL_NAME")
 
 max_context_window = 128000
 max_output_token_nums = 8192
+llm_request_timeout_seconds = float(os.getenv("LLM_REQUEST_TIMEOUT_SECONDS", "180"))
 
 enc = tiktoken.encoding_for_model("gpt-4o")
 
@@ -111,7 +112,7 @@ def run_summary_agent(base_dir: str, pseudocode_file: str, pseudocode: str = Non
             api_key=api_key,
             temperature=0,
             max_tokens=max_output_token_nums,
-            timeout=None,
+            timeout=llm_request_timeout_seconds,
             max_retries=3,
         )
 

@@ -189,7 +189,7 @@ When a function's signature changes, update all its call sites and declarations.
 6. Mark: `// Restored AST: UB parameter loss recovered`.
 
 ### Compilation:
-Use: `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
+Use the compile command shown in the Parse GCC Errors tool description.
 
 Report: return types, param types, param names, calling conventions, and dropped parameters restored.
 If no degradation detected, report skip reason.

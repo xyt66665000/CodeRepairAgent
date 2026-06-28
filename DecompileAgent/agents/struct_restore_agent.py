@@ -188,7 +188,7 @@ When a local array like `_QWORD dest[5]` shows heterogeneous usage:
 - If uncertain, keep the original PAMA — do NOT guess.
 
 ### Compilation:
-Use: `gcc -c -Werror=implicit-function-declaration -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Werror=return-type -fno-builtin -fmax-errors=0 -I.`
+Use the compile command shown in the Parse GCC Errors tool description.
 
 Report: number of structs defined, PAMA expressions replaced, and final compilation status.
 If no PAMA/degradation detected, report skip reason.
