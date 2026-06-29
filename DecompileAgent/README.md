@@ -38,7 +38,7 @@ DecompileAgent/
 
 ---
 
-## 管线流程（Pipeline）
+## Pipeline
 
 ```
 INPUT: 反编译 .c 文件
@@ -163,7 +163,7 @@ TOOL_MAX_OUTPUT_TOKENS=32768
 
 ## 使用方式
 
-### 完整管线
+### 完整流程
 
 ```bash
 # 处理单个目录下的所有 .c 文件
