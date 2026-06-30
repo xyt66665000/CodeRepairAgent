@@ -50,7 +50,7 @@ python main.py -d ./target_dir
 在 Claude Code 会话中使用：
 
 ```
-/repair-full-pipeline  # 执行完整管线
+/repair-full-pipeline  # 执行完整流程
 ```
 
 详细用法见各 Skill 目录下的 README。
