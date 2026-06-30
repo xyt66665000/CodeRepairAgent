@@ -2,7 +2,7 @@
 
 对 IDA Pro / Hex-Rays / Ghidra 反编译 C 伪代码进行**多阶段修复与语义恢复**的智能体系统。
 
-项目与 `.claude/skills/` 下的 skill 体系完全同步，实现 `repair-full-pipeline` 总流程及其 5 个子 skill 的自动化管线。
+项目与 `.claude/skills/` 下的 skill 体系完全同步，实现 `repair-full-pipeline` 总流程及其 5 个子 skill 的自动化pipeline。
 
 ---
 
@@ -92,9 +92,9 @@ DONE: 可编译、语义恢复的 .c + .o
 5. Integrity Check — 验证文件非空、行数未丢失 >20%
 6. Verify         — 用严格 gcc 编译验证
    ├─ 通过 → 删除备份，进入下一阶段
-   └─ 失败 → 重试（最多 3 次）
+   └─ 失败 → 重试（最多 2 次）
        ├─ 重试成功 → 进入下一阶段
-       └─ 3 次全部失败 → ROLLBACK（恢复备份，跳过此阶段，继续管线）
+       └─ 2 次全部失败 → ROLLBACK（恢复备份，跳过此阶段，继续管线）
 ```
 
 ---
